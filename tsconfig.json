@@ -8,6 +8,9 @@
     "allowJs": true,
     "moduleResolution": "node",
     "baseUrl": ".",
+    "paths": {
+      "*": ["./src/*"]
+    },
     "types": ["node"],
     // позволяет работать с require common.js, как с import
     "esModuleInterop": true,

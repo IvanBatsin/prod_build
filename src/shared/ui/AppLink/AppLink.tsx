@@ -2,16 +2,16 @@ import React from "react";
 import styles from './AppLink.module.scss';
 import { Link, LinkProps } from "react-router-dom";
 import { classNames } from "shared/lib/classNames/classNames";
+import { CommonComponentProps } from "shared/types/commonTypes";
 
 export enum AppLinkTheme {
   PRIMARY = 'primary',
   SECONDARY = 'secondary'
 }
 
-interface AppLinkProps extends LinkProps {
-  additionalClass?: string,
+type AppLinkProps = CommonComponentProps & LinkProps & {
   theme?: AppLinkTheme
-}
+};
 
 export const AppLink: React.FC<AppLinkProps> = (props) => {
   const { additionalClass, children, to, theme = AppLinkTheme.PRIMARY, ...restProps } = props;

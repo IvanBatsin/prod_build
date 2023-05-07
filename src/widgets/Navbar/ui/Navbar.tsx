@@ -2,12 +2,9 @@ import React from "react";
 import styles from './Navbar.module.scss';
 import { classNames } from "shared/lib/classNames/classNames";
 import { AppLink, AppLinkTheme } from "shared/ui/AppLink/AppLink";
+import { CommonComponentProps } from "shared/types/commonTypes";
 
-interface NavbarProps {
-  additionalClass?: string
-}
-
-export const Navbar: React.FC<NavbarProps> = ({additionalClass}) => {
+export const Navbar: React.FC<CommonComponentProps> = ({additionalClass}) => {
   return (
     <div className={classNames(styles.navbar, {}, [additionalClass])}>
       <div className={styles.links}>

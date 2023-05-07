@@ -1,10 +1,10 @@
-import React, { ButtonHTMLAttributes } from "react";
-import styles from './Button.module.scss';
+import React, { type ButtonHTMLAttributes } from "react";
+import styles from "./Button.module.scss";
 import { classNames } from "shared/lib/classNames/classNames";
-import { CommonComponentProps } from "shared/types/commonTypes";
+import { type CommonComponentProps } from "shared/types/commonTypes";
 
 enum ButtonTypes {
-  CLEAR = 'clear'
+  CLEAR = "clear"
 }
 
 type ButtonProps = CommonComponentProps & ButtonHTMLAttributes<HTMLButtonElement> & {
@@ -15,6 +15,6 @@ export const Button: React.FC<ButtonProps> = (props) => {
   const { additionalClass, theme = ButtonTypes.CLEAR, children, ...restProps } = props;
 
   return (
-    <button className={classNames(styles.btn, {}, [additionalClass, styles[theme]])} {...restProps}>{children}</button>
-  )
-}
+    <button type="button" className={classNames(styles.btn, {}, [additionalClass, styles[theme]])} {...restProps}>{children}</button>
+  );
+};

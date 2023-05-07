@@ -4,11 +4,11 @@ export const classNames = (baseClass: string, mods?: Mods, additionalClasses?: s
   const resultArr = [baseClass];
   additionalClasses && resultArr.push(...additionalClasses.filter(Boolean));
   mods && Object.keys(mods).length && resultArr.push(
-    ...Object.entries(mods).reduce((acc, [cls, value]) => {
+    ...Object.entries(mods).reduce<string[]>((acc, [cls, value]) => {
       Boolean(value) && acc.push(cls);
       return acc;
-    }, [] as string[])
+    }, [])
   );
 
-  return resultArr.join(' ');
-}
+  return resultArr.join(" ");
+};

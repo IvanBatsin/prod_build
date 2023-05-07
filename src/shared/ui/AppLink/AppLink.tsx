@@ -1,12 +1,12 @@
 import React from "react";
-import styles from './AppLink.module.scss';
-import { Link, LinkProps } from "react-router-dom";
+import styles from "./AppLink.module.scss";
+import { Link, type LinkProps } from "react-router-dom";
 import { classNames } from "shared/lib/classNames/classNames";
-import { CommonComponentProps } from "shared/types/commonTypes";
+import { type CommonComponentProps } from "shared/types/commonTypes";
 
 export enum AppLinkTheme {
-  PRIMARY = 'primary',
-  SECONDARY = 'secondary'
+  PRIMARY = "primary",
+  SECONDARY = "secondary"
 }
 
 type AppLinkProps = CommonComponentProps & LinkProps & {
@@ -17,12 +17,12 @@ export const AppLink: React.FC<AppLinkProps> = (props) => {
   const { additionalClass, children, to, theme = AppLinkTheme.PRIMARY, ...restProps } = props;
 
   return (
-    <Link 
-      to={to} 
+    <Link
+      to={to}
       className={classNames(styles.link, {}, [additionalClass, styles[theme]])}
       {...restProps}
     >
       {children}
     </Link>
-  )
-}
+  );
+};

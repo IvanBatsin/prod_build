@@ -1,3 +1,3 @@
-import React from 'react';
+import React from "react";
 
-export const AboutPageComponent = React.lazy(() => import('./AboutPage'));
+export const AboutPageComponent = React.lazy(async () => await import("./AboutPage"));

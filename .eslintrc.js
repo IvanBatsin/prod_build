@@ -15,7 +15,8 @@ module.exports = {
     project: ["./tsconfig.json"]
   },
   plugins: [
-    "react"
+    "react",
+    "i18next"
   ],
   rules: {
     "@typescript-eslint/prefer-nullish-coalescing": 0,
@@ -29,6 +30,7 @@ module.exports = {
     "@typescript-eslint/naming-convention": 1,
     quotes: [2, "double"],
     "react/button-has-type": [2],
-    "@typescript-eslint/no-floating-promises": 1
+    "@typescript-eslint/no-floating-promises": 1,
+    "i18next/no-literal-string": 2
   }
 };

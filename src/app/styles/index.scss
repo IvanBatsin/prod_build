@@ -1,7 +1,7 @@
-@import './reset.scss';
-@import './themes/drark.scss';
-@import './themes/normal.scss';
-@import './variables/global.scss';
+@import './reset';
+@import './themes/drark';
+@import './themes/normal';
+@import './variables/global';
 
 .app {
   font: var(--font-m);

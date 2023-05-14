@@ -51,7 +51,19 @@ export const buildLoaders = (options: BuildOptions): webpack.RuleSetRule[] => {
           }
         }
       },
-      "sass-loader"
+      "sass-loader",
+      {
+        loader: "postcss-loader",
+        options: {
+          postcssOptions: {
+            plugins: [
+              [
+                "autoprefixer"
+              ]
+            ]
+          }
+        }
+      }
     ]
   };
 

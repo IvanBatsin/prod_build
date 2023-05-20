@@ -3,8 +3,9 @@ import styles from "./Button.module.scss";
 import { classNames } from "shared/lib/classNames/classNames";
 import { type CommonComponentProps } from "shared/types/commonTypes";
 
-enum ButtonTypes {
-  CLEAR = "clear"
+export enum ButtonTypes {
+  CLEAR = "clear",
+  RELOAD = "reload"
 }
 
 type ButtonProps = CommonComponentProps & ButtonHTMLAttributes<HTMLButtonElement> & {

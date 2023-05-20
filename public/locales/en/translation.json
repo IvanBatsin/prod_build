@@ -1,4 +1,6 @@
 {
   "translate": "translate",
-  "language": "Русский"
+  "language": "Русский",
+  "errorBoundaryMessage": "Something went wrong",
+  "errorBoundaryButtonText": "Reload page"
 }

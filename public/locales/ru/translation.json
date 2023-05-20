@@ -1,4 +1,6 @@
 {
   "translate": "пиревести",
-  "language": "English"
+  "language": "English",
+  "errorBoundaryMessage": "Что-то пошло не так",
+  "errorBoundaryButtonText": "Перезагрузить страницу"
 }

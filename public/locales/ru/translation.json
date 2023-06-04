@@ -2,5 +2,6 @@
   "translate": "пиревести",
   "language": "English",
   "errorBoundaryMessage": "Что-то пошло не так",
-  "errorBoundaryButtonText": "Перезагрузить страницу"
+  "errorBoundaryButtonText": "Перезагрузить страницу",
+  "toggleMenu": "Переключить меню"
 }

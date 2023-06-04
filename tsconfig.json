@@ -12,14 +12,20 @@
       "*": ["./src/*"]
     },
     "types": ["node"],
-    // позволяет работать с require common.js, как с import
     "esModuleInterop": true,
     // позволяет использвать import без * 
     "allowSyntheticDefaultImports": true
   },
   "ts-node": {
     "compilerOptions": {
-      "module": "CommonJS"
+      "module": "CommonJS",
     }
-  }
+  },
+  "include": [
+    "src",
+    "./config/jest/test-setup.ts"
+  ],
+  "exclude": [
+    "./config/jest/jestEmptyComponent.tsx"
+  ]
 }

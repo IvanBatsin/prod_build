@@ -24,8 +24,5 @@
   "include": [
     "src",
     "./config/jest/test-setup.ts"
-  ],
-  "exclude": [
-    "./config/jest/jestEmptyComponent.tsx"
   ]
 }

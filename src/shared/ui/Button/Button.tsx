@@ -5,7 +5,8 @@ import { type CommonComponentProps } from "shared/types/commonTypes";
 
 export enum ButtonTypes {
   CLEAR = "clear",
-  RELOAD = "reload"
+  RELOAD = "reload",
+  OUTLINE = "outline"
 }
 
 type ButtonProps = CommonComponentProps & ButtonHTMLAttributes<HTMLButtonElement> & {

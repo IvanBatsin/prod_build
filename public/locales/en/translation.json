@@ -2,5 +2,6 @@
   "translate": "translate",
   "language": "Русский",
   "errorBoundaryMessage": "Something went wrong",
-  "errorBoundaryButtonText": "Reload page"
+  "errorBoundaryButtonText": "Reload page",
+  "toggleMenu": "toggle menu" 
 }

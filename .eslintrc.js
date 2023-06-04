@@ -8,8 +8,6 @@ module.exports = {
     "plugin:react/recommended",
     "standard-with-typescript"
   ],
-  overrides: [
-  ],
   parserOptions: {
     ecmaVersion: "latest",
     sourceType: "module",
@@ -17,7 +15,8 @@ module.exports = {
   },
   plugins: [
     "react",
-    "i18next"
+    "i18next",
+    "jest"
   ],
   rules: {
     "@typescript-eslint/prefer-nullish-coalescing": 0,
@@ -32,6 +31,16 @@ module.exports = {
     quotes: [2, "double"],
     "react/button-has-type": [2],
     "@typescript-eslint/no-floating-promises": 1,
-    "i18next/no-literal-string": 2
-  }
+    "i18next/no-literal-string": 2,
+    "@typescript-eslint/ban-tslint-comment": 1,
+    "@typescript-eslint/method-signature-style": 2
+  },
+  overrides: [
+    {
+      files: ["**/src/**/*.test.{ts,tsx}"],
+      rules: {
+        "i18next/no-literal-string": "off",
+      }
+    }
+  ]
 };

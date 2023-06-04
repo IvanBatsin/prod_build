@@ -4,26 +4,20 @@ module.exports = {
     es2021: true,
     jest: true
   },
-  extends: [
-    "plugin:react/recommended",
-    "standard-with-typescript"
-  ],
-  overrides: [],
+  extends: ["plugin:react/recommended", "standard-with-typescript", "plugin:storybook/recommended"],
   parserOptions: {
     ecmaVersion: "latest",
     sourceType: "module",
     project: ["./tsconfig.json"]
   },
-  plugins: [
-    "react",
-    "i18next",
-    "jest"
-  ],
+  plugins: ["react", "i18next", "jest"],
   rules: {
     "@typescript-eslint/prefer-nullish-coalescing": 0,
     "@typescript-eslint/quotes": [2, "double"],
     "@typescript-eslint/strict-boolean-expressions": 0,
-    semi: ["error", "always", { omitLastInOneLineBlock: true }],
+    semi: ["error", "always", {
+      omitLastInOneLineBlock: true
+    }],
     "@typescript-eslint/semi": 0,
     "react/react-in-jsx-scope": 0,
     "react/jsx-uses-react": 0,
@@ -36,12 +30,10 @@ module.exports = {
     "@typescript-eslint/ban-tslint-comment": 1,
     "@typescript-eslint/method-signature-style": 2
   },
-  overrides: [
-    {
-      files: ["**/src/**/*.test.{ts,tsx}"],
-      rules: {
-        "i18next/no-literal-string": "off",
-      }
+  overrides: [{
+    files: ["**/src/**/*.test.{ts,tsx}"],
+    rules: {
+      "i18next/no-literal-string": "off"
     }
-  ]
+  }]
 };

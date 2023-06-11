@@ -3,5 +3,7 @@
   "language": "English",
   "errorBoundaryMessage": "Что-то пошло не так",
   "errorBoundaryButtonText": "Перезагрузить страницу",
-  "toggleMenu": "Переключить меню"
+  "toggleMenu": "Переключить меню",
+  "aboutLink": "О нас",
+  "mainLink": "Главная"
 }

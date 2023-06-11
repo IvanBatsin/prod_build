@@ -15,8 +15,11 @@ export default ({ config }: { config: WebpackConfiguration }): WebpackConfigurat
   config.resolve?.extensions?.push(".ts", ".tsx");
   config.module?.rules?.push(buildCssLoaders(true));
   config.module.rules = config.module?.rules?.map((rule: any) => {
-    if ((rule.test as string).includes("svg") && rule.test) {
-      return { ...rule, exclude: /\.svg$/i };
+    if (rule?.test && rule?.test?.toString().includes('svg')) {
+      if (rule.test.toString()?.includes("svg")) {
+        return { ...rule, exclude: /\.svg$/i };
+      }
+      return rule;
     }
     return rule;
   });

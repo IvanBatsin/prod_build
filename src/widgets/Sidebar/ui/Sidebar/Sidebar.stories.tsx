@@ -1,14 +1,13 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 import { Sidebar } from "./Sidebar";
-import { themeDecorator } from 'shared/config/storybook/themeDecorator';
-import { Themes } from 'app/providers/themeProvider';
+import { themeDecorator } from "shared/config/storybook/themeDecorator";
+import { Themes } from "app/providers/themeProvider";
 
-// More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 const meta = {
-  title: 'widget/Sidebar',
+  title: "widget/Sidebar",
   component: Sidebar,
-  tags: ['autodocs'],
-  argTypes: {},
+  tags: ["autodocs"],
+  argTypes: {}
 } satisfies Meta<typeof Sidebar>;
 
 export default meta;
@@ -20,5 +19,5 @@ export const Light: Story = {
 };
 
 export const Dark: Story = {
-  args: {},
+  args: {}
 };

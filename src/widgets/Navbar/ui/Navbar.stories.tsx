@@ -1,15 +1,15 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 import { Navbar } from "./Navbar";
-import { themeDecorator } from 'shared/config/storybook/themeDecorator';
-import { Themes } from 'app/providers/themeProvider';
-import { routerDecorator } from 'shared/config/storybook/routerDecorator';
+import { themeDecorator } from "shared/config/storybook/themeDecorator";
+import { Themes } from "app/providers/themeProvider";
+import { routerDecorator } from "shared/config/storybook/routerDecorator";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 const meta = {
-  title: 'widget/Navbar',
+  title: "widget/Navbar",
   component: Navbar,
-  tags: ['autodocs'],
-  argTypes: {},
+  tags: ["autodocs"],
+  argTypes: {}
 } satisfies Meta<typeof Navbar>;
 
 export default meta;

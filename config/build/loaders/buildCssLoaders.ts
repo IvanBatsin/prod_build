@@ -29,5 +29,5 @@ export const buildCssLoaders = (isDev: boolean): webpack.RuleSetRule => {
         }
       }
     ]
-  }
+  };
 };

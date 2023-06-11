@@ -5,6 +5,7 @@ module.exports = {
     jest: true
   },
   extends: ["plugin:react/recommended", "standard-with-typescript", "plugin:storybook/recommended"],
+  ignorePatterns: ["**/src/**/*.stories.{ts,tsx}", "webpack.config.ts"],
   parserOptions: {
     ecmaVersion: "latest",
     sourceType: "module",
@@ -28,7 +29,10 @@ module.exports = {
     "@typescript-eslint/no-floating-promises": 1,
     "i18next/no-literal-string": 2,
     "@typescript-eslint/ban-tslint-comment": 1,
-    "@typescript-eslint/method-signature-style": 2
+    "@typescript-eslint/method-signature-style": 2,
+    "@typescript-eslint/prefer-includes": "off",
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": "warn"
   },
   overrides: [{
     files: ["**/src/**/*.test.{ts,tsx}"],

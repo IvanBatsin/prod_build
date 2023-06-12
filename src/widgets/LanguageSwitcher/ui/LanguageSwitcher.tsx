@@ -4,7 +4,11 @@ import { classNames } from "shared/lib/classNames/classNames";
 import { Button } from "shared/ui/Button/Button";
 import { type CommonComponentProps } from "shared/types/commonTypes";
 
-export const LanguageSwitcher: React.FC<CommonComponentProps> = ({ additionalClass }) => {
+type LanguageSwitcherProps = CommonComponentProps & {
+  short?: boolean
+}
+
+export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ additionalClass, short }) => {
   const { t, i18n } = useTranslation();
 
   const handleToggleLanguage = (): void => {
@@ -15,7 +19,7 @@ export const LanguageSwitcher: React.FC<CommonComponentProps> = ({ additionalCla
     <Button
       additionalClass={classNames("", {}, [additionalClass])}
       onClick={handleToggleLanguage}>
-        {t("language")}
+        {t(short ? "shortLanguage" : "language")}
     </Button>
   );
 };

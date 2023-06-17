@@ -11,7 +11,7 @@ module.exports = {
     sourceType: "module",
     project: ["./tsconfig.json"]
   },
-  plugins: ["react", "i18next", "jest"],
+  plugins: ["react", "i18next", "jest", "react-hooks"],
   rules: {
     "@typescript-eslint/prefer-nullish-coalescing": 0,
     "@typescript-eslint/quotes": [2, "double"],
@@ -32,7 +32,9 @@ module.exports = {
     "@typescript-eslint/method-signature-style": 2,
     "@typescript-eslint/prefer-includes": "off",
     "no-unused-vars": "off",
-    "@typescript-eslint/no-unused-vars": "warn"
+    "@typescript-eslint/no-unused-vars": "warn",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
   },
   overrides: [{
     files: ["**/src/**/*.test.{ts,tsx}"],

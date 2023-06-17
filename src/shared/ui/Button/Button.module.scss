@@ -4,11 +4,16 @@
   padding: 10px 15px;
 }
 
-.clear {
+.clear,
+.clear_inverted {
   padding: 0;
   border: none;
   outline: none;
   background: none;
+}
+
+.clear_inverted {
+  color: var(--inverted-primary-color);
 }
 
 .reload {

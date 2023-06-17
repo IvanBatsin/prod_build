@@ -1,8 +1,13 @@
 import React from "react";
 import { LOCAL_STORAGE_THEME_KEY, ThemeContext, Themes } from "../lib/ThemeContext";
 
-export const ThemeProvider: React.FC = ({ children }) => {
-  const [theme, setTheme] = React.useState<Themes>(JSON.parse(window.localStorage.getItem(LOCAL_STORAGE_THEME_KEY)) as Themes || Themes.LIGHT);
+interface ThemeProviderProps {
+  initialTheme?: Themes
+}
+
+export const ThemeProvider: React.FC<ThemeProviderProps> = (props) => {
+  const { children, initialTheme } = props;
+  const [theme, setTheme] = React.useState<Themes>(initialTheme || JSON.parse(window.localStorage.getItem(LOCAL_STORAGE_THEME_KEY)) as Themes || Themes.LIGHT);
 
   const defaultValue = React.useMemo(() => {
     return { theme, setTheme };

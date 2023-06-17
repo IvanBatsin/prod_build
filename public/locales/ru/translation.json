@@ -4,7 +4,7 @@
   "shortLanguage": "Ru",
   "errorBoundaryMessage": "Что-то пошло не так",
   "errorBoundaryButtonText": "Перезагрузить страницу",
-  "toggleMenu": "Переключить меню",
   "aboutLink": "О нас",
-  "mainLink": "Главная"
+  "mainLink": "Главная",
+  "login": "Войти"
 }

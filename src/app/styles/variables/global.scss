@@ -10,8 +10,17 @@
   --font-line-xl: 40px;
   --font-xl: var(--font-size-xl) / var(--font-line-xl) var(--font-family-main);
 
+
   // Sizes
   --navbar-height: 50px;
   --sidebar-full-width: 300px;
   --sidebar-collapsed-width: 80px;
+
+
+  // Indexes
+  --modal-z-index: 10;
+
+
+  // Overlays
+  --background-overlay: rgba(0, 0, 0, 60%);
 }

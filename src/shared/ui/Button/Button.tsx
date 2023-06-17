@@ -5,6 +5,7 @@ import { type CommonComponentProps } from "shared/types/commonTypes";
 
 export enum ButtonTypes {
   CLEAR = "clear",
+  CLEAR_INVERTED = "clear_inverted",
   RELOAD = "reload",
   OUTLINE = "outline",
   BACKGROUND = "background",

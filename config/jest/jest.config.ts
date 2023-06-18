@@ -43,6 +43,9 @@ export default {
   moduleNameMapper: {
     "\\.s?css$": "identity-obj-proxy",
     "\\.svg": path.resolve(__dirname, "jestEmptyComponent.tsx")
+  },
+  globals: {
+    __IS__DEV: true
   }
 
   // Stop running tests after `n` failures

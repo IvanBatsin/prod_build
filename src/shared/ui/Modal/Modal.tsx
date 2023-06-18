@@ -3,7 +3,6 @@ import styles from "./Modal.module.scss";
 import type { CommonComponentProps } from "shared/types/commonTypes";
 import { classNames } from "shared/lib/classNames/classNames";
 import { Portal } from "../Portal/Portal";
-import { useTheme } from "app/providers/themeProvider";
 
 type ModalProps = CommonComponentProps & {
   isOpen: boolean

@@ -7,14 +7,16 @@ import { Portal } from "../Portal/Portal";
 type ModalProps = CommonComponentProps & {
   isOpen: boolean
   onClose: () => void
+  lazy?: boolean
 };
 
 const ANIMATION_DELAY = 300;
 
 export const Modal: React.FC<ModalProps> = (props) => {
-  const { isOpen, additionalClass, children, onClose } = props;
+  const { isOpen, additionalClass, children, lazy, onClose } = props;
 
   const [isClosing, setIsClosing] = React.useState<boolean>(false);
+  const [isMounted, setIsMounted] = React.useState<boolean>(false);
   const timerRef = React.useRef<NodeJS.Timeout>();
 
   const mods: Record<string, boolean> = {
@@ -43,6 +45,10 @@ export const Modal: React.FC<ModalProps> = (props) => {
   }, [handleClose]);
 
   React.useEffect(() => {
+    isOpen && setIsMounted(true);
+  }, [isOpen]);
+
+  React.useEffect(() => {
     if (isOpen) {
       window.addEventListener("keydown", handleKeyDown);
     }
@@ -57,6 +63,10 @@ export const Modal: React.FC<ModalProps> = (props) => {
       timerRef?.current && clearTimeout(timerRef.current);
     };
   }, []);
+
+  if (lazy && !isMounted) {
+    return null;
+  }
 
   return (
     <Portal>

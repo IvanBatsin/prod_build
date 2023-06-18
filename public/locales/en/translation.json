@@ -6,5 +6,7 @@
   "errorBoundaryButtonText": "Reload page",
   "aboutLink": "About",
   "mainLink": "Main",
-  "login": "Login"
+  "login": "Login",
+  "EnterUserName": "Enter username",
+  "EnterPassword": "Enter password"
 }

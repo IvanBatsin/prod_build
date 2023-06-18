@@ -3,17 +3,19 @@ import styles from "./Navbar.module.scss";
 import { classNames } from "shared/lib/classNames/classNames";
 import { type CommonComponentProps } from "shared/types/commonTypes";
 import { useTranslation } from "react-i18next";
-import { Modal } from "shared/ui/Modal/Modal";
 import { Button, ButtonTypes } from "shared/ui/Button/Button";
-
-const modal_content = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum possimus atque similique sed ducimus non! Minus, molestias. Totam mollitia, soluta voluptate porro nulla, libero saepe error nisi ad nobis architecto.";
+import { LoginModal } from "features/authByUserName";
 
 export const Navbar: React.FC<CommonComponentProps> = ({ additionalClass }) => {
   const { t } = useTranslation();
   const [isAuthModal, setIsAuthModal] = React.useState<boolean>(false);
 
-  const handleModalToggle = React.useCallback(() => {
-    setIsAuthModal(prev => !prev);
+  const handleModalClose = React.useCallback(() => {
+    setIsAuthModal(false);
+  }, []);
+
+  const handleModalOpen = React.useCallback(() => {
+    setIsAuthModal(true);
   }, []);
 
   return (
@@ -21,16 +23,14 @@ export const Navbar: React.FC<CommonComponentProps> = ({ additionalClass }) => {
       <Button
         theme={ButtonTypes.CLEAR_INVERTED}
         additionalClass={styles.links}
-        onClick={handleModalToggle}
+        onClick={handleModalOpen}
       >
         {t("login")}
       </Button>
-      <Modal
+      <LoginModal
         isOpen={isAuthModal}
-        onClose={handleModalToggle}
-      >
-        {modal_content}
-      </Modal>
+        onCLose={handleModalClose}
+      />
     </div>
   );
 };

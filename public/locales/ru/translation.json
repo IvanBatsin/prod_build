@@ -6,5 +6,7 @@
   "errorBoundaryButtonText": "Перезагрузить страницу",
   "aboutLink": "О нас",
   "mainLink": "Главная",
-  "login": "Войти"
+  "login": "Войти",
+  "EnterUserName": "Введите username",
+  "EnterPassword": "Введите password"
 }

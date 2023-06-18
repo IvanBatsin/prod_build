@@ -14,15 +14,13 @@ const ANIMATION_DELAY = 300;
 
 export const Modal: React.FC<ModalProps> = (props) => {
   const { isOpen, additionalClass, children, onClose } = props;
-  const { theme } = useTheme();
 
   const [isClosing, setIsClosing] = React.useState<boolean>(false);
   const timerRef = React.useRef<NodeJS.Timeout>();
 
   const mods: Record<string, boolean> = {
     [styles.opened]: isOpen,
-    [styles.isClosing]: isClosing,
-    [styles[theme]]: true
+    [styles.isClosing]: isClosing
   };
 
   const handleClose = React.useCallback((): void => {

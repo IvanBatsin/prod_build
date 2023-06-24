@@ -25,14 +25,15 @@ type ButtonProps = CommonComponentProps & ButtonHTMLAttributes<HTMLButtonElement
 };
 
 export const Button: React.FC<ButtonProps> = (props) => {
-  const { additionalClass, square, size = ButtonSizes.M, theme = ButtonTypes.CLEAR, children, ...restProps } = props;
+  const { additionalClass, square, disabled, size = ButtonSizes.M, theme = ButtonTypes.CLEAR, children, ...restProps } = props;
 
   const mods: Record<string, boolean> = {
     [styles.square]: !!square,
-    [styles[size]]: !!size
+    [styles[size]]: !!size,
+    [styles.disabled]: disabled
   };
 
   return (
-    <button type="button" className={classNames(styles.btn, mods, [additionalClass, styles[theme]])} {...restProps}>{children}</button>
+    <button disabled={disabled} type="button" className={classNames(styles.btn, mods, [additionalClass, styles[theme]])} {...restProps}>{children}</button>
   );
 };

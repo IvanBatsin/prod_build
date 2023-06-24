@@ -27,7 +27,7 @@ export const Sidebar: React.FC<CommonComponentProps> = ({ additionalClass }) => 
         square
         size={ButtonSizes.XL}
       >
-          { collapsed ? ">" : "<" }
+        { collapsed ? ">" : "<" }
       </Button>
       <div className={styles.link_items}>
         <AppLink theme={AppLinkTheme.SECONDARY} to={routePaths.about} additionalClass={styles.item}>

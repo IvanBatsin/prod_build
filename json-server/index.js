@@ -1,4 +1,4 @@
-const fs = require("fs");
+const fs = require("fs").promises;
 const jsonServer = require("json-server");
 const path = require("path");
 
@@ -7,21 +7,20 @@ const router = jsonServer.router(path.resolve(__dirname, "db.json"));
 
 server.use(async (req, res, next) => {
   await new Promise((res) => {
-    setTimeout(res, 800);
-    next();
+    setTimeout(next, 800);
   });
 });
 
 server.use((req, res, next) => {
-  if (!req.headers.authorization) {
-    return res.status(403).json({message: "Auth error"});
-  }
+  // if (!req.headers.authorization) {
+  //   return res.status(403).json({message: "Auth error"});
+  // }
 
   next();
 }); 
 
 server.use(jsonServer.defaults());
-server.use(router);
+server.use(jsonServer.bodyParser);
 
 server.post("/login", async (req, res) => {
   try {
@@ -40,6 +39,8 @@ server.post("/login", async (req, res) => {
     return res.status(500).json({message: JSON.stringify(error)});
   }
 });
+
+server.use(router);
 
 server.listen(8000, () => {
   console.log("server is running");

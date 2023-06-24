@@ -7,6 +7,9 @@
   "aboutLink": "About",
   "mainLink": "Main",
   "login": "Login",
+  "logout": "Logout",
   "EnterUserName": "Enter username",
-  "EnterPassword": "Enter password"
+  "EnterPassword": "Enter password",
+  "authorizationForm": "Authorization form",
+  "authorizationError": "Incrorrect login or password"
 }

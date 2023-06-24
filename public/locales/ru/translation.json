@@ -7,6 +7,9 @@
   "aboutLink": "О нас",
   "mainLink": "Главная",
   "login": "Войти",
+  "logout": "Выйти  ",
   "EnterUserName": "Введите username",
-  "EnterPassword": "Введите password"
+  "EnterPassword": "Введите password",
+  "authorizationForm": "Форма авторизации",
+  "authorizationError": "Вы ввели неправильный логин или пароль"
 }

@@ -2,6 +2,7 @@ import type { WebpackConfiguration } from "webpack-dev-server";
 import type { BuildPath } from "../build/types/config";
 import path from "path";
 import { buildCssLoaders } from "../build/loaders/buildCssLoaders";
+import { DefinePlugin } from "webpack";
 
 export default ({ config }: { config: WebpackConfiguration }): WebpackConfiguration => {
   const pathConfig: BuildPath = {
@@ -27,6 +28,10 @@ export default ({ config }: { config: WebpackConfiguration }): WebpackConfigurat
     test: /\.svg$/i,
     use: ["@svgr/webpack"]
   });
+
+  config.plugins.push(new DefinePlugin({
+    __IS__DEV: true
+  }));
 
   return config;
 };

@@ -9,7 +9,7 @@ type LoginModalProps = CommonComponentProps & {
 }
 
 export const LoginModal: React.FC<LoginModalProps> = (props) => {
-  const { isOpen, additionalClass, onCLose } = props;
+  const { isOpen, onCLose } = props;
   return (
     <Modal
       isOpen={isOpen}

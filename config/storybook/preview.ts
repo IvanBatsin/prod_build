@@ -1,8 +1,6 @@
 import type { Preview } from "@storybook/react";
 import { stylesDecorator } from "../../src/shared/config/storybook/styleDecorator";
-import { themeDecorator } from "../../src/shared/config/storybook/themeDecorator";
 import { translationDecorator } from "../../src/shared/config/storybook/translationDecorator";
-import { Themes } from "../../src/app/providers/themeProvider/index";
 import "../../src/app/styles/index.scss";
 
 const preview: Preview = {
@@ -17,7 +15,6 @@ const preview: Preview = {
   },
   decorators: [
     stylesDecorator,
-    themeDecorator(Themes.DARK),
     translationDecorator
   ]
 };

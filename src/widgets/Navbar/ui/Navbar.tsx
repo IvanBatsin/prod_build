@@ -44,10 +44,12 @@ export const Navbar: React.FC<CommonComponentProps> = ({ additionalClass }) => {
           >
             {t("login")}
           </Button>
-          <LoginModal
-            isOpen={isAuthModal}
-            onCLose={handleModalClose}
-          />
+          {isAuthModal &&
+            <LoginModal
+              isOpen={isAuthModal}
+              onCLose={handleModalClose}
+            />
+          }
         </>
       }
     </div>

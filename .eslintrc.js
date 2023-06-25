@@ -34,7 +34,8 @@ module.exports = {
     "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": "warn",
     "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn"
+    "react-hooks/exhaustive-deps": "warn",
+    "@typescript-eslint/no-dynamic-delete": "warn"
   },
   overrides: [{
     files: ["**/src/**/*.test.{ts,tsx}"],

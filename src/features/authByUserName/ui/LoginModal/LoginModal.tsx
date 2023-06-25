@@ -1,7 +1,8 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { Modal } from "shared/ui/Modal/Modal";
-import { LoginForm } from "../LoginForm/LoginForm";
+import { LoginForm } from "../LoginForm/LoginForm.async";
 import type { CommonComponentProps } from "shared/types/commonTypes";
+import { PageLoader } from "widgets/PageLoader";
 
 type LoginModalProps = CommonComponentProps & {
   isOpen: boolean
@@ -16,7 +17,9 @@ export const LoginModal: React.FC<LoginModalProps> = (props) => {
       onClose={onCLose}
       lazy
     >
+    <Suspense fallback={<PageLoader/>}>
       <LoginForm/>
+    </Suspense>
     </Modal>
   );
 };

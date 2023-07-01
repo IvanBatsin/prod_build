@@ -1,1 +1,1 @@
-export { NotFound } from "./ui/NotFound";
+export { NotFoundComponent as NotFoundPage } from "./ui/NotFound.async";

@@ -6,7 +6,7 @@ import DarkThemeIcon from "../assets/icons/theme-dark.svg";
 import { Button } from "shared/ui/Button/Button";
 import { type CommonComponentProps } from "shared/types/commonTypes";
 
-export const ThemeSwitcher: React.FC<CommonComponentProps> = ({ additionalClass }) => {
+export const ThemeSwitcher: React.FC<CommonComponentProps> = React.memo(function ThemeSwitcher ({ additionalClass }: CommonComponentProps) {
   const { theme, toggleTheme } = useTheme();
 
   return (
@@ -14,4 +14,4 @@ export const ThemeSwitcher: React.FC<CommonComponentProps> = ({ additionalClass 
       {theme === Themes.LIGHT ? <LightThemeIcon/> : <DarkThemeIcon/>}
     </Button>
   );
-};
+});

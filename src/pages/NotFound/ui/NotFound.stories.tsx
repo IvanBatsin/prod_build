@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { NotFound } from "./NotFound";
+import NotFound from "./NotFound";
 import { themeDecorator } from "shared/config/storybook/themeDecorator";
 import { Themes } from "app/providers/themeProvider";
 

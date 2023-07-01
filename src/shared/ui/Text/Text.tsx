@@ -14,7 +14,7 @@ type TextProps = CommonComponentProps & {
   theme?: TextThemes
 }
 
-export const Text: React.FC<TextProps> = (props) => {
+export const Text: React.FC<TextProps> = React.memo(function Text (props: TextProps) {
   const { additionalClass, text, title, theme = TextThemes.PRIMARY } = props;
   return (
     <div className={classNames(styles.container, { [styles[theme]]: true }, [additionalClass])}>
@@ -22,4 +22,4 @@ export const Text: React.FC<TextProps> = (props) => {
       {text && <p className={styles.text}>{text}</p>}
     </div>
   );
-};
+});

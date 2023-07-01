@@ -15,17 +15,24 @@
   ],
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "username": "admin",
       "password": "123"
     },
     {
       "username": "dfdf",
       "password": "dfdf",
-      "id": 2
+      "id": "2"
     }
   ],
   "profile": {
-    "name": "typicode"
+    "firstName": "Jon",
+    "lastName": "Jons",
+    "age": 23,
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Moscow",
+    "username": "admin",
+    "avatar": "https://ufc.ru/athlete/dzhon-dzhons"
   }
 }

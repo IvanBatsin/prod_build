@@ -4,7 +4,7 @@ import type { User } from "entities/User";
 import { userActions } from "entities/User/model/slice/userSlice";
 import { LOCALSTORAGE_KEY } from "shared/const/localStorage";
 
-interface LoginByUsernamePayload {
+export interface LoginByUsernamePayload {
   username: string
   password: string
 }

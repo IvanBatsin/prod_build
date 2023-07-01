@@ -13,7 +13,7 @@ type AppLinkProps = CommonComponentProps & LinkProps & {
   theme?: AppLinkTheme
 };
 
-export const AppLink: React.FC<AppLinkProps> = (props) => {
+export const AppLink: React.FC<AppLinkProps> = React.memo(function AppLink (props: AppLinkProps) {
   const { additionalClass, children, to, theme = AppLinkTheme.PRIMARY, ...restProps } = props;
 
   return (
@@ -25,4 +25,4 @@ export const AppLink: React.FC<AppLinkProps> = (props) => {
       {children}
     </Link>
   );
-};
+});

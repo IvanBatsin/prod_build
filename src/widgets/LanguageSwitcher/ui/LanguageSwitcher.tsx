@@ -8,7 +8,7 @@ type LanguageSwitcherProps = CommonComponentProps & {
   short?: boolean
 }
 
-export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ additionalClass, short }) => {
+export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = React.memo(function LanguageSwitcher ({ additionalClass, short }: LanguageSwitcherProps) {
   const { t, i18n } = useTranslation();
 
   const handleToggleLanguage = (): void => {
@@ -22,4 +22,4 @@ export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ additionalCl
         {t(short ? "shortLanguage" : "language")}
     </Button>
   );
-};
+});

@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import { classNames } from "shared/lib/classNames/classNames";
 import type { CommonComponentProps } from "shared/types/commonTypes";
 
-export const NotFound: React.FC<CommonComponentProps> = ({ additionalClass }) => {
+const NotFound: React.FC<CommonComponentProps> = ({ additionalClass }) => {
   const { t } = useTranslation("notFound");
 
   return (
@@ -13,3 +13,5 @@ export const NotFound: React.FC<CommonComponentProps> = ({ additionalClass }) =>
     </div>
   );
 };
+
+export default NotFound;

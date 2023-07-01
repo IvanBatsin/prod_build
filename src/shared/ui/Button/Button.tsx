@@ -24,7 +24,7 @@ type ButtonProps = CommonComponentProps & ButtonHTMLAttributes<HTMLButtonElement
   size?: ButtonSizes
 };
 
-export const Button: React.FC<ButtonProps> = (props) => {
+export const Button: React.FC<ButtonProps> = React.memo(function Button (props: ButtonProps) {
   const { additionalClass, square, disabled, size = ButtonSizes.M, theme = ButtonTypes.CLEAR, children, ...restProps } = props;
 
   const mods: Record<string, boolean> = {
@@ -36,4 +36,4 @@ export const Button: React.FC<ButtonProps> = (props) => {
   return (
     <button disabled={disabled} type="button" className={classNames(styles.btn, mods, [additionalClass, styles[theme]])} {...restProps}>{children}</button>
   );
-};
+});

@@ -5,7 +5,7 @@ import { classNames } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next";
 import { Button, ButtonTypes } from "shared/ui/Button/Button";
 import { Input } from "shared/ui/Input/Input";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { loginActions, loginReducer } from "../../model/slice/loginSlice";
 import { loginByUsername } from "../../../authByUserName/model/services/loginByUsername/loginByUsername";
 import { Text, TextThemes } from "shared/ui/Text/Text";
@@ -14,14 +14,20 @@ import { getLoginPassword } from "../../model/selectors/getLoginPassword/getLogi
 import { getLoginError } from "../../model/selectors/getLoginError/getLoginError";
 import { getLoginIsLoading } from "../../model/selectors/getLoginIsLoading/getLoginIsLoading";
 import { DynamicModuleLoader, type ReducersList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 
 const REDUCER_LIST: ReducersList = {
   login: loginReducer
 };
 
-const LoginForm: React.FC<CommonComponentProps> = React.memo(function LoginForm ({ additionalClass }: CommonComponentProps) {
+type LoginFormProps = CommonComponentProps & {
+  onSuccessHandler: () => void
+}
+
+const LoginForm: React.FC<LoginFormProps> = React.memo(function LoginForm (props: LoginFormProps) {
+  const { additionalClass, onSuccessHandler } = props;
   const { t } = useTranslation();
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const username = useSelector(getLoginUsername);
   const password = useSelector(getLoginPassword);
   const error = useSelector(getLoginError);
@@ -35,9 +41,10 @@ const LoginForm: React.FC<CommonComponentProps> = React.memo(function LoginForm 
     dispatch(loginActions.setPassword(value));
   }, [dispatch]);
 
-  const handleLoginClick = React.useCallback((): void => {
-    dispatch(loginByUsername({ username, password }) as any);
-  }, [dispatch, password, username]);
+  const handleLoginClick = React.useCallback(async (): Promise<void> => {
+    const result = await dispatch(loginByUsername({ username, password }));
+    result.meta.requestStatus === "fulfilled" && onSuccessHandler();
+  }, [dispatch, password, username, onSuccessHandler]);
 
   return (
     <DynamicModuleLoader reducers={REDUCER_LIST}>

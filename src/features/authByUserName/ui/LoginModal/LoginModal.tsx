@@ -6,19 +6,19 @@ import { PageLoader } from "widgets/PageLoader";
 
 type LoginModalProps = CommonComponentProps & {
   isOpen: boolean
-  onCLose: () => void
+  onClose: () => void
 }
 
 export const LoginModal: React.FC<LoginModalProps> = (props) => {
-  const { isOpen, onCLose } = props;
+  const { isOpen, onClose } = props;
   return (
     <Modal
       isOpen={isOpen}
-      onClose={onCLose}
+      onClose={onClose}
       lazy
     >
     <Suspense fallback={<PageLoader/>}>
-      <LoginForm/>
+      <LoginForm onSuccessHandler={onClose}/>
     </Suspense>
     </Modal>
   );

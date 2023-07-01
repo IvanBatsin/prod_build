@@ -5,14 +5,15 @@ import { type CommonComponentProps } from "shared/types/commonTypes";
 import { useTranslation } from "react-i18next";
 import { Button, ButtonTypes } from "shared/ui/Button/Button";
 import { LoginModal } from "features/authByUserName";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { getAuthData, userActions } from "entities/User";
+import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 
-export const Navbar: React.FC<CommonComponentProps> = ({ additionalClass }) => {
+export const Navbar: React.FC<CommonComponentProps> = React.memo(function Navbar ({ additionalClass }: CommonComponentProps) {
   const { t } = useTranslation();
   const [isAuthModal, setIsAuthModal] = React.useState<boolean>(false);
   const authData = useSelector(getAuthData);
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const handleModalClose = React.useCallback(() => {
     setIsAuthModal(false);
@@ -47,11 +48,11 @@ export const Navbar: React.FC<CommonComponentProps> = ({ additionalClass }) => {
           {isAuthModal &&
             <LoginModal
               isOpen={isAuthModal}
-              onCLose={handleModalClose}
+              onClose={handleModalClose}
             />
           }
         </>
       }
     </div>
   );
-};
+});

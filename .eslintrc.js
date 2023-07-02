@@ -4,6 +4,10 @@ module.exports = {
     es2021: true,
     jest: true
   },
+  globals: {
+    __IS_DEV__: true,
+    __API__: true
+  },
   extends: ["plugin:react/recommended", "standard-with-typescript", "plugin:storybook/recommended"],
   ignorePatterns: ["**/src/**/*.stories.{ts,tsx}", "webpack.config.ts"],
   parserOptions: {

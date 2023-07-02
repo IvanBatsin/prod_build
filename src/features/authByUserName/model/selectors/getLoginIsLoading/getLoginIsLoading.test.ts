@@ -6,7 +6,10 @@ describe("Get login isLoading test:", () => {
   test("should return isLoading", () => {
     const state: DeepPartial<StateSchema> = {
       login: {
-        isLoading: true
+        isLoading: true,
+        password: "",
+        username: "",
+        error: ""
       }
     };
 

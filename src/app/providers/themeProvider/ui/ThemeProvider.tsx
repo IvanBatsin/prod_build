@@ -7,7 +7,7 @@ interface ThemeProviderProps {
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = (props) => {
   const { children, initialTheme } = props;
-  const [theme, setTheme] = React.useState<Themes>(initialTheme || JSON.parse(window.localStorage.getItem(LOCAL_STORAGE_THEME_KEY)) as Themes || Themes.LIGHT);
+  const [theme, setTheme] = React.useState<Themes>(initialTheme || JSON.parse(window.localStorage.getItem(LOCAL_STORAGE_THEME_KEY) || "") as Themes || Themes.LIGHT);
 
   const defaultValue = React.useMemo(() => {
     return { theme, setTheme };

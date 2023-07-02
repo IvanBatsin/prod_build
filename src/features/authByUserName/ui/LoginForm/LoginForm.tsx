@@ -42,25 +42,25 @@ const LoginForm: React.FC<LoginFormProps> = React.memo(function LoginForm (props
   }, [dispatch]);
 
   const handleLoginClick = React.useCallback(async (): Promise<void> => {
-    const result = await dispatch(loginByUsername({ username, password }));
+    const result = await dispatch(loginByUsername({ password, username }) as any);
     result.meta.requestStatus === "fulfilled" && onSuccessHandler();
   }, [dispatch, password, username, onSuccessHandler]);
 
   return (
     <DynamicModuleLoader reducers={REDUCER_LIST}>
       <div className={classNames(styles.loginForm, {}, [additionalClass])}>
-        <Text title={t("authorizationForm")}/>
-        {error && <Text text={t("authorizationError")} theme={TextThemes.ERROR}/>}
+        <Text title={t("authorizationForm") || ""}/>
+        {error && <Text text={t("authorizationError") || ""} theme={TextThemes.ERROR}/>}
         <Input
           autoFocus
-          placeholder={t("EnterUserName")}
+          placeholder={t("EnterUserName") || ""}
           additionalClass={styles.input}
           type="text"
           value={username}
           onChange={handleChangeUsername}
         />
         <Input
-          placeholder={t("EnterPassword")}
+          placeholder={t("EnterPassword") || ""}
           additionalClass={styles.input}
           type="text"
           value={password}

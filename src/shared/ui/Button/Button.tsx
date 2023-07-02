@@ -27,7 +27,7 @@ type ButtonProps = CommonComponentProps & ButtonHTMLAttributes<HTMLButtonElement
 export const Button: React.FC<ButtonProps> = React.memo(function Button (props: ButtonProps) {
   const { additionalClass, square, disabled, size = ButtonSizes.M, theme = ButtonTypes.CLEAR, children, ...restProps } = props;
 
-  const mods: Record<string, boolean> = {
+  const mods: Record<string, boolean | undefined> = {
     [styles.square]: !!square,
     [styles[size]]: !!size,
     [styles.disabled]: disabled

@@ -7,9 +7,10 @@ describe("get login state from store", () => {
     const state: DeepPartial<StateSchema> = {
       login: {
         username: "test",
-        password: "123"
+        password: "123",
+        isLoading: false
       }
     };
-    expect(getLoginState(state as StateSchema)).toEqual({ username: "test", password: "123" });
+    expect(getLoginState(state as StateSchema)).toEqual({ username: "test", password: "123", isLoading: false });
   });
 });

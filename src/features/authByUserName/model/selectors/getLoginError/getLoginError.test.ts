@@ -6,7 +6,10 @@ describe("Get login error test:", () => {
   test("should return error", () => {
     const state: DeepPartial<StateSchema> = {
       login: {
-        error: "Error message"
+        error: "Error message",
+        isLoading: false,
+        password: "",
+        username: ""
       }
     };
     expect(getLoginError(state as StateSchema)).toEqual("Error message");

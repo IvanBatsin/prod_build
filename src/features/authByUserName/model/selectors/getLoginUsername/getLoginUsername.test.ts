@@ -5,7 +5,11 @@ import { getLoginUsername } from "./getLoginUsername";
 describe("Get login username test:", () => {
   test("should return password", () => {
     const state: DeepPartial<StateSchema> = {
-      login: { username: "userName" }
+      login: {
+        username: "userName",
+        isLoading: false,
+        password: ""
+      }
     };
     expect(getLoginUsername(state as StateSchema)).toEqual("userName");
   });

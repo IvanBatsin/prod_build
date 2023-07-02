@@ -10,7 +10,7 @@ export const AppRouter = (): JSX.Element => {
       <Routes>
         {routeConfig.map((configObj, index) => {
           return <Route
-              key={`${index}_${configObj.path}`}
+              key={`${index}_${configObj.path || ""}`}
               path={configObj.path}
               element={<div className="page-wrapper">{configObj.element}</div>}/>;
         })}

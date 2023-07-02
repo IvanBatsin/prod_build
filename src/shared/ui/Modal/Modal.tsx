@@ -6,8 +6,8 @@ import { Portal } from "../Portal/Portal";
 
 type ModalProps = CommonComponentProps & {
   isOpen: boolean
-  onClose: () => void
   lazy?: boolean
+  onClose: () => void
 };
 
 const ANIMATION_DELAY = 300;

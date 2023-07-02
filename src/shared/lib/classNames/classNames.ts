@@ -1,8 +1,8 @@
-type Mods = Record<string, boolean | string>;
+type Mods = Record<string, boolean | string | undefined>;
 
-export const classNames = (baseClass: string, mods?: Mods, additionalClasses?: string[]): string => {
+export const classNames = (baseClass: string, mods?: Mods, additionalClasses?: Array<string | undefined>): string => {
   const resultArr = [baseClass];
-  additionalClasses && resultArr.push(...additionalClasses.filter(Boolean));
+  additionalClasses && resultArr.push(...additionalClasses.filter(Boolean) as string[]);
   mods && Object.keys(mods).length && resultArr.push(
     ...Object.entries(mods).reduce<string[]>((acc, [cls, value]) => {
       Boolean(value) && acc.push(cls);

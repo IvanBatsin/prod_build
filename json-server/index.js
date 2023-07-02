@@ -12,9 +12,9 @@ server.use(async (req, res, next) => {
 });
 
 server.use((req, res, next) => {
-  // if (!req.headers.authorization) {
-  //   return res.status(403).json({message: "Auth error"});
-  // }
+  if (!req.headers.authorization) {
+    return res.status(403).json({message: "Auth error"});
+  }
 
   next();
 }); 

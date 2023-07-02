@@ -15,22 +15,25 @@ export default ({ config }: { config: WebpackConfiguration }): WebpackConfigurat
   config.resolve?.modules?.push(pathConfig.src);
   config.resolve?.extensions?.push(".ts", ".tsx");
   config.module?.rules?.push(buildCssLoaders(true));
-  config.module.rules = config.module?.rules?.map((rule: any) => {
-    if (rule?.test && rule?.test?.toString().includes('svg')) {
-      if (rule.test.toString()?.includes("svg")) {
-        return { ...rule, exclude: /\.svg$/i };
+  if (config?.module?.rules) {
+    config.module.rules = config.module?.rules?.map((rule: any) => {
+      if (rule?.test && rule?.test?.toString().includes('svg')) {
+        if (rule.test.toString()?.includes("svg")) {
+          return { ...rule, exclude: /\.svg$/i };
+        }
+        return rule;
       }
       return rule;
-    }
-    return rule;
-  });
+    });
+  }
   config.module?.rules?.push({
     test: /\.svg$/i,
     use: ["@svgr/webpack"]
   });
 
-  config.plugins.push(new DefinePlugin({
-    __IS__DEV: true
+  config?.plugins?.push(new DefinePlugin({
+    __IS_DEV__: JSON.stringify(true),
+    __API__: JSON.stringify("")
   }));
 
   return config;

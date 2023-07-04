@@ -1,6 +1,6 @@
 import React, { type ButtonHTMLAttributes } from "react";
 import styles from "./Button.module.scss";
-import { classNames } from "shared/lib/classNames/classNames";
+import { type Mods, classNames } from "shared/lib/classNames/classNames";
 import { type CommonComponentProps } from "shared/types/commonTypes";
 
 export enum ButtonTypes {
@@ -8,6 +8,7 @@ export enum ButtonTypes {
   CLEAR_INVERTED = "clear_inverted",
   RELOAD = "reload",
   OUTLINE = "outline",
+  OUTLINE_RED = "outlineRed",
   BACKGROUND = "background",
   BACKGROUND_INVERTED = "background_inverted"
 }
@@ -27,7 +28,7 @@ type ButtonProps = CommonComponentProps & ButtonHTMLAttributes<HTMLButtonElement
 export const Button: React.FC<ButtonProps> = React.memo(function Button (props: ButtonProps) {
   const { additionalClass, square, disabled, size = ButtonSizes.M, theme = ButtonTypes.CLEAR, children, ...restProps } = props;
 
-  const mods: Record<string, boolean | undefined> = {
+  const mods: Mods = {
     [styles.square]: !!square,
     [styles[size]]: !!size,
     [styles.disabled]: disabled

@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Modal.module.scss";
 import type { CommonComponentProps } from "shared/types/commonTypes";
-import { classNames } from "shared/lib/classNames/classNames";
+import { type Mods, classNames } from "shared/lib/classNames/classNames";
 import { Portal } from "../Portal/Portal";
 
 type ModalProps = CommonComponentProps & {
@@ -19,7 +19,7 @@ export const Modal: React.FC<ModalProps> = (props) => {
   const [isMounted, setIsMounted] = React.useState<boolean>(false);
   const timerRef = React.useRef<NodeJS.Timeout>();
 
-  const mods: Record<string, boolean> = {
+  const mods: Mods = {
     [styles.opened]: isOpen,
     [styles.isClosing]: isClosing
   };

@@ -15,6 +15,7 @@ import { getLoginError } from "../../model/selectors/getLoginError/getLoginError
 import { getLoginIsLoading } from "../../model/selectors/getLoginIsLoading/getLoginIsLoading";
 import { DynamicModuleLoader, type ReducersList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { LOCALSTORAGE_KEY } from "shared/const/localStorage";
 
 const REDUCER_LIST: ReducersList = {
   login: loginReducer
@@ -43,6 +44,7 @@ const LoginForm: React.FC<LoginFormProps> = React.memo(function LoginForm (props
 
   const handleLoginClick = React.useCallback(async (): Promise<void> => {
     const result = await dispatch(loginByUsername({ password, username }) as any);
+    window.localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(result.payload));
     result.meta.requestStatus === "fulfilled" && onSuccessHandler();
   }, [dispatch, password, username, onSuccessHandler]);
 

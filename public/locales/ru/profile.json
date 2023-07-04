@@ -1,6 +1,16 @@
 {
   "profileTitle": "Профиль",
   "prodileEdit": "Редактировать",
+  "prodileEditCancel": "Отменить",
+  "profileSave": "Сохранить",
   "lastName": "Фамилия",
-  "firstName": "Имя"
+  "firstName": "Имя",
+  "age": "Возраст",
+  "city": "Город",
+  "avatar": "Avatar",
+  "username": "User name",
+  "chooseCurrency": "Выберите валюту",
+  "chooseCountry": "Выберите страну",
+  "profileCardErrorTitle": "Что-то пошло не так",
+  "profileCardErrorText": "Попробуйте перезагрузить страницу"
 }

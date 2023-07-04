@@ -1,6 +1,16 @@
 {
   "profileTitle": "Profile",
   "prodileEdit": "Edit",
+  "prodileEditCancel": "Cancel",
+  "profileSave": "Save",
   "lastName": "Last Name",
-  "firstName": "First Name"
+  "firstName": "First Name",
+  "age": "Age",
+  "city": "City",
+  "avatar": "Avatar",
+  "username": "User name",
+  "chooseCurrency": "Choose currency",
+  "chooseCountry": "Choose country",
+  "profileCardErrorTitle": "Something wrong",
+  "profileCardErrorText": "Please, reload page"
 }

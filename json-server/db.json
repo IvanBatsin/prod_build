@@ -26,7 +26,7 @@
     }
   ],
   "profile": {
-    "firstName": "John",
+    "firstName": "",
     "lastName": "Jons",
     "age": 23,
     "currency": "RUB",

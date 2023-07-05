@@ -12,5 +12,10 @@
   "chooseCurrency": "Выберите валюту",
   "chooseCountry": "Выберите страну",
   "profileCardErrorTitle": "Что-то пошло не так",
-  "profileCardErrorText": "Попробуйте перезагрузить страницу"
+  "profileCardErrorText": "Попробуйте перезагрузить страницу",
+  "incorrectAge": "Возраст указан неправильно",
+  "incorrectCountry": "Страна указана неправильно",
+  "incorrectProfileData": "Данные о пользователе указанны неправильно",
+  "noneData": "Профиля не существует",
+  "serverError": "Ошибка на стороне сервера"
 }

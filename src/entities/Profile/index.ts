@@ -5,5 +5,6 @@ export { updateProfileData } from "./model/services/updateProfileData/updateProf
 export { ProfileCard } from "./ui/ProfileCard/ProfileCard";
 export { getProfileData } from "./model/selectors/getProfileData/getProfileData";
 export { getProfileError } from "./model/selectors/getProfileError/getProfileError";
-export { getProfileReadonly } from "./model/selectors/getProfileReadonly/getProfileReadonly";
 export { getProfileForm } from "./model/selectors/getProfileForm/getProfileForm";
+export { getProfileValidationErrors } from "./model/selectors/getProfileValidationErrors/getProfileValidationErrors";
+export { getProfileReadOnly } from "./model/selectors/getProfileReadOnly/getProfileReadOnly";

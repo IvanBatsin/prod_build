@@ -6,12 +6,12 @@ import { Button, ButtonTypes } from "shared/ui/Button/Button";
 import { type CommonComponentProps } from "shared/types/commonTypes";
 import { classNames } from "shared/lib/classNames/classNames";
 import { useSelector } from "react-redux";
-import { getProfileReadonly, profileActions, updateProfileData } from "entities/Profile";
+import { getProfileReadOnly, profileActions, updateProfileData } from "entities/Profile";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 
 export const ProfileHeader: React.FC<CommonComponentProps> = (props) => {
   const { t } = useTranslation("profile");
-  const readOnly = useSelector(getProfileReadonly);
+  const readOnly = useSelector(getProfileReadOnly);
   const dispatch = useAppDispatch();
   const { additionalClass } = props;
 

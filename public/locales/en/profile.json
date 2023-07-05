@@ -12,5 +12,10 @@
   "chooseCurrency": "Choose currency",
   "chooseCountry": "Choose country",
   "profileCardErrorTitle": "Something wrong",
-  "profileCardErrorText": "Please, reload page"
+  "profileCardErrorText": "Please, reload page",
+  "incorrectAge": "Incorrect age",
+  "incorrectCountry": "Incorrect country",
+  "incorrectProfileData": "Incorrect profile data",
+  "noneData": "Profile dont exist",
+  "serverError": "Error on server side"
 }

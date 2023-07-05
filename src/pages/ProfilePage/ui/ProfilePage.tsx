@@ -1,4 +1,4 @@
-import { ProfileCard, fetchProfileData, getProfileError, getProfileForm, getProfileReadonly, profileActions, profileReducer } from "entities/Profile";
+import { ProfileCard, fetchProfileData, getProfileError, getProfileForm, getProfileReadOnly, getProfileValidationErrors, profileActions, profileReducer } from "entities/Profile";
 import { getProfileIsLoading } from "entities/Profile/model/selectors/getProfileIsLoading/getProfileIsLoading";
 import React from "react";
 import { useSelector } from "react-redux";
@@ -8,21 +8,30 @@ import { ProfileHeader } from "./ProfileHeader/ProfileHeader";
 import styles from "./ProfilePage.module.scss";
 import type { Currency } from "entities/Currency";
 import type { Country } from "entities/Country";
+import { Text, TextThemes } from "shared/ui/Text/Text";
+import { ValidationProfileError } from "entities/Profile/model/types/profile";
+import { useTranslation } from "react-i18next";
 
 const reducers: ReducersList = {
   profile: profileReducer
 };
 
 const ProfilePage: React.FC = () => {
+  const { t } = useTranslation("profile");
   const dispatch = useAppDispatch();
   const profileForm = useSelector(getProfileForm);
   const isLoading = useSelector(getProfileIsLoading);
   const error = useSelector(getProfileError);
-  const readOnly = useSelector(getProfileReadonly);
+  const readOnly = useSelector(getProfileReadOnly);
+  const validationErrors = useSelector(getProfileValidationErrors);
 
-  React.useEffect(() => {
-    dispatch(fetchProfileData(null) as any);
-  }, [dispatch]);
+  const validationErrorsTranslate = {
+    [ValidationProfileError.INCORRECT_AGE]: t("incorrectAge"),
+    [ValidationProfileError.INCORRECT_COUNTRY]: t("incorrectCountry"),
+    [ValidationProfileError.INCORRECT_PROFILE_DATA]: t("incorrectProfileData"),
+    [ValidationProfileError.NONE_DATA]: t("noneData"),
+    [ValidationProfileError.SERVER_ERROR]: t("serverError")
+  };
 
   const handleFirstNameChange = React.useCallback((value?: string) => {
     dispatch(profileActions.updateProfile({ firstName: value }));
@@ -58,10 +67,21 @@ const ProfilePage: React.FC = () => {
     dispatch(profileActions.updateProfile({ country: value }));
   }, [dispatch]);
 
+  React.useEffect(() => {
+    if (__PROJECT__ !== "storybook") {
+      dispatch(fetchProfileData(null) as any);
+    }
+  }, [dispatch]);
+
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <div>
         <ProfileHeader additionalClass={styles.header}/>
+        {validationErrors?.length &&
+          validationErrors.map(error => {
+            return <Text key={error} theme={TextThemes.ERROR} title={validationErrorsTranslate[error]}/>;
+          })
+        }
         <ProfileCard
           profile={profileForm}
           error={error}

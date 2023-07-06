@@ -5,7 +5,7 @@ import type { SidebarItemType } from "widgets/Sidebar/model/SidebarItemType";
 import { useTranslation } from "react-i18next";
 import { classNames } from "shared/lib/classNames/classNames";
 import { useSelector } from "react-redux";
-import { getAuthData } from "entities/User";
+import { getUserAuthData } from "entities/User";
 
 interface SidebarItemProps {
   item: SidebarItemType
@@ -15,7 +15,7 @@ interface SidebarItemProps {
 export const SidebarItem: React.FC<SidebarItemProps> = (props) => {
   const { item: { Icon, path, text, authOnly }, collapsed } = props;
   const { t } = useTranslation();
-  const isAuth = useSelector(getAuthData);
+  const isAuth = useSelector(getUserAuthData);
 
   if (!isAuth && authOnly) {
     return null;

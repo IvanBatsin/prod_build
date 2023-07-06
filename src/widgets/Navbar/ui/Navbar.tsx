@@ -6,13 +6,13 @@ import { useTranslation } from "react-i18next";
 import { Button, ButtonTypes } from "shared/ui/Button/Button";
 import { LoginModal } from "features/authByUserName";
 import { useSelector } from "react-redux";
-import { getAuthData, userActions } from "entities/User";
+import { getUserAuthData, userActions } from "entities/User";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 
 export const Navbar: React.FC<CommonComponentProps> = React.memo(function Navbar ({ additionalClass }: CommonComponentProps) {
   const { t } = useTranslation();
   const [isAuthModal, setIsAuthModal] = React.useState<boolean>(false);
-  const authData = useSelector(getAuthData);
+  const authData = useSelector(getUserAuthData);
   const dispatch = useAppDispatch();
 
   const handleModalClose = React.useCallback(() => {

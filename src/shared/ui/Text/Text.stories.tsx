@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Text, TextThemes } from "./Text";
+import { Text, TextSize, TextThemes } from "./Text";
 import { themeDecorator } from "shared/config/storybook/themeDecorator";
 import { Themes } from "app/providers/themeProvider";
 
@@ -48,6 +48,15 @@ export const TextError: Story = {
     title: "Test title",
     text: "Test text and some text to test",
     theme: TextThemes.ERROR
+  },
+  decorators: [themeDecorator(Themes.LIGHT)]
+};
+
+export const TextLargeLightTheme: Story = {
+  args: {
+    title: "Test title",
+    text: "Test text and some text to test",
+    size: TextSize.L
   },
   decorators: [themeDecorator(Themes.LIGHT)]
 };

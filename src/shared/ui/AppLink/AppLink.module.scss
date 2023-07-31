@@ -1,5 +1,11 @@
 .link {
   color: var(--primary-color);
+  transition: .2;
+
+  &:hover {
+    opacity: 0.8;
+    transform: translateY(1px)
+  }
 }
 
 .primary {

@@ -44,13 +44,13 @@ export const routeConfig: AppRouterProps[] = [
   },
   {
     authOnly: true,
-    element: <ArticlesPage/>,
-    path: routePaths[AppRoutes.ARTICLES]
+    element: <ArticlesDetailsPage/>,
+    path: `${routePaths[AppRoutes.ARTICLES_DETAILS]}/:id`
   },
   {
     authOnly: true,
-    element: <ArticlesDetailsPage/>,
-    path: `${routePaths[AppRoutes.ARTICLES_DETAILS]}/:id`
+    element: <ArticlesPage/>,
+    path: routePaths[AppRoutes.ARTICLES]
   },
   {
     element: <NotFoundPage/>,

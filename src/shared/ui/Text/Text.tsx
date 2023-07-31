@@ -14,23 +14,30 @@ export enum TextAlign {
   CENTER = "center"
 }
 
+export enum TextSize {
+  L = "size_L",
+  M = "size_M"
+}
+
 type TextProps = CommonComponentProps & {
   title?: string
   text?: string
   theme?: TextThemes
   align?: TextAlign
+  size?: TextSize
 }
 
 export const Text: React.FC<TextProps> = React.memo(function Text (props: TextProps) {
-  const { additionalClass, text, title, theme = TextThemes.PRIMARY, align = TextAlign.LEFT } = props;
+  const { additionalClass, text, title, size = TextSize.M, theme = TextThemes.PRIMARY, align = TextAlign.LEFT } = props;
 
   const mods: Mods = {
     [styles[theme]]: true,
-    [styles[align]]: true
+    [styles[align]]: true,
+    [styles[size]]: true
   };
 
   return (
-    <div className={classNames(styles.container, mods, [additionalClass])}>
+    <div className={classNames("", mods, [additionalClass])}>
       {title && <p className={styles.title}>{title}</p>}
       {text && <p className={styles.text}>{text}</p>}
     </div>

@@ -6,12 +6,16 @@ import { Button, ButtonTypes } from "shared/ui/Button/Button";
 import { type CommonComponentProps } from "shared/types/commonTypes";
 import { classNames } from "shared/lib/classNames/classNames";
 import { useSelector } from "react-redux";
-import { getProfileReadOnly, profileActions, updateProfileData } from "entities/Profile";
+import { getProfileData, getProfileReadOnly, profileActions, updateProfileData } from "entities/Profile";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { getUserAuthData } from "entities/User";
 
 export const ProfileHeader: React.FC<CommonComponentProps> = (props) => {
   const { t } = useTranslation("profile");
   const readOnly = useSelector(getProfileReadOnly);
+  const authData = useSelector(getUserAuthData);
+  const profileData = useSelector(getProfileData);
+  const isEditable = authData?.id === profileData?.id;
   const dispatch = useAppDispatch();
   const { additionalClass } = props;
 
@@ -30,33 +34,35 @@ export const ProfileHeader: React.FC<CommonComponentProps> = (props) => {
   return (
     <div className={classNames(styles.header, {}, [additionalClass])}>
       <Text title={t("profileTitle") || ""}/>
-      <div>
-        {readOnly
-          ? <Button
-            theme={ButtonTypes.OUTLINE}
-            additionalClass={styles.editBtn}
-            onClick={handleEditClick}
-          >
-            {t("prodileEdit")}
-          </Button>
-          : <>
-            <Button
-              theme={ButtonTypes.OUTLINE_RED}
-              additionalClass={styles.editBtn}
-              onClick={handleCancelEditClick}
-            >
-              {t("prodileEditCancel")}
-            </Button>
-            <Button
+      {isEditable &&
+        <div className={styles.btn_wrapper}>
+          {readOnly
+            ? <Button
               theme={ButtonTypes.OUTLINE}
               additionalClass={styles.editBtn}
-              onClick={handleSaveClick}
+              onClick={handleEditClick}
             >
-              {t("profileSave")}
+              {t("prodileEdit")}
             </Button>
-          </>
-        }
-      </div>
+            : <>
+              <Button
+                theme={ButtonTypes.OUTLINE_RED}
+                additionalClass={styles.editBtn}
+                onClick={handleCancelEditClick}
+              >
+                {t("prodileEditCancel")}
+              </Button>
+              <Button
+                theme={ButtonTypes.OUTLINE}
+                additionalClass={styles.editBtn}
+                onClick={handleSaveClick}
+              >
+                {t("profileSave")}
+              </Button>
+            </>
+          }
+        </div>
+      }
   </div>
   );
 };

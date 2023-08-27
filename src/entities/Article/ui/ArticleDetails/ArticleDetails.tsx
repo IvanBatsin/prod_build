@@ -16,6 +16,7 @@ import { ArticleBlockType, type ArticleBlock } from "../../../../entities/Articl
 import { ArticleCodeBlockComponent } from "../ArticleCodeBlockComponent/ArticleCodeBlockComponent";
 import { ArticleImageBlockComponent } from "../ArticleImageBlockComponent/ArticleImageBlockComponent";
 import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
+import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
 
 const reducers: ReducersList = {
   articleDetails: articleReducer
@@ -73,11 +74,9 @@ export const ArticleDetails: React.FC<ArticleDetailsProps> = React.memo(function
     );
   }
 
-  React.useEffect(() => {
-    if (__PROJECT__ !== "storybook") {
-      dispatch(fetchArticleById(id) as any);
-    }
-  }, [dispatch, id]);
+  useInitialEffect(() => {
+    dispatch(fetchArticleById(id) as any);
+  });
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>

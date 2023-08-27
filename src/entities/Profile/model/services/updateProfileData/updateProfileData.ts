@@ -13,7 +13,7 @@ export const updateProfileData = createAsyncThunk<Profile, any, ThunkConfig<Vali
       if (errors.length) {
         return thunkAPI.rejectWithValue(errors);
       }
-      const response = await thunkAPI.extra.api.put<Profile>("/profile", formData);
+      const response = await thunkAPI.extra.api.put<Profile>(`/profile/${formData?.id || ""}`, formData);
       if (!response.data) {
         return thunkAPI.rejectWithValue([ValidationProfileError.SERVER_ERROR]);
       }

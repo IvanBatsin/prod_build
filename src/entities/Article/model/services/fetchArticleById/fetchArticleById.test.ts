@@ -12,7 +12,12 @@ describe("fetch article by id:", () => {
       subtitle: "test",
       title: "test title",
       type: [ArticleType.ECONOMICS],
-      views: 12
+      views: 12,
+      user: {
+        id: "1",
+        username: "MockUser",
+        avatar: "https://dmxg5wxfqgb4u.cloudfront.net/styles/athlete_bio_full_body/s3/2023-03/JONES_JON_L_BELT_03_04.png?itok=P6J6DQpm"
+      }
     };
     const asyncThunk = new TestAsyncThunk(fetchArticleById);
     asyncThunk.api.get.mockReturnValue(Promise.resolve({ data }));

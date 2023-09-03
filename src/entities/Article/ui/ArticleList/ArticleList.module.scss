@@ -1,0 +1,15 @@
+.BIG {
+  .list_item {
+    margin-bottom: 30px;
+  }  
+}
+
+.SMALL {
+  display: flex;
+  flex-wrap: wrap;
+
+  .list_item {
+    margin-right: 30px;
+    margin-bottom: 30px;
+  }  
+}

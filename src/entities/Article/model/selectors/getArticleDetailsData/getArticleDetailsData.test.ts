@@ -13,6 +13,11 @@ describe("get article details data from store", () => {
       subtitle: "test",
       title: "test title",
       type: [ArticleType.ECONOMICS],
+      user: {
+        id: "1",
+        username: "MockUser",
+        avatar: "https://dmxg5wxfqgb4u.cloudfront.net/styles/athlete_bio_full_body/s3/2023-03/JONES_JON_L_BELT_03_04.png?itok=P6J6DQpm"
+      },
       views: 12
     };
 

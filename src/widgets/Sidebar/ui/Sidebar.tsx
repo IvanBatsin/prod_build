@@ -5,17 +5,19 @@ import { ThemeSwitcher } from "widgets/ThemeSwitcher";
 import { Button, ButtonSizes, ButtonTypes } from "shared/ui/Button/Button";
 import { LanguageSwitcher } from "widgets/LanguageSwitcher";
 import { type CommonComponentProps } from "shared/types/commonTypes";
-import { sidebarItemList } from "../model/SidebarItemType";
 import { SidebarItem } from "./SidebarItem/SidebarItem";
+import { useSelector } from "react-redux";
+import { getSidebarItems } from "../model/selectors/getSidebarItems/getSidebarItems";
 
 export const Sidebar: React.FC<CommonComponentProps> = React.memo(function Sidebar ({ additionalClass }: CommonComponentProps) {
   const [collapsed, setCollapsed] = React.useState<boolean>(false);
+  const sidebarItemList = useSelector(getSidebarItems);
 
   const handleToggleSidebar = (): void => { setCollapsed(prev => !prev) };
 
   const listItems = React.useMemo(() => {
     return sidebarItemList.map(item => <SidebarItem key={item.path} item={item} collapsed={collapsed}/>);
-  }, [collapsed]);
+  }, [collapsed, sidebarItemList]);
 
   return (
     <div data-testid="sidebar-test-id" className={classNames(styles.sidebar, { [styles.collapsed]: collapsed }, [additionalClass])}>

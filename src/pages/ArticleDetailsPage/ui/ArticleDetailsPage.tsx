@@ -7,7 +7,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { Text } from "shared/ui/Text/Text";
 import { CommentsList } from "entities/Comment";
 import { DynamicModuleLoader, type ReducersList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
-import { articleDetailsCommentsReducer, getArticleComment } from "../model/slices/ArticleDetailsCommentsSlice";
+import { articleDetailsCommentsReducer, getArticleComment } from "../model/slices/articleDetailsCommentsSlice";
 import { useSelector } from "react-redux";
 import { getArticleDetailsCommentsIsLoading } from "../selectors/comments/getArticleDetailsCommentsIsLoading/getArticleDetailsCommentsIsLoading";
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";

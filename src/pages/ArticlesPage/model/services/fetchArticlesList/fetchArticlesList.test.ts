@@ -1,0 +1,41 @@
+import { TestAsyncThunk } from "shared/lib/tests/testAsyncThunk/testAsyncThunk";
+import { fetchArticlesList } from "./fetchArticlesList";
+import type { Article } from "entities/Article";
+import { ArticleType } from "entities/Article/model/types/article";
+
+describe("fetch articles:", () => {
+  test("success server request", async () => {
+    const data: Article[] = [
+      {
+        blocks: [],
+        id: "1",
+        title: "Javascript news",
+        subtitle: "Что нового в JS за 2022 год?",
+        img: "https://teknotower.com/wp-content/uploads/2020/11/js.png",
+        views: 1022,
+        createdAt: "26.02.2022",
+        user: {
+          id: "1",
+          username: "username"
+        },
+        type: [ArticleType.IT]
+      }
+    ];
+    const asyncThunk = new TestAsyncThunk(fetchArticlesList);
+    asyncThunk.api.get.mockReturnValue(Promise.resolve({ data }));
+    const result = await asyncThunk.callThunk("1");
+
+    expect(asyncThunk.api.get).toHaveBeenCalled();
+    expect(result.meta.requestStatus).toEqual("fulfilled");
+    expect(result.payload).toEqual(data);
+  });
+
+  test("server response with error", async () => {
+    const asyncThunk = new TestAsyncThunk(fetchArticlesList);
+    asyncThunk.api.get.mockReturnValue(Promise.resolve(undefined));
+    const result = await asyncThunk.callThunk("1");
+
+    expect(asyncThunk.api.get).toHaveBeenCalled();
+    expect(result.meta.requestStatus).toEqual("rejected");
+  });
+});

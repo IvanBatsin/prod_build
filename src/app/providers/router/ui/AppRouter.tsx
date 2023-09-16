@@ -9,7 +9,7 @@ export const AppRouter = (): JSX.Element => {
   const renderWithWrapper = React.useCallback((route: AppRouterProps, index: number) => {
     const element = (
       <Suspense fallback={<PageLoader/>}>
-        <div className="page-wrapper">{route.element}</div>
+        {route.element}
       </Suspense>
     );
 

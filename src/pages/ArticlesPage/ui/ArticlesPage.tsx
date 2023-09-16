@@ -10,6 +10,8 @@ import { fetchArticlesList } from "../model/services/fetchArticlesList/fetchArti
 import { useSelector } from "react-redux";
 import { getArticlesPageIsLoading } from "../model/selectors/getArticlesPageIsLoading/getArticlesPageIsLoading";
 import { getArticlesPageView } from "../model/selectors/getArticlesPageView/getArticlesPageView";
+import { PageWrapper } from "shared/ui/PageWrapper/PageWrapper";
+import { fetchNextArticlesPage } from "../model/services/fetchNextArticlesPage/fetchNextArticlesPage";
 
 const reducers: ReducersList = {
   articlesPage: articlesPageReducer
@@ -22,7 +24,8 @@ const ArticlePage: React.FC = () => {
   const view = useSelector(getArticlesPageView);
 
   useInitialEffect(() => {
-    dispatch(fetchArticlesList(null) as any);
+    dispatch(articlesPageActions.initState());
+    dispatch(fetchArticlesList({ page: 1 }) as any);
   });
 
   const handleChangeView = (view: ArticleView): void => {
@@ -30,12 +33,18 @@ const ArticlePage: React.FC = () => {
     dispatch(articlesPageActions.initState());
   };
 
+  const handleLoadNextPart = React.useCallback(() => {
+    dispatch(fetchNextArticlesPage(null) as any);
+  }, [dispatch]);
+
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <div className={styles.container}>
-        <ArticleViewSelector view={view} handleViewClick={handleChangeView}/>
-        <ArticleList view={view} articles={articles} isLoading={isLoading}/>
-      </div>
+      <PageWrapper onScrollEndHandler={handleLoadNextPart}>
+        <section className={styles.container}>
+          <ArticleViewSelector view={view} handleViewClick={handleChangeView}/>
+          <ArticleList view={view} articles={articles} isLoading={isLoading}/>
+        </section>
+      </PageWrapper>
     </DynamicModuleLoader>
   );
 };

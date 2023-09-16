@@ -13,6 +13,7 @@ import { ValidationProfileError } from "entities/Profile/model/types/profile";
 import { useTranslation } from "react-i18next";
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
 import { useParams } from "react-router-dom";
+import { PageWrapper } from "shared/ui/PageWrapper/PageWrapper";
 
 const reducers: ReducersList = {
   profile: profileReducer
@@ -76,28 +77,30 @@ const ProfilePage: React.FC = () => {
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <div>
-        <ProfileHeader additionalClass={styles.header}/>
-        {validationErrors?.length &&
-          validationErrors.map(error => {
-            return <Text key={error} theme={TextThemes.ERROR} title={validationErrorsTranslate[error]}/>;
-          })
-        }
-        <ProfileCard
-          profile={profileForm}
-          error={error}
-          isLoading={!!isLoading}
-          readonly={readOnly}
-          handleFirstNameChange={handleFirstNameChange}
-          handleLastNameChange={handleLastNameChange}
-          handleAgeChange={handleAgeChange}
-          handleCityChange={handleCityChange}
-          handleAvatarChange={handleAvatarChange}
-          handleUserNameChange={handleUserNameChange}
-          handleCurrencyChange={handleCurrencyChange}
-          handleCountryChange={handleCountryChange}
-        />
-      </div>
+      <PageWrapper>
+        <section>
+          <ProfileHeader additionalClass={styles.header}/>
+          {validationErrors?.length &&
+            validationErrors.map(error => {
+              return <Text key={error} theme={TextThemes.ERROR} title={validationErrorsTranslate[error]}/>;
+            })
+          }
+          <ProfileCard
+            profile={profileForm}
+            error={error}
+            isLoading={!!isLoading}
+            readonly={readOnly}
+            handleFirstNameChange={handleFirstNameChange}
+            handleLastNameChange={handleLastNameChange}
+            handleAgeChange={handleAgeChange}
+            handleCityChange={handleCityChange}
+            handleAvatarChange={handleAvatarChange}
+            handleUserNameChange={handleUserNameChange}
+            handleCurrencyChange={handleCurrencyChange}
+            handleCountryChange={handleCountryChange}
+          />
+        </section>
+      </PageWrapper>
     </DynamicModuleLoader>
   );
 };

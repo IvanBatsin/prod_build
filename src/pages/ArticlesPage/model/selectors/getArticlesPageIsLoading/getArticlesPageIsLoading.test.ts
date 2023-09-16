@@ -11,7 +11,9 @@ describe("get article page state from store", () => {
         entities: {},
         ids: [],
         view: ArticleView.BIG,
-        isLoading: true
+        isLoading: true,
+        hasMore: true,
+        page: 1
       }
     };
     expect(getArticlesPageIsLoading(state as StateSchema)).toEqual(true);

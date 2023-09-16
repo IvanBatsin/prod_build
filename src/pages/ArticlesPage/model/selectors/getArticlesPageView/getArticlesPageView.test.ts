@@ -10,7 +10,9 @@ describe("get article page state from store", () => {
         error: "Error test",
         entities: {},
         ids: [],
-        view: ArticleView.BIG
+        view: ArticleView.BIG,
+        hasMore: true,
+        page: 1
       }
     };
     expect(getArticlesPageView(state as StateSchema)).toEqual(ArticleView.BIG);

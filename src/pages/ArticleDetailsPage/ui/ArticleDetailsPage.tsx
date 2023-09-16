@@ -17,6 +17,7 @@ import AddCommentForm from "features/addCommentForm/ui/AddCommentForm/AddComment
 import { addCommentForArticle } from "../model/services/addCommentForArticle/addCommentForArticle";
 import { Button, ButtonTypes } from "shared/ui/Button/Button";
 import { routePaths } from "shared/config/routerConfig/routerConfig";
+import { PageWrapper } from "shared/ui/PageWrapper/PageWrapper";
 
 const reducers: ReducersList = {
   articleDetailsComments: articleDetailsCommentsReducer
@@ -45,21 +46,25 @@ const ArticleDetailsPage: React.FC<CommonComponentProps> = (props) => {
 
   if (!id) {
     return (
-      <div className={styles.container}>
-        <span>{t("articleNotFound")}</span>
-      </div>
+      <PageWrapper>
+        <div className={styles.container}>
+          <span>{t("articleNotFound")}</span>
+        </div>
+      </PageWrapper>
     );
   }
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <div className={styles.container}>
-        <Button onClick={handleReturnToList} theme={ButtonTypes.OUTLINE}>{t("returnToTheList")}</Button>
-        <ArticleDetails id={id}/>
-        <Text additionalClass={styles.comment_title} title={t("comment") || ""}/>
-        <AddCommentForm sendComment={handleSendComment}/>
-        <CommentsList comments={comments} isLoading={commentsIsLoading}/>
-      </div>
+      <PageWrapper>
+        <div className={styles.container}>
+          <Button onClick={handleReturnToList} theme={ButtonTypes.OUTLINE}>{t("returnToTheList")}</Button>
+          <ArticleDetails id={id}/>
+          <Text additionalClass={styles.comment_title} title={t("comment") || ""}/>
+          <AddCommentForm sendComment={handleSendComment}/>
+          <CommentsList comments={comments} isLoading={commentsIsLoading}/>
+        </div>
+      </PageWrapper>
     </DynamicModuleLoader>
   );
 };

@@ -1,9 +1,9 @@
 import { TestAsyncThunk } from "shared/lib/tests/testAsyncThunk/testAsyncThunk";
 import { fetchArticlesList } from "./fetchArticlesList";
 import type { Article } from "entities/Article";
-import { ArticleType } from "entities/Article/model/types/article";
+import { ArticleType, ArticleView } from "entities/Article/model/types/article";
 
-describe("fetch articles:", () => {
+describe("fetch articles list:", () => {
   test("success server request", async () => {
     const data: Article[] = [
       {
@@ -21,9 +21,17 @@ describe("fetch articles:", () => {
         type: [ArticleType.IT]
       }
     ];
-    const asyncThunk = new TestAsyncThunk(fetchArticlesList);
+    const asyncThunk = new TestAsyncThunk(fetchArticlesList, {
+      articlesPage: {
+        entities: {},
+        ids: [],
+        hasMore: true,
+        page: 1,
+        view: ArticleView.BIG
+      }
+    });
     asyncThunk.api.get.mockReturnValue(Promise.resolve({ data }));
-    const result = await asyncThunk.callThunk("1");
+    const result = await asyncThunk.callThunk({ page: 1 });
 
     expect(asyncThunk.api.get).toHaveBeenCalled();
     expect(result.meta.requestStatus).toEqual("fulfilled");
@@ -31,9 +39,17 @@ describe("fetch articles:", () => {
   });
 
   test("server response with error", async () => {
-    const asyncThunk = new TestAsyncThunk(fetchArticlesList);
+    const asyncThunk = new TestAsyncThunk(fetchArticlesList, {
+      articlesPage: {
+        entities: {},
+        ids: [],
+        hasMore: true,
+        page: 1,
+        view: ArticleView.BIG
+      }
+    });
     asyncThunk.api.get.mockReturnValue(Promise.resolve(undefined));
-    const result = await asyncThunk.callThunk("1");
+    const result = await asyncThunk.callThunk({ page: 1 });
 
     expect(asyncThunk.api.get).toHaveBeenCalled();
     expect(result.meta.requestStatus).toEqual("rejected");

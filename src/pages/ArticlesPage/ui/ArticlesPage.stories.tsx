@@ -33,15 +33,15 @@ const data: Article = {
 
 export const Dark: Story = {
   args: {},
-  decorators: [themeDecorator(Themes.DARK), storeDecorator({ articlesPage: { entities: { 1: { ...data } }, ids: ["1"], view: ArticleView.BIG } })]
+  decorators: [themeDecorator(Themes.DARK), storeDecorator({ articlesPage: { entities: { 1: { ...data } }, ids: ["1"], view: ArticleView.BIG, page: 1, hasMore: true } })]
 };
 
 export const Light: Story = {
   args: {},
-  decorators: [themeDecorator(Themes.LIGHT), storeDecorator({ articlesPage: { entities: { 1: { ...data } }, ids: ["1"], view: ArticleView.BIG } })]
+  decorators: [themeDecorator(Themes.LIGHT), storeDecorator({ articlesPage: { entities: { 1: { ...data } }, ids: ["1"], view: ArticleView.BIG, page: 1, hasMore: true } })]
 };
 
 export const Orange: Story = {
   args: {},
-  decorators: [themeDecorator(Themes.ORANGE), storeDecorator({ articlesPage: { entities: { 1: { ...data } }, ids: ["1"], view: ArticleView.BIG } })]
+  decorators: [themeDecorator(Themes.ORANGE), storeDecorator({ articlesPage: { entities: { 1: { ...data } }, ids: ["1"], view: ArticleView.BIG, page: 1, hasMore: true } })]
 };

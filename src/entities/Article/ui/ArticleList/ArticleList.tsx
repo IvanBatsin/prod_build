@@ -29,15 +29,12 @@ export const ArticleList: React.FC<ArticleListProps> = (props) => {
     return articles.map(article => <ArticleListItem additionalClass={styles.list_item} key={article.id} article={article} view={view}/>);
   }, [articles, view]);
 
-  if (isLoading) {
-    return getSkeletons(view, additionalClass);
-  }
-
   return (
     <div className={classNames(styles.container, {}, [additionalClass, styles[view]])}>
       {articles.length > 0
         ? renderArticles
         : null}
+      {isLoading && getSkeletons(view, additionalClass)}
     </div>
   );
 };

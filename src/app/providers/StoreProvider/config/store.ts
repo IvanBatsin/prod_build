@@ -6,12 +6,14 @@ import { createReducerManager } from "./reducerManagers";
 import { type ToolkitStore } from "@reduxjs/toolkit/dist/configureStore";
 import { axiosApi } from "shared/api/api";
 import { type AxiosInstance } from "axios";
+import { scrollRestoreReducer } from "features/ScrollRestore";
 
 export const createStore = (initialState?: StateSchema, asyncReducers?: ReducersMapObject<StateSchema>): ToolkitStore<StateSchema, AnyAction, MiddlewareArray<[ThunkMiddleware<StateSchema, AnyAction, { api: AxiosInstance }>]>> => {
   const rootReducer: ReducersMapObject<StateSchema> = {
     ...asyncReducers,
     counter: counterReducer,
-    user: userReducer
+    user: userReducer,
+    scrollRestore: scrollRestoreReducer
   };
 
   const reducerManager = createReducerManager(rootReducer);

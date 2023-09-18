@@ -18,8 +18,11 @@ export const DynamicModuleLoader: React.FC<DynamicModuleLoaderProps> = (props) =
   const store = useStore() as ReduxStoreWithManager;
 
   React.useEffect(() => {
+    const reducersMap = store.reducerManager.getReducerMap();
     Object.entries(reducers).forEach(([key, value]) => {
-      store.reducerManager.add(key as StateSchemaKeys, value);
+      if (!reducersMap[key as StateSchemaKeys]) {
+        store.reducerManager.add(key as StateSchemaKeys, value);
+      }
     });
 
     return () => {

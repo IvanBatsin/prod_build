@@ -17,7 +17,7 @@ import AddCommentForm from "features/addCommentForm/ui/AddCommentForm/AddComment
 import { addCommentForArticle } from "../model/services/addCommentForArticle/addCommentForArticle";
 import { Button, ButtonTypes } from "shared/ui/Button/Button";
 import { routePaths } from "shared/config/routerConfig/routerConfig";
-import { PageWrapper } from "shared/ui/PageWrapper/PageWrapper";
+import { PageWrapper } from "widgets/PageWrapper/PageWrapper";
 
 const reducers: ReducersList = {
   articleDetailsComments: articleDetailsCommentsReducer

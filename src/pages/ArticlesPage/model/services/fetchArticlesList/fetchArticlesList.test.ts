@@ -1,7 +1,7 @@
 import { TestAsyncThunk } from "shared/lib/tests/testAsyncThunk/testAsyncThunk";
 import { fetchArticlesList } from "./fetchArticlesList";
 import type { Article } from "entities/Article";
-import { ArticleType, ArticleView } from "entities/Article/model/types/article";
+import { ArticleSortType, ArticleType, ArticleView } from "entities/Article/model/types/article";
 
 describe("fetch articles list:", () => {
   test("success server request", async () => {
@@ -27,7 +27,12 @@ describe("fetch articles list:", () => {
         ids: [],
         hasMore: true,
         page: 1,
-        view: ArticleView.BIG
+        view: ArticleView.BIG,
+        order: "asc",
+        search: "",
+        sort: ArticleSortType.CREATED_AT,
+        limit: 9,
+        currentType: ArticleType.ALL
       }
     });
     asyncThunk.api.get.mockReturnValue(Promise.resolve({ data }));
@@ -45,7 +50,12 @@ describe("fetch articles list:", () => {
         ids: [],
         hasMore: true,
         page: 1,
-        view: ArticleView.BIG
+        view: ArticleView.BIG,
+        order: "asc",
+        search: "",
+        sort: ArticleSortType.CREATED_AT,
+        limit: 9,
+        currentType: ArticleType.ALL
       }
     });
     asyncThunk.api.get.mockReturnValue(Promise.resolve(undefined));

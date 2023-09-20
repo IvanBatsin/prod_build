@@ -1,7 +1,7 @@
 import { describe, expect, test } from "@jest/globals";
 import { classNames } from "./classNames";
 
-describe("classNames", () => {
+describe("shared/lib/classNames", () => {
   test("base class", () => {
     expect(classNames("some class")).toBe("some class");
   });

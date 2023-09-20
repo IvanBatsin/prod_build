@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Card } from "./Card";
+import { Card, CardTheme } from "./Card";
 import { themeDecorator } from "shared/config/storybook/themeDecorator";
 import { Themes } from "app/providers/themeProvider";
 
@@ -32,6 +32,14 @@ export const Dark: Story = {
 export const Orange: Story = {
   args: {
     children: <span>{mockChildrenTest}</span>
+  },
+  decorators: [themeDecorator(Themes.ORANGE)]
+};
+
+export const Outline: Story = {
+  args: {
+    children: <span>{mockChildrenTest}</span>,
+    theme: CardTheme.OUTLINE
   },
   decorators: [themeDecorator(Themes.ORANGE)]
 };

@@ -5,10 +5,16 @@ import { getArticleDetailsCommentsError } from "./getArticleDetailsCommentsError
 describe("get article details comments state from store", () => {
   test("should return error value", () => {
     const state: DeepPartial<StateSchema> = {
-      articleDetailsComments: {
-        error: "Error test",
-        entities: {},
-        ids: []
+      articleDetailsPage: {
+        comments: {
+          error: "Error test",
+          entities: {},
+          ids: []
+        },
+        recommendations: {
+          entities: {},
+          ids: []
+        }
       }
     };
     expect(getArticleDetailsCommentsError(state as StateSchema)).toEqual("Error test");
@@ -16,7 +22,7 @@ describe("get article details comments state from store", () => {
 
   test("should return default error value", () => {
     const state: DeepPartial<StateSchema> = {
-      articleDetailsComments: undefined
+      articleDetailsPage: undefined
     };
     expect(getArticleDetailsCommentsError(state as StateSchema)).toEqual(undefined);
   });

@@ -5,11 +5,17 @@ import { getArticleDetailsCommentsIsLoading } from "./getArticleDetailsCommentsI
 describe("get article details comments state from store", () => {
   test("should return isLoading value", () => {
     const state: DeepPartial<StateSchema> = {
-      articleDetailsComments: {
-        error: "Error test",
-        entities: {},
-        ids: [],
-        isLoading: true
+      articleDetailsPage: {
+        comments: {
+          error: "Error test",
+          entities: {},
+          ids: [],
+          isLoading: true
+        },
+        recommendations: {
+          entities: {},
+          ids: []
+        }
       }
     };
     expect(getArticleDetailsCommentsIsLoading(state as StateSchema)).toEqual(true);
@@ -17,7 +23,7 @@ describe("get article details comments state from store", () => {
 
   test("should return default isLoading value", () => {
     const state: DeepPartial<StateSchema> = {
-      articleDetailsComments: undefined
+      articleDetailsPage: undefined
     };
     expect(getArticleDetailsCommentsIsLoading(state as StateSchema)).toEqual(undefined);
   });

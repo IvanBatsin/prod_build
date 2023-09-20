@@ -5,7 +5,7 @@ import { articleReducer } from "entities/Article/model/slice/articleDetailsSlice
 import { profileReducer } from "entities/Profile";
 import { addCommentFormReducer } from "features/addCommentForm/model/slice/addCommentFormSlice";
 import { loginReducer } from "features/authByUserName/model/slice/loginSlice";
-import { articleDetailsCommentsReducer } from "pages/ArticleDetailsPage/model/slices/articleDetailsCommentsSlice";
+import { articleDetailsPageReducer } from "pages/ArticleDetailsPage/model/slices";
 import type { ReducersList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 
 const defaultAsyncReducers: ReducersList = {
@@ -13,7 +13,7 @@ const defaultAsyncReducers: ReducersList = {
   profile: profileReducer,
   articleDetails: articleReducer,
   addCommentForm: addCommentFormReducer,
-  articleDetailsComments: articleDetailsCommentsReducer
+  articleDetailsPage: articleDetailsPageReducer
 };
 
 // eslint-disable-next-line react/display-name

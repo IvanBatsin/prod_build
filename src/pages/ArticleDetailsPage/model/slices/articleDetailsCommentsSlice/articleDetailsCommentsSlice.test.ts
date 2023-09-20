@@ -1,6 +1,6 @@
 import type { Comment } from "entities/Comment";
-import { fetchCommentsByArticleId } from "../services/fetchCommentsByArticleId/fetchCommentsByArticleId";
-import type { ArticleDetailsCommentsSchema } from "../types/ArticleDetailsCommentsSchema";
+import { fetchCommentsByArticleId } from "../../services/fetchCommentsByArticleId/fetchCommentsByArticleId";
+import type { ArticleDetailsCommentsSchema } from "../../types/ArticleDetailsCommentsSchema";
 import { articleDetailsCommentsReducer } from "./articleDetailsCommentsSlice";
 
 describe("profile slice", () => {

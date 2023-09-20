@@ -7,7 +7,7 @@ import type { UserSchema } from "entities/User";
 import type { ScrollRestoreSchema } from "features/ScrollRestore";
 import type { AddCommentFormSchema } from "features/addCommentForm";
 import type { LoginSchema } from "features/authByUserName";
-import type { ArticleDetailsCommentsSchema } from "pages/ArticleDetailsPage";
+import type { ArticleDetailsPageSchema } from "pages/ArticleDetailsPage";
 import type { ArticlesPageSchema } from "pages/ArticlesPage";
 
 export interface StateSchema {
@@ -17,7 +17,7 @@ export interface StateSchema {
   login?: LoginSchema
   profile?: ProfileSchema
   articleDetails?: ArticleDetailsSchema
-  articleDetailsComments?: ArticleDetailsCommentsSchema
+  articleDetailsPage?: ArticleDetailsPageSchema
   addCommentForm?: AddCommentFormSchema
   articlesPage?: ArticlesPageSchema
 };

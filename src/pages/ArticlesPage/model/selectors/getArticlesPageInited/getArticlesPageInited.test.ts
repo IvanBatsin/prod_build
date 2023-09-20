@@ -2,6 +2,7 @@ import type { DeepPartial } from "@reduxjs/toolkit";
 import type { StateSchema } from "app/providers/StoreProvider";
 import { getArticlesPageInited } from "./getArticlesPageInited";
 import { ArticleView } from "entities/Article";
+import { ArticleSortType, ArticleType } from "entities/Article/model/types/article";
 
 describe("get articles page state from store", () => {
   test("should return inited value", () => {
@@ -13,7 +14,12 @@ describe("get articles page state from store", () => {
         view: ArticleView.BIG,
         hasMore: true,
         page: 1,
-        _inited: true
+        _inited: true,
+        order: "asc",
+        search: "",
+        sort: ArticleSortType.CREATED_AT,
+        limit: 9,
+        currentType: ArticleType.ALL
       }
     };
     expect(getArticlesPageInited(state as StateSchema)).toEqual(true);

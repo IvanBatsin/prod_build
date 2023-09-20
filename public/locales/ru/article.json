@@ -2,5 +2,18 @@
   "title": "Article",
   "details": "Details",
   "articleNotFound": "Статья не найдена",
-  "readMore": "Читать далее..."
+  "readMore": "Читать далее...",
+  "chooseSortType": "Выберите тип сортировки",
+  "search": "Поиск",
+  "mode": "По",
+  "ascending": "По возрастанию",
+  "descending": "По убыванию",
+  "creationDateSort": "По дате создания",
+  "titleSort": "По названию",
+  "viewsSort": "По количесту просмотров",
+  "tabIT": "Айти",
+  "tabEconomics": "Экономика",
+  "tabScience": "Наука",
+  "tabAll": "Все",
+  "empty": "Статьи не найдены"
 }

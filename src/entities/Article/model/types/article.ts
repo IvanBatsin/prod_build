@@ -33,7 +33,8 @@ export type ArticleBlock = ArticleCodeBlock | ArticleImageBlock | ArticleTextBlo
 export enum ArticleType {
   IT = "IT",
   SCIENCE = "science",
-  ECONOMICS = "economics"
+  ECONOMICS = "economics",
+  ALL = "all"
 }
 
 export interface Article {
@@ -51,4 +52,10 @@ export interface Article {
 export enum ArticleView {
   BIG = "BIG",
   SMALL = "SMALL"
+};
+
+export enum ArticleSortType {
+  VIEWS = "views",
+  TITLE = "title",
+  CREATED_AT = "createdAt"
 };

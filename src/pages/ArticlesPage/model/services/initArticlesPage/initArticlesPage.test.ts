@@ -1,6 +1,6 @@
 import { TestAsyncThunk } from "shared/lib/tests/testAsyncThunk/testAsyncThunk";
 import { initArticlesPage } from "./initArticlesPage";
-import { ArticleView } from "entities/Article/model/types/article";
+import { ArticleSortType, ArticleType, ArticleView } from "entities/Article/model/types/article";
 import { fetchArticlesList } from "../fetchArticlesList/fetchArticlesList";
 
 jest.mock("../fetchArticlesList/fetchArticlesList");
@@ -15,11 +15,15 @@ describe("init articles page:", () => {
         ids: [],
         view: ArticleView.BIG,
         isLoading: false,
-        limit: 5
+        limit: 5,
+        order: "asc",
+        search: "",
+        sort: ArticleSortType.CREATED_AT,
+        currentType: ArticleType.ALL
       }
     });
 
-    await asyncThunk.callThunk(null);
+    await asyncThunk.callThunk({ searchParams: undefined });
 
     expect(asyncThunk.dispatch).toBeCalledTimes(4);
     expect(fetchArticlesList).toHaveBeenCalledWith({ page: 1 });
@@ -34,11 +38,15 @@ describe("init articles page:", () => {
         ids: [],
         view: ArticleView.BIG,
         isLoading: false,
-        limit: 5
+        limit: 5,
+        order: "asc",
+        search: "",
+        sort: ArticleSortType.CREATED_AT,
+        currentType: ArticleType.ALL
       }
     });
 
-    await asyncThunk.callThunk(null);
+    await asyncThunk.callThunk({ searchParams: undefined });
 
     expect(asyncThunk.dispatch).toBeCalledTimes(4);
   });

@@ -2,5 +2,18 @@
   "title": "Article",
   "details": "Details",
   "articleNotFound": "Article not found",
-  "readMore": "Read more..."
+  "readMore": "Read more...",
+  "chooseSortType": "Choose sort type",
+  "search": "Search",
+  "mode": "Mode",
+  "ascending": "Ascending",
+  "descending": "Descending",
+  "creationDateSort": "By creation Date",
+  "titleSort": "By title",
+  "viewsSort": "By views",
+  "tabIT": "IT",
+  "tabEconomics": "Economics",
+  "tabScience": "Science",
+  "tabAll": "All",
+  "empty": "Articles is not found"
 }

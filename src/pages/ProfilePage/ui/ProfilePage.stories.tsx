@@ -6,6 +6,7 @@ import { storeDecorator } from "shared/config/storybook/storeDecorator";
 import { Currency } from "entities/Currency";
 import { Country } from "entities/Country";
 import type { Profile } from "entities/Profile";
+import { routerDecorator } from "shared/config/storybook/routerDecorator";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 const meta = {
@@ -37,7 +38,7 @@ export const Dark: Story = {
       isLoading: false,
       readonly: false
     }
-  })]
+  }), routerDecorator]
 };
 
 export const Light: Story = {
@@ -48,5 +49,16 @@ export const Light: Story = {
       isLoading: false,
       readonly: false
     }
-  })]
+  }), routerDecorator]
+};
+
+export const Orange: Story = {
+  args: {},
+  decorators: [themeDecorator(Themes.ORANGE), storeDecorator({
+    profile: {
+      data: profile,
+      isLoading: false,
+      readonly: false
+    }
+  }), routerDecorator]
 };

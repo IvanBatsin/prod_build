@@ -46,7 +46,7 @@ export const PageWrapper: React.FC<PageWrapperProps> = (props) => {
       onScroll={handleScroll}
       >
       {children}
-      <div ref={triggerRef}></div>
+      {onScrollEndHandler && <div className={styles.trigger} ref={triggerRef}></div>}
     </section>
   );
 };

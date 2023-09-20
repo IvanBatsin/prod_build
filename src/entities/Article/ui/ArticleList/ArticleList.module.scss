@@ -10,9 +10,9 @@
 .SMALL {
   display: flex;
   flex-flow: row wrap;
+  gap: 30px; 
+}
 
-  .list_item {
-    margin-right: 30px;
-    margin-bottom: 30px;
-  }  
+.empty {
+  margin-top: 16px;
 }

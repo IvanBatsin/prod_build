@@ -3,5 +3,6 @@
   "error": "Error",
   "loading": "loading",
   "comment": "Comment",
-  "returnToTheList": "Return to the list"
+  "returnToTheList": "Return to the list",
+  "recommendedArticles": "Recommended articles"
 }

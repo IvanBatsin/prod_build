@@ -1,4 +1,4 @@
-import React from "react";
+import React, { type HTMLAttributeAnchorTarget } from "react";
 import styles from "../ArticleListItem.module.scss";
 import { classNames } from "shared/lib/classNames/classNames";
 import { Card } from "shared/ui/Card/Card";
@@ -9,14 +9,16 @@ import { Text } from "shared/ui/Text/Text";
 import { Button, ButtonTypes } from "shared/ui/Button/Button";
 import { useTranslation } from "react-i18next";
 import { ArticleTextBlockComponent } from "../../ArticleTextBlockComponent/ArticleTextBlockComponent";
+import { AppLink } from "shared/ui/AppLink/AppLink";
+import { routePaths } from "shared/config/routerConfig/routerConfig";
 
 type ArticleListItemBigProps = CommonComponentProps & {
   article: Article
-  handleArticleClick: () => void
+  target?: HTMLAttributeAnchorTarget
 }
 
 export const ArticleListItemBig: React.FC<ArticleListItemBigProps> = (props) => {
-  const { article, additionalClass, handleArticleClick } = props;
+  const { article, additionalClass, target } = props;
   const { t } = useTranslation("article");
 
   const textBlock = React.useMemo(() => {
@@ -36,7 +38,9 @@ export const ArticleListItemBig: React.FC<ArticleListItemBigProps> = (props) => 
         <img src={article.img} alt={article.title} className={styles.img}/>
         {textBlock && <ArticleTextBlockComponent block={textBlock} additionalClass={styles.textBlock}/>}
         <div className={styles.footer}>
-          <Button onClick={handleArticleClick} theme={ButtonTypes.OUTLINE}>{t("readMore")}</Button>
+          <AppLink target={target} to={`${routePaths.articleDetails}/${article.id}`}>
+            <Button theme={ButtonTypes.OUTLINE}>{t("readMore")}</Button>
+          </AppLink>
           <Text text={String(article.views)} additionalClass={styles.views}/>
         </div>
       </Card>

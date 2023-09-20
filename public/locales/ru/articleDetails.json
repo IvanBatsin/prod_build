@@ -3,5 +3,6 @@
   "error": "Error",
   "loading": "loading",
   "comment": "Комментарий",
-  "returnToTheList": "Вернуться к списку"
+  "returnToTheList": "Вернуться к списку",
+  "recommendedArticles": "Рекомендуемые стати"
 }

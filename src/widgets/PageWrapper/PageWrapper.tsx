@@ -15,6 +15,8 @@ type PageWrapperProps = CommonComponentProps & {
   onScrollEndHandler?: () => void
 }
 
+export const PAGE_ID = "pageId";
+
 export const PageWrapper: React.FC<PageWrapperProps> = (props) => {
   const { additionalClass, children, onScrollEndHandler } = props;
   const wrapperRef = React.useRef() as MutableRefObject<HTMLDivElement>;
@@ -41,6 +43,7 @@ export const PageWrapper: React.FC<PageWrapperProps> = (props) => {
 
   return (
     <section
+      id={PAGE_ID}
       ref={wrapperRef}
       className={classNames(styles.container, {}, [additionalClass])}
       onScroll={handleScroll}

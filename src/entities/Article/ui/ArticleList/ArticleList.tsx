@@ -7,12 +7,14 @@ import { ArticleListItem } from "../ArticleListItem/ArticleListItem";
 import { ArticleListSkeleton } from "../ArticleListItem/ArticleListItemTypes/ArticleListItemSkeleton";
 import { Text, TextAlign, TextSize } from "shared/ui/Text/Text";
 import { useTranslation } from "react-i18next";
+import { VirtualArticleList } from "./VirtualArticleList";
 
 type ArticleListProps = CommonComponentProps & {
   articles: Article[]
   isLoading?: boolean
   view?: ArticleView
   target?: HTMLAttributeAnchorTarget
+  isVirtual?: boolean
 }
 
 const getSkeletons = (view: ArticleView, additionalClass: string | undefined): JSX.Element => {
@@ -26,7 +28,7 @@ const getSkeletons = (view: ArticleView, additionalClass: string | undefined): J
 };
 
 export const ArticleList: React.FC<ArticleListProps> = (props) => {
-  const { additionalClass, articles, view = ArticleView.SMALL, isLoading, target } = props;
+  const { additionalClass, articles, view = ArticleView.SMALL, isLoading, target, isVirtual = true } = props;
   const { t } = useTranslation("article");
 
   const renderArticles = useMemo(() => {
@@ -43,9 +45,14 @@ export const ArticleList: React.FC<ArticleListProps> = (props) => {
 
   return (
     <div className={classNames(styles.container, {}, [additionalClass, styles[view]])}>
-      {articles.length > 0
-        ? renderArticles
-        : null}
+      {isVirtual
+        ? <VirtualArticleList
+          articles={articles}
+          target={target}
+          view={view}
+        />
+        : renderArticles
+      }
       {isLoading && getSkeletons(view, additionalClass)}
     </div>
   );

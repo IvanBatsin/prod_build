@@ -10,6 +10,8 @@
   "articlesLink": "Articles",
   "login": "Login",
   "logout": "Logout",
+  "logo": "PB",
+  "createArticle": "Create Article",
   "EnterUserName": "Enter username",
   "EnterPassword": "Enter password",
   "authorizationForm": "Authorization form",

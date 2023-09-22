@@ -11,6 +11,15 @@
   display: flex;
   flex-flow: row wrap;
   gap: 30px; 
+
+  .list_item {
+    display: inline-flex;
+  }
+
+  .row {
+    display: flex;
+    gap: 30px;
+  }
 }
 
 .empty {

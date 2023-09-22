@@ -3,7 +3,7 @@ import styles from "./ArticleDetailsPage.module.scss";
 import type { CommonComponentProps } from "shared/types/commonTypes";
 import { useTranslation } from "react-i18next";
 import { ArticleDetails, ArticleList } from "entities/Article";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { Text, TextSize } from "shared/ui/Text/Text";
 import { CommentsList } from "entities/Comment";
 import { DynamicModuleLoader, type ReducersList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
@@ -15,14 +15,13 @@ import { fetchCommentsByArticleId } from "../model/services/fetchCommentsByArtic
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import AddCommentForm from "features/addCommentForm/ui/AddCommentForm/AddCommentForm";
 import { addCommentForArticle } from "../model/services/addCommentForArticle/addCommentForArticle";
-import { Button, ButtonTypes } from "shared/ui/Button/Button";
-import { routePaths } from "shared/config/routerConfig/routerConfig";
 import { PageWrapper } from "widgets/PageWrapper/PageWrapper";
 import { getRecommendations } from "../model/slices/articleDetailsRecommendationsSlice/articleDetailsRecommendationsSlice";
 import { getArticleDetailsRecommendationsIsLoading } from "../selectors/recommendations/getArticleDetailsRecommendationsIsLoading/getArticleDetailsRecommendationsIsLoading";
 import { getArticleDetailsRecommendationsError } from "../selectors/recommendations/getArticleDetailsRecommendationsError/getArticleDetailsRecommendationsError";
 import { fetchRecommededArticles } from "../model/services/fetchRecommededArticles/fetchRecommededArticles";
 import { articleDetailsPageReducer } from "../model/slices";
+import { ArticleDetailsPageHeader } from "./ArticleDetailsPageHeader/ArticleDetailsPageHeader";
 
 const reducers: ReducersList = {
   articleDetailsPage: articleDetailsPageReducer
@@ -37,7 +36,6 @@ const ArticleDetailsPage: React.FC<CommonComponentProps> = (props) => {
   const recommendationsIsLoading = useSelector(getArticleDetailsRecommendationsIsLoading);
   const recommendationsError = useSelector(getArticleDetailsRecommendationsError);
   const dispatch = useAppDispatch();
-  const navigate = useNavigate();
 
   useInitialEffect(() => {
     dispatch(fetchCommentsByArticleId(id) as any);
@@ -46,11 +44,6 @@ const ArticleDetailsPage: React.FC<CommonComponentProps> = (props) => {
 
   const handleSendComment = (text: string): void => {
     dispatch(addCommentForArticle(text) as any);
-  };
-
-  const handleReturnToList = (e: React.MouseEvent<HTMLButtonElement>): void => {
-    e.preventDefault();
-    navigate(routePaths.articles);
   };
 
   if (!id) {
@@ -67,11 +60,12 @@ const ArticleDetailsPage: React.FC<CommonComponentProps> = (props) => {
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <PageWrapper>
         <div className={styles.container}>
-          <Button onClick={handleReturnToList} theme={ButtonTypes.OUTLINE}>{t("returnToTheList")}</Button>
+          <ArticleDetailsPageHeader/>
           <ArticleDetails id={id}/>
           <Text size={TextSize.L} additionalClass={styles.comment_title} title={t("recommendedArticles") || ""}/>
           {!recommendationsError && !recommendationsIsLoading &&
             <ArticleList
+              isVirtual={false}
               articles={recommendations}
               isLoading={recommendationsIsLoading}
               additionalClass={styles.recommendations}

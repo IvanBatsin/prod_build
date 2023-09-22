@@ -5,7 +5,8 @@ import type { CommonComponentProps } from "shared/types/commonTypes";
 
 export enum TextThemes {
   PRIMARY = "primary",
-  ERROR = "error"
+  ERROR = "error",
+  INVERTED = "inverted"
 }
 
 export enum TextAlign {

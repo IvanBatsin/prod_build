@@ -8,6 +8,9 @@ import { LoginModal } from "features/authByUserName";
 import { useSelector } from "react-redux";
 import { getUserAuthData, userActions } from "entities/User";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { Text, TextSize, TextThemes } from "shared/ui/Text/Text";
+import { AppLink, AppLinkTheme } from "shared/ui/AppLink/AppLink";
+import { routePaths } from "shared/config/routerConfig/routerConfig";
 
 export const Navbar: React.FC<CommonComponentProps> = React.memo(function Navbar ({ additionalClass }: CommonComponentProps) {
   const { t } = useTranslation();
@@ -28,15 +31,21 @@ export const Navbar: React.FC<CommonComponentProps> = React.memo(function Navbar
   }, [dispatch]);
 
   return (
-    <div className={classNames(styles.navbar, {}, [additionalClass])}>
+    <header className={classNames(styles.navbar, {}, [additionalClass])}>
       {authData
-        ? <Button
-          theme={ButtonTypes.CLEAR_INVERTED}
-          additionalClass={styles.links}
-          onClick={handleLogoutClick}
-        >
-          {t("logout")}
-        </Button>
+        ? <div className={styles.logoutWrapper}>
+            <Text size={TextSize.L} theme={TextThemes.INVERTED} title={t("logo") || ""}/>
+            <AppLink additionalClass={styles.createBtn} theme={AppLinkTheme.SECONDARY} to={`${routePaths.articleCreate}`}>
+              {t("createArticle")}
+            </AppLink>
+            <Button
+              theme={ButtonTypes.CLEAR_INVERTED}
+              additionalClass={styles.links}
+              onClick={handleLogoutClick}
+            >
+              {t("logout")}
+            </Button>
+          </div>
         : <>
           <Button
             theme={ButtonTypes.CLEAR_INVERTED}
@@ -53,6 +62,6 @@ export const Navbar: React.FC<CommonComponentProps> = React.memo(function Navbar
           }
         </>
       }
-    </div>
+    </header>
   );
 });

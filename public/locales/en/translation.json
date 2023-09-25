@@ -15,5 +15,6 @@
   "EnterUserName": "Enter username",
   "EnterPassword": "Enter password",
   "authorizationForm": "Authorization form",
-  "authorizationError": "Incrorrect login or password"
+  "authorizationError": "Incrorrect login or password",
+  "toProfile": "Profile"
 }

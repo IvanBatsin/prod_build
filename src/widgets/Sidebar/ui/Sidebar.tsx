@@ -8,6 +8,7 @@ import { type CommonComponentProps } from "shared/types/commonTypes";
 import { SidebarItem } from "./SidebarItem/SidebarItem";
 import { useSelector } from "react-redux";
 import { getSidebarItems } from "../model/selectors/getSidebarItems/getSidebarItems";
+import { VStack } from "shared/ui/Stack/VStack/VStack";
 
 export const Sidebar: React.FC<CommonComponentProps> = React.memo(function Sidebar ({ additionalClass }: CommonComponentProps) {
   const [collapsed, setCollapsed] = React.useState<boolean>(false);
@@ -20,7 +21,7 @@ export const Sidebar: React.FC<CommonComponentProps> = React.memo(function Sideb
   }, [collapsed, sidebarItemList]);
 
   return (
-    <div data-testid="sidebar-test-id" className={classNames(styles.sidebar, { [styles.collapsed]: collapsed }, [additionalClass])}>
+    <aside data-testid="sidebar-test-id" className={classNames(styles.sidebar, { [styles.collapsed]: collapsed }, [additionalClass])}>
       <Button
         additionalClass={styles.collapseBtn}
         data-testid="toggle-sidebar"
@@ -31,9 +32,9 @@ export const Sidebar: React.FC<CommonComponentProps> = React.memo(function Sideb
       >
         { collapsed ? ">" : "<" }
       </Button>
-      <div className={styles.link_items}>
+      <VStack role="navigation" additionalClass={styles.link_items} align="start">
         {listItems}
-      </div>
+      </VStack>
       <div className={styles.switchers}>
         <ThemeSwitcher/>
         <LanguageSwitcher
@@ -41,6 +42,6 @@ export const Sidebar: React.FC<CommonComponentProps> = React.memo(function Sideb
           additionalClass={styles.lang}
         />
       </div>
-    </div>
+    </aside>
   );
 });

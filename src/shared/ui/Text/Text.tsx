@@ -17,8 +17,17 @@ export enum TextAlign {
 
 export enum TextSize {
   L = "size_L",
-  M = "size_M"
+  M = "size_M",
+  S = "size_S"
 }
+
+type HeaderTagType = "h1" | "h2" | "h3";
+
+const mapSizeToHeader: Record<TextSize, HeaderTagType> = {
+  [TextSize.S]: "h3",
+  [TextSize.M]: "h2",
+  [TextSize.L]: "h1"
+};
 
 type TextProps = CommonComponentProps & {
   title?: string
@@ -37,9 +46,11 @@ export const Text: React.FC<TextProps> = React.memo(function Text (props: TextPr
     [styles[size]]: true
   };
 
+  const HeaderTag = mapSizeToHeader[size];
+
   return (
     <div className={classNames("", mods, [additionalClass])}>
-      {title && <p className={styles.title}>{title}</p>}
+      {title && <HeaderTag className={styles.title}>{title}</HeaderTag>}
       {text && <p className={styles.text}>{text}</p>}
     </div>
   );

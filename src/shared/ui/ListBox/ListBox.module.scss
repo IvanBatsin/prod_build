@@ -1,0 +1,53 @@
+.container {
+  position: relative;
+}
+
+.triggerBtn {
+  background: none;
+  outline: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.options {
+  position: absolute;
+  z-index: 1000;
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 4px 4px 8px var(--card-bg);
+  color: var(--primary-color);
+}
+
+.bottomLeft {
+  top: 100%;
+  right: 0;
+}
+
+.bottomRight {
+  top: 100%;
+  left: 0;
+}
+
+.topLeft {
+  bottom: 100%;
+  right: 0;
+}
+
+.topRight {
+  bottom: 100%;
+  left: 0;
+}
+
+.optionItem {
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.selectedItem {
+  background: var(--inveted-primary-color);
+}
+
+.disabled {
+  opacity: 0.7;
+}

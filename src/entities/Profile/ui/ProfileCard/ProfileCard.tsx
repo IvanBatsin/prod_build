@@ -9,6 +9,7 @@ import { PageLoader } from "widgets/PageLoader";
 import { Avatar } from "shared/ui/Avatar/Avatar";
 import { type Currency, CurrencySelector } from "entities/Currency";
 import { CountrySelector, type Country } from "entities/Country";
+import { VStack } from "shared/ui/Stack/VStack/VStack";
 
 interface ProfileCardProps {
   profile?: Profile
@@ -52,12 +53,10 @@ export const ProfileCard: React.FC<ProfileCardProps> = (props) => {
       {isLoading
         ? <PageLoader/>
         : <>
-          <div>
+          <VStack align="start" gap="8">
             {profile?.avatar &&
               <div className={styles.avatarWrapper}>
-                <Avatar
-                  src={profile.avatar}
-                />
+                <Avatar src={profile.avatar}/>
               </div>
             }
             <Input
@@ -114,7 +113,7 @@ export const ProfileCard: React.FC<ProfileCardProps> = (props) => {
               additionalClass={styles.input}
               onChange={handleCountryChange}
             />
-          </div>
+          </VStack>
         </>
       }
     </div>

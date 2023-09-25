@@ -11,6 +11,9 @@ import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { Text, TextSize, TextThemes } from "shared/ui/Text/Text";
 import { AppLink, AppLinkTheme } from "shared/ui/AppLink/AppLink";
 import { routePaths } from "shared/config/routerConfig/routerConfig";
+import { HStack } from "shared/ui/Stack/HStack/HStack";
+import { Dropdown } from "shared/ui/Dropdown/Dropdown";
+import { Avatar } from "shared/ui/Avatar/Avatar";
 
 export const Navbar: React.FC<CommonComponentProps> = React.memo(function Navbar ({ additionalClass }: CommonComponentProps) {
   const { t } = useTranslation();
@@ -33,19 +36,27 @@ export const Navbar: React.FC<CommonComponentProps> = React.memo(function Navbar
   return (
     <header className={classNames(styles.navbar, {}, [additionalClass])}>
       {authData
-        ? <div className={styles.logoutWrapper}>
+        ? <HStack align="baseline" justify="between" max>
             <Text size={TextSize.L} theme={TextThemes.INVERTED} title={t("logo") || ""}/>
             <AppLink additionalClass={styles.createBtn} theme={AppLinkTheme.SECONDARY} to={`${routePaths.articleCreate}`}>
               {t("createArticle")}
             </AppLink>
-            <Button
-              theme={ButtonTypes.CLEAR_INVERTED}
-              additionalClass={styles.links}
-              onClick={handleLogoutClick}
-            >
-              {t("logout")}
-            </Button>
-          </div>
+            <Dropdown
+              additionalClass={styles.dropdown}
+              trigger={<Avatar size={30} src={authData.avatar || ""}/>}
+              direction="bottom left"
+              items={[
+                {
+                  content: t("logout"),
+                  handleClick: handleLogoutClick
+                },
+                {
+                  content: t("toProfile"),
+                  href: `${routePaths.profile}/${authData.id}`
+                }
+              ]}
+            />
+        </HStack>
         : <>
           <Button
             theme={ButtonTypes.CLEAR_INVERTED}

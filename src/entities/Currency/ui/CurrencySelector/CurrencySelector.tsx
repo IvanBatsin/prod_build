@@ -2,7 +2,7 @@ import { Currency } from "entities/Currency/model/types/currency";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import type { CommonComponentProps } from "shared/types/commonTypes";
-import { Select } from "shared/ui/Select/Select";
+import { ListBox } from "shared/ui/ListBox/ListBox";
 
 const options = [
   { value: Currency.EUR, content: Currency.EUR },
@@ -25,13 +25,15 @@ export const CurrencySelector: React.FC<CurrencySelectorProps> = React.memo(func
   }, [onChange]);
 
   return (
-    <Select
+    <ListBox
       additionalClass={additionalClass}
-      label={t("chooseCurrency") || ""}
-      options={options}
-      value={value}
       readonly={readonly}
-      onChange={handleSelectChange}
+      label={t("chooseCurrency") || ""}
+      items={options}
+      defaultValue={t("chooseCurrency") || ""}
+      value={value}
+      direction="top right"
+      handleOnChangeValue={handleSelectChange}
     />
   );
 });

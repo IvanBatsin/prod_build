@@ -1,0 +1,56 @@
+.container {
+  position: relative;
+}
+
+.btn {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+}
+
+.itemsList {
+  background: var(--card-bd);
+  position: absolute;
+  z-index: 1000;
+  border-radius: 8px;
+  border: 1px solid var(--primary-color);
+  flex-direction: column;
+  display: flex;
+}
+
+.item {
+  width: 100%;
+  padding: 10px 25px;
+  border: none;
+  outline: none;
+  background: none;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.active {
+  background-color: var(--inverted-primary-color);
+}
+
+.bottomLeft {
+  top: 100%;
+  right: 0;
+}
+
+.bottomRight {
+  top: 100%;
+  left: 0;
+}
+
+.topLeft {
+  bottom: 100%;
+  right: 0;
+}
+
+.topRight {
+  bottom: 100%;
+  left: 0;
+}

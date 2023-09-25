@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./ArticlePageFilters.module.scss";
 import type { CommonComponentProps, SortOrderType } from "shared/types/commonTypes";
-import { classNames } from "shared/lib/classNames/classNames";
 import { useSelector } from "react-redux";
 import { getArticlesPageView } from "pages/ArticlesPage/model/selectors/getArticlesPageView/getArticlesPageView";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
@@ -20,12 +19,9 @@ import { useDebounce } from "shared/lib/hooks/useDebounce/useDebounce";
 import { type TabItem } from "shared/ui/Tabs/Tabs";
 import { getArticlePageCurrentType } from "pages/ArticlesPage/model/selectors/getArticlePageCurrentType/getArticlePageCurrentType";
 import { ArticleTypes } from "features/articleTypes";
+import { classNames } from "shared/lib/classNames/classNames";
 
-type ArticlePageFiltersProps = CommonComponentProps & {
-  test?: string
-}
-
-export const ArticlePageFilters: React.FC<ArticlePageFiltersProps> = (props) => {
+export const ArticlePageFilters: React.FC<CommonComponentProps> = (props) => {
   const { additionalClass } = props;
   const { t } = useTranslation("article");
   const view = useSelector(getArticlesPageView);

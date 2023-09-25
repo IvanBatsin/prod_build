@@ -42,7 +42,7 @@ export const PageWrapper: React.FC<PageWrapperProps> = (props) => {
   }, 500);
 
   return (
-    <section
+    <main
       id={PAGE_ID}
       ref={wrapperRef}
       className={classNames(styles.container, {}, [additionalClass])}
@@ -50,6 +50,6 @@ export const PageWrapper: React.FC<PageWrapperProps> = (props) => {
       >
       {children}
       {onScrollEndHandler && <div className={styles.trigger} ref={triggerRef}></div>}
-    </section>
+    </main>
   );
 };

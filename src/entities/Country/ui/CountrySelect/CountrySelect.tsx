@@ -2,7 +2,7 @@ import { Country } from "entities/Country/model/types/country";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import type { CommonComponentProps } from "shared/types/commonTypes";
-import { Select } from "shared/ui/Select/Select";
+import { ListBox } from "shared/ui/ListBox/ListBox";
 
 const options = [
   { value: Country.Belarus, content: Country.Belarus },
@@ -27,13 +27,15 @@ export const CountrySelector: React.FC<CountrySelectorProps> = React.memo(functi
   }, [onChange]);
 
   return (
-    <Select
+    <ListBox
       additionalClass={additionalClass}
+      defaultValue={t("chooseCountry") || ""}
       label={t("chooseCountry") || ""}
-      options={options}
+      items={options}
       value={value}
       readonly={readonly}
-      onChange={handleSelectChange}
+      handleOnChangeValue={handleSelectChange}
+      direction="top right"
     />
   );
 });

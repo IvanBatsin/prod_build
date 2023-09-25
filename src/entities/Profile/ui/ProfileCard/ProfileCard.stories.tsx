@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { ProfileCard } from "./ProfileCard";
 import { themeDecorator } from "shared/config/storybook/themeDecorator";
 import { Themes } from "app/providers/themeProvider";
-import type { Profile } from "entities/Profile/model/types/profile";
+import type { Profile } from "features/editableProfileCard/model/types/profile";
 import { Currency } from "entities/Currency";
 import { Country } from "entities/Country";
 

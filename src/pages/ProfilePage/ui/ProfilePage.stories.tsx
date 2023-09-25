@@ -5,8 +5,8 @@ import { Themes } from "app/providers/themeProvider";
 import { storeDecorator } from "shared/config/storybook/storeDecorator";
 import { Currency } from "entities/Currency";
 import { Country } from "entities/Country";
-import type { Profile } from "entities/Profile";
 import { routerDecorator } from "shared/config/storybook/routerDecorator";
+import type { Profile } from "features/editableProfileCard";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 const meta = {

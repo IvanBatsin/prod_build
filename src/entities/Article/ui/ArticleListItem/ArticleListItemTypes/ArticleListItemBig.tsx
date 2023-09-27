@@ -34,7 +34,7 @@ export const ArticleListItemBig: React.FC<ArticleListItemBigProps> = (props) => 
           <Text additionalClass={styles.date} text={article.createdAt}/>
         </div>
         <Text text={article.title} additionalClass={styles.title}/>
-        <Text text={article.type.join(", ")} additionalClass={styles.types}/>
+        <Text text={article.types.join(", ")} additionalClass={styles.types}/>
         <img src={article.img} alt={article.title} className={styles.img}/>
         {textBlock && <ArticleTextBlockComponent block={textBlock} additionalClass={styles.textBlock}/>}
         <div className={styles.footer}>

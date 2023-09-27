@@ -35,10 +35,11 @@ type TextProps = CommonComponentProps & {
   theme?: TextThemes
   align?: TextAlign
   size?: TextSize
+  "data-testid"?: string
 }
 
 export const Text: React.FC<TextProps> = React.memo(function Text (props: TextProps) {
-  const { additionalClass, text, title, size = TextSize.M, theme = TextThemes.PRIMARY, align = TextAlign.LEFT } = props;
+  const { additionalClass, text, title, size = TextSize.M, theme = TextThemes.PRIMARY, align = TextAlign.LEFT, "data-testid": dataTestId = "Text" } = props;
 
   const mods: Mods = {
     [styles[theme]]: true,
@@ -50,8 +51,8 @@ export const Text: React.FC<TextProps> = React.memo(function Text (props: TextPr
 
   return (
     <div className={classNames("", mods, [additionalClass])}>
-      {title && <HeaderTag className={styles.title}>{title}</HeaderTag>}
-      {text && <p className={styles.text}>{text}</p>}
+      {title && <HeaderTag data-testid={`${dataTestId}.Header`} className={styles.title}>{title}</HeaderTag>}
+      {text && <p data-testid={`${dataTestId}.Paragraph`} className={styles.text}>{text}</p>}
     </div>
   );
 });

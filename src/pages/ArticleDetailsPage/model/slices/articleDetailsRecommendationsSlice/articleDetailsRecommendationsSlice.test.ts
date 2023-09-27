@@ -30,7 +30,7 @@ describe("article details recommendation slice", () => {
         img: "",
         subtitle: "subtitle",
         title: "title",
-        type: [ArticleType.ECONOMICS],
+        types: [ArticleType.ECONOMICS],
         user: {
           id: "1",
           username: "username"
@@ -49,7 +49,7 @@ describe("article details recommendation slice", () => {
           img: "",
           subtitle: "subtitle",
           title: "title",
-          type: [ArticleType.ECONOMICS],
+          types: [ArticleType.ECONOMICS],
           user: {
             id: "1",
             username: "username"

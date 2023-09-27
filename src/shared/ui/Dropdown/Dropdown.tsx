@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, type JSXElementConstructor, type ReactElement } from "react";
 import styles from "./Dropdown.module.scss";
 import type { CommonComponentProps } from "shared/types/commonTypes";
 import { Menu } from "@headlessui/react";
@@ -34,7 +34,7 @@ export const Dropdown: React.FC<DropdownProps> = (props) => {
       <Menu.Button className={styles.btn}>{trigger}</Menu.Button>
       <Menu.Items className={classNames(styles.itemsList, {}, [directionMapper[direction]])}>
         {items.map((item, index) => {
-          const innerContent = ({ active }: { active: boolean }): React.ReactNode => (
+          const innerContent = ({ active }: { active: boolean }): ReactElement<any, string | JSXElementConstructor<any>> => (
             <button disabled={item.disabled} type="button" onClick={item.handleClick} className={classNames(styles.item, { [styles.active]: active }, [])}>
               {item.content}
             </button>

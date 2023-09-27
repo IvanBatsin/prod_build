@@ -4,8 +4,8 @@ import { themeDecorator } from "shared/config/storybook/themeDecorator";
 import { Themes } from "app/providers/themeProvider";
 import { routerDecorator } from "shared/config/storybook/routerDecorator";
 import { storeDecorator } from "shared/config/storybook/storeDecorator";
+import { Roles } from "entities/User/model/types/user";
 
-// More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 const meta = {
   title: "widget/Navbar",
   component: Navbar,
@@ -34,4 +34,9 @@ export const LightAuthorizedUser: Story = {
 export const DarkAuthorizedUser: Story = {
   args: {},
   decorators: [themeDecorator(Themes.DARK), routerDecorator, storeDecorator({ user: { authData: { username: "test", id: "s" } } })]
+};
+
+export const DarkUserAdmin: Story = {
+  args: {},
+  decorators: [themeDecorator(Themes.DARK), routerDecorator, storeDecorator({ user: { authData: { username: "test", id: "s", roles: [Roles.ADMIN] } } })]
 };

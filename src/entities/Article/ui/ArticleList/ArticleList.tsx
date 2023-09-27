@@ -32,6 +32,8 @@ export const ArticleList: React.FC<ArticleListProps> = (props) => {
   const { t } = useTranslation("article");
 
   const renderArticles = useMemo(() => {
+    if (!articles) return null;
+
     return articles.map(article => <ArticleListItem target={target} additionalClass={styles.list_item} key={article.id} article={article} view={view}/>);
   }, [articles, target, view]);
 

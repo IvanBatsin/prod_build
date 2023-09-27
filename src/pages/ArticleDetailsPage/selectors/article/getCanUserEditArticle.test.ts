@@ -12,7 +12,7 @@ describe("Get can user edit article", () => {
     img: "",
     subtitle: "subtitle",
     title: "title",
-    type: [ArticleType.ALL],
+    types: [ArticleType.ALL],
     user: {
       id: "1",
       username: "username"

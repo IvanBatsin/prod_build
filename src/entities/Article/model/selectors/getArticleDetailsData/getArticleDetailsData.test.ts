@@ -12,7 +12,7 @@ describe("get article details data from store", () => {
       img: "",
       subtitle: "test",
       title: "test title",
-      type: [ArticleType.ECONOMICS],
+      types: [ArticleType.ECONOMICS],
       user: {
         id: "1",
         username: "MockUser",

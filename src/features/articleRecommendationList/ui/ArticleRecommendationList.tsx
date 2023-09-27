@@ -17,10 +17,14 @@ export const ArticleRecommendationList: React.FC<CommonComponentProps> = (props)
     );
   }
 
+  if (!isLoading && !recommendedArticles) {
+    return null;
+  }
+
   return (
     <VStack gap="8" additionalClass={additionalClass}>
       <Text size={TextSize.L} title={t("recommendedArticles") || ""}/>
-        {!error && !isLoading &&
+        {!error && !isLoading && recommendedArticles &&
           <ArticleList
             isVirtual={false}
             articles={recommendedArticles}

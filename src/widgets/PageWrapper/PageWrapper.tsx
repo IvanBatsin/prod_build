@@ -12,6 +12,7 @@ import type { StateSchema } from "app/providers/StoreProvider";
 import { useThrottle } from "shared/lib/hooks/useThrottle/useThrottle";
 
 type PageWrapperProps = CommonComponentProps & {
+  children: React.ReactNode
   onScrollEndHandler?: () => void
 }
 

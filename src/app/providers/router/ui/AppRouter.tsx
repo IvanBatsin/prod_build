@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import { type AppRouterProps, routeConfig } from "shared/config/routerConfig/routerConfig";
 import { PageLoader } from "widgets/PageLoader";
 import { RequireAuth } from "./RequireAuth";
+import { RequireRoles } from "./RequireRoles";
 
 export const AppRouter = (): JSX.Element => {
   const renderWithWrapper = React.useCallback((route: AppRouterProps, index: number) => {
@@ -13,10 +14,19 @@ export const AppRouter = (): JSX.Element => {
       </Suspense>
     );
 
+    let elementToShow = element;
+    if (route.authOnly) {
+      elementToShow = <RequireAuth>{element}</RequireAuth>;
+    }
+
+    if (route.roles) {
+      elementToShow = <RequireRoles roles={route.roles}>{element}</RequireRoles>;
+    }
+
     return <Route
             key={`${index}_${route.path || ""}`}
             path={route.path}
-            element={route.authOnly ? <RequireAuth>{element}</RequireAuth> : element}/>;
+            element={elementToShow}/>;
   }, []);
 
   return (

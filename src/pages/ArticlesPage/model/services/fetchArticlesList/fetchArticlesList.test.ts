@@ -18,7 +18,7 @@ describe("fetch articles list:", () => {
           id: "1",
           username: "username"
         },
-        type: [ArticleType.IT]
+        types: [ArticleType.IT]
       }
     ];
     const asyncThunk = new TestAsyncThunk(fetchArticlesList, {

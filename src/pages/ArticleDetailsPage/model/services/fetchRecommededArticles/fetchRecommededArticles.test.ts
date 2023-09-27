@@ -13,7 +13,7 @@ describe("fetch recommeded articles:", () => {
         img: "",
         subtitle: "subtitle",
         title: "title",
-        type: [ArticleType.ECONOMICS],
+        types: [ArticleType.ECONOMICS],
         user: {
           id: "1",
           username: "username"

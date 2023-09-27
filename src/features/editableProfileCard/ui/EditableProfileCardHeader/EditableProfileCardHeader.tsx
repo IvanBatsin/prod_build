@@ -44,6 +44,7 @@ export const EditableProfileCardHeader: React.FC<CommonComponentProps> = (props)
             ? <Button
               theme={ButtonTypes.OUTLINE}
               additionalClass={styles.editBtn}
+              data-testid="EditableProfileCard.EditBtn"
               onClick={handleEditClick}
             >
               {t("prodileEdit")}
@@ -52,6 +53,7 @@ export const EditableProfileCardHeader: React.FC<CommonComponentProps> = (props)
               <Button
                 theme={ButtonTypes.OUTLINE_RED}
                 additionalClass={styles.editBtn}
+                data-testid="EditableProfileCard.CancelBtn"
                 onClick={handleCancelEditClick}
               >
                 {t("prodileEditCancel")}
@@ -59,6 +61,7 @@ export const EditableProfileCardHeader: React.FC<CommonComponentProps> = (props)
               <Button
                 theme={ButtonTypes.OUTLINE}
                 additionalClass={styles.editBtn}
+                data-testid="EditableProfileCard.SaveBtn"
                 onClick={handleSaveClick}
               >
                 {t("profileSave")}

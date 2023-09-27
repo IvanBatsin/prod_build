@@ -16,5 +16,6 @@
   "EnterPassword": "Введите password",
   "authorizationForm": "Форма авторизации",
   "authorizationError": "Вы ввели неправильный логин или пароль",
-  "toProfile": "Профиль"
+  "toProfile": "Профиль",
+  "admin": "Панель админа"
 }

@@ -11,7 +11,7 @@ describe("fetch article by id:", () => {
       img: "",
       subtitle: "test",
       title: "test title",
-      type: [ArticleType.ECONOMICS],
+      types: [ArticleType.ECONOMICS],
       views: 12,
       user: {
         id: "1",

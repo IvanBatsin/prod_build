@@ -30,7 +30,7 @@ const articleData: Article = {
     id: "1",
     username: "username"
   },
-  type: [ArticleType.IT]
+  types: [ArticleType.IT]
 };
 
 const authData: User = {

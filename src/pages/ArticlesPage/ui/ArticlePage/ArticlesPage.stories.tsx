@@ -30,7 +30,7 @@ const data: Article = {
     id: "1",
     username: "username"
   },
-  type: [ArticleType.IT]
+  types: [ArticleType.IT]
 };
 
 const ArticlePageData: ArticlesPageSchema = {

@@ -5,7 +5,7 @@ import { getProfileIsLoading } from "features/editableProfileCard/model/selector
 import { ValidationProfileError } from "features/editableProfileCard/model/types/profile";
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { useSelector } from "react-redux/es/hooks/useSelector";
+import { useSelector } from "react-redux";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
 import type { CommonComponentProps } from "shared/types/commonTypes";
@@ -88,7 +88,12 @@ export const EditableProfileCard: React.FC<EditableProfileCardProps> = (props) =
         <EditableProfileCardHeader/>
         {validationErrors?.length &&
           validationErrors.map(error => {
-            return <Text key={error} theme={TextThemes.ERROR} title={validationErrorsTranslate[error]}/>;
+            return <Text
+                      key={error}
+                      theme={TextThemes.ERROR}
+                      title={validationErrorsTranslate[error]}
+                      data-testid="EditableProfileCard.Error"
+                    />;
           })
         }
         <ProfileCard

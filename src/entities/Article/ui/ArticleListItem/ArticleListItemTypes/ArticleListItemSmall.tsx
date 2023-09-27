@@ -29,7 +29,7 @@ export const ArticleListItemSmall: React.FC<ArticleListItemSmallProps> = (props)
             <Text text={article.createdAt} additionalClass={styles.date}/>
           </div>
           <div className={styles.infoWrapper}>
-            <Text text={article.type.join(", ")} additionalClass={styles.types}/>
+            <Text text={article.types.join(", ")} additionalClass={styles.types}/>
             <Text text={String(article.views)} additionalClass={styles.views}/>
             <Icon SVG={EyeIcon}/>
           </div>

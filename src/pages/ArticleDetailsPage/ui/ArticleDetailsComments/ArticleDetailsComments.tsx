@@ -4,7 +4,7 @@ import { addCommentForArticle } from "pages/ArticleDetailsPage/model/services/ad
 import { fetchCommentsByArticleId } from "pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
 import { getArticleComment } from "pages/ArticleDetailsPage/model/slices/articleDetailsCommentsSlice/articleDetailsCommentsSlice";
 import { getArticleDetailsCommentsIsLoading } from "pages/ArticleDetailsPage/selectors/comments/getArticleDetailsCommentsIsLoading/getArticleDetailsCommentsIsLoading";
-import React from "react";
+import React, { Suspense } from "react";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
@@ -35,7 +35,9 @@ export const ArticleDetailsComments: React.FC<ArticleDetailsCommentsProps> = (pr
   return (
     <VStack gap="8" max align="start" additionalClass={additionalClass}>
       <Text title={t("comment") || ""}/>
-      <AddCommentForm sendComment={handleSendComment}/>
+      <Suspense>
+        <AddCommentForm sendComment={handleSendComment}/>
+      </Suspense>
       <CommentsList comments={comments} isLoading={commentsIsLoading}/>
     </VStack>
   );

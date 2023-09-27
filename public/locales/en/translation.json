@@ -16,5 +16,6 @@
   "EnterPassword": "Enter password",
   "authorizationForm": "Authorization form",
   "authorizationError": "Incrorrect login or password",
-  "toProfile": "Profile"
+  "toProfile": "Profile",
+  "admin": "Admin panel"
 }

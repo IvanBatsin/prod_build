@@ -28,7 +28,7 @@ describe("add comment for article by article id:", () => {
           img: "",
           subtitle: "subtitle",
           title: "title",
-          type: [ArticleType.ECONOMICS],
+          types: [ArticleType.ECONOMICS],
           user: {
             id: "1",
             username: "username"
@@ -62,7 +62,7 @@ describe("add comment for article by article id:", () => {
           img: "",
           subtitle: "subtitle",
           title: "title",
-          type: [ArticleType.ECONOMICS],
+          types: [ArticleType.ECONOMICS],
           user: {
             id: "1",
             username: "username"

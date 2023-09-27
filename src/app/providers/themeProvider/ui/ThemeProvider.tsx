@@ -3,6 +3,7 @@ import { LOCAL_STORAGE_THEME_KEY, ThemeContext, Themes } from "../lib/ThemeConte
 
 interface ThemeProviderProps {
   initialTheme?: Themes
+  children: React.ReactNode
 }
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = (props) => {

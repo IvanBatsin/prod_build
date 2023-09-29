@@ -3,6 +3,7 @@ import styles from "./Modal.module.scss";
 import type { CommonComponentProps } from "shared/types/commonTypes";
 import { type Mods, classNames } from "shared/lib/classNames/classNames";
 import { Portal } from "../Portal/Portal";
+import { Overlay } from "../Overlay/Overlay";
 
 type ModalProps = CommonComponentProps & {
   isOpen: boolean
@@ -33,10 +34,6 @@ export const Modal: React.FC<ModalProps> = (props) => {
       }, ANIMATION_DELAY);
     }
   }, [onClose]);
-
-  const handleContentClick = (event: React.MouseEvent<HTMLDivElement>): void => {
-    event.stopPropagation();
-  };
 
   const handleKeyDown = React.useCallback((event: KeyboardEvent): void => {
     if (event.key === "Escape") {
@@ -70,11 +67,10 @@ export const Modal: React.FC<ModalProps> = (props) => {
 
   return (
     <Portal>
-      <div className={classNames(styles.modal, mods, [additionalClass])}>
-        <div className={styles.overlay} onClick={handleClose}>
-          <div className={styles.content} onClick={handleContentClick}>
-            {children}
-          </div>
+      <div className={classNames(styles.modal, mods, [additionalClass, "app_modal"])}>
+        <Overlay handleClick={handleClose}/>
+        <div className={styles.content}>
+          {children}
         </div>
       </div>
     </Portal>

@@ -15,7 +15,8 @@
     "types": ["node"],
     "esModuleInterop": true,
     // позволяет использвать import без * 
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "isolatedModules": true,
   },
   "ts-node": {
     "compilerOptions": {

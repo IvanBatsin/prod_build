@@ -8,7 +8,7 @@ import { getArticlePageOrder } from "../../selectors/getArticlePageOrder/getArti
 import { getArticlesPagePage } from "../../selectors/getArticlesPagePage/getArticlesPagePage";
 import { setQueryParams } from "shared/lib/url/setQueryParams/setQueryParams";
 import { getArticlePageCurrentType } from "../../selectors/getArticlePageCurrentType/getArticlePageCurrentType";
-import { ArticleType } from "entities/Article/model/types/article";
+import { ArticleType } from "entities/Article/model/consts/consts";
 
 interface fetchArticlesListPayload {
   page?: number

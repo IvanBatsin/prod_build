@@ -1,5 +1,6 @@
+import { ValidationProfileError } from "../consts/consts";
 import { updateProfileData } from "../services/updateProfileData/updateProfileData";
-import { ValidationProfileError, type Profile, type ProfileSchema } from "../types/profile";
+import { type Profile, type ProfileSchema } from "../types/profile";
 import { editableProfileCardActions, editableProfileCardReducer } from "./editableProfileCardSlice";
 
 describe("EditableProfileCard slice", () => {

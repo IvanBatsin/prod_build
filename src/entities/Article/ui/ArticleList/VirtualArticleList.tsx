@@ -3,8 +3,9 @@ import styles from "./ArticleList.module.scss";
 import type { CommonComponentProps } from "shared/types/commonTypes";
 import { List, type ListRowProps, WindowScroller } from "react-virtualized";
 import { PAGE_ID } from "widgets/PageWrapper/PageWrapper";
-import { type Article, ArticleView } from "entities/Article/model/types/article";
+import { type Article } from "entities/Article/model/types/article";
 import { ArticleListItem } from "../ArticleListItem/ArticleListItem";
+import { ArticleView } from "entities/Article/model/consts/consts";
 
 type VirtualArticleListProps = CommonComponentProps & {
   articles: Article[]

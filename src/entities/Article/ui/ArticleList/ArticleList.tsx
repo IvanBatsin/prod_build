@@ -2,12 +2,13 @@ import React, { type HTMLAttributeAnchorTarget, useMemo } from "react";
 import styles from "./ArticleList.module.scss";
 import { classNames } from "shared/lib/classNames/classNames";
 import type { CommonComponentProps } from "shared/types/commonTypes";
-import { type Article, ArticleView } from "entities/Article/model/types/article";
+import { type Article } from "entities/Article/model/types/article";
 import { ArticleListItem } from "../ArticleListItem/ArticleListItem";
 import { ArticleListSkeleton } from "../ArticleListItem/ArticleListItemTypes/ArticleListItemSkeleton";
 import { Text, TextAlign, TextSize } from "shared/ui/Text/Text";
 import { useTranslation } from "react-i18next";
 import { VirtualArticleList } from "./VirtualArticleList";
+import { ArticleView } from "entities/Article/model/consts/consts";
 
 type ArticleListProps = CommonComponentProps & {
   articles: Article[]

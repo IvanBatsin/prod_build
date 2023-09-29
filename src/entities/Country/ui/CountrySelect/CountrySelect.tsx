@@ -2,7 +2,7 @@ import { Country } from "entities/Country/model/types/country";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import type { CommonComponentProps } from "shared/types/commonTypes";
-import { ListBox } from "shared/ui/ListBox/ListBox";
+import { ListBox } from "shared/ui/Popups/index";
 
 const options = [
   { value: Country.Belarus, content: Country.Belarus },

@@ -3,7 +3,8 @@ import { themeDecorator } from "shared/config/storybook/themeDecorator";
 import { ArticleDetails } from "./ArticleDetails";
 import { Themes } from "app/providers/themeProvider";
 import { storeDecorator } from "shared/config/storybook/storeDecorator";
-import { ArticleType, type Article, ArticleBlockType } from "entities/Article/model/types/article";
+import { type Article } from "entities/Article/model/types/article";
+import { ArticleBlockType, ArticleType } from "entities/Article/model/consts/consts";
 
 const meta = {
   title: "entities/ArticleDetails",

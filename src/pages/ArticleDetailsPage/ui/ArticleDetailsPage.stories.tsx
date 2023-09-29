@@ -4,8 +4,8 @@ import { themeDecorator } from "shared/config/storybook/themeDecorator";
 import { Themes } from "app/providers/themeProvider";
 import { storeDecorator } from "shared/config/storybook/storeDecorator";
 import type { Article } from "entities/Article";
-import { ArticleType } from "entities/Article/model/types/article";
 import { routerDecorator } from "shared/config/storybook/routerDecorator";
+import { ArticleType } from "entities/Article/model/consts/consts";
 
 const meta = {
   title: "pages/ArticleDetailsPage",

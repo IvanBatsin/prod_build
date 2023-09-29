@@ -20,7 +20,7 @@
       "views": 12,
       "createdAt": "1.05.2022",
       "userId": "1",
-      "type": [
+      "types": [
         "IT"
       ],
       "blocks": [
@@ -64,7 +64,7 @@
       "views": 2003,
       "createdAt": "3.05.2023",
       "userId": "1",
-      "type": [
+      "types": [
         "science"
       ],
       "blocks": [
@@ -136,7 +136,7 @@
       "views": 1022,
       "createdAt": "7.10.2022",
       "userId": "1",
-      "type": [
+      "types": [
         "economics"
       ],
       "blocks": [
@@ -160,7 +160,7 @@
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
-      "type": [
+      "types": [
         "science"
       ],
       "blocks": [
@@ -184,7 +184,7 @@
       "views": 30032,
       "createdAt": "26.08.2021",
       "userId": "1",
-      "type": [
+      "types": [
         "economics"
       ],
       "blocks": [
@@ -208,7 +208,7 @@
       "views": 247,
       "createdAt": "26.04.2022",
       "userId": "1",
-      "type": [
+      "types": [
         "IT"
       ],
       "blocks": [
@@ -232,7 +232,7 @@
       "views": 122,
       "createdAt": "23.01.2022",
       "userId": "1",
-      "type": [
+      "types": [
         "IT"
       ],
       "blocks": [
@@ -256,7 +256,7 @@
       "views": 998,
       "createdAt": "29.07.2023",
       "userId": "1",
-      "type": [
+      "types": [
         "IT"
       ],
       "blocks": [
@@ -280,7 +280,7 @@
       "views": 1111,
       "createdAt": "21.06.2023",
       "userId": "1",
-      "type": [
+      "types": [
         "IT"
       ],
       "blocks": [
@@ -304,7 +304,7 @@
       "views": 1522,
       "createdAt": "3.02.2022",
       "userId": "1",
-      "type": [
+      "types": [
         "IT"
       ],
       "blocks": [
@@ -328,7 +328,7 @@
       "views": 9987,
       "createdAt": "26.02.2021",
       "userId": "1",
-      "type": [
+      "types": [
         "IT"
       ],
       "blocks": [
@@ -387,6 +387,21 @@
       "userId": "1",
       "text": "rest",
       "id": "KKWd1bF"
+    }
+  ],
+  "notifications": [
+    {
+      "id": "1",
+      "title": "Notification - 1",
+      "description": "This is the first notification",
+      "userId": "1"
+    },
+    {
+      "id": "2",
+      "title": "Notification - 1",
+      "description": "This is the first notification",
+      "userId": "1",
+      "href": "http://localhost:3000/admin"
     }
   ],
   "users": [

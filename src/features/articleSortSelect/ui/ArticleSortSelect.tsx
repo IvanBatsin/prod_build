@@ -4,7 +4,7 @@ import type { CommonComponentProps, SortOrderType } from "shared/types/commonTyp
 import { classNames } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next";
 import { Select, type SelectOption } from "shared/ui/Select/Select";
-import { ArticleSortType } from "entities/Article/model/types/article";
+import { ArticleSortType } from "entities/Article/model/consts/consts";
 
 type ArticleSortSelectProps = CommonComponentProps & {
   sort: ArticleSortType

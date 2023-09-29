@@ -1,7 +1,7 @@
 import type { DeepPartial } from "@reduxjs/toolkit";
 import type { StateSchema } from "app/providers/StoreProvider";
-import { ValidationProfileError } from "../../types/profile";
 import { getProfileValidationErrors } from "./getProfileValidationErrors";
+import { ValidationProfileError } from "../../consts/consts";
 
 describe("get profile validation errors from store", () => {
   test("should return profile validation errors", () => {

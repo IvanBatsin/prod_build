@@ -1,7 +1,7 @@
 import { ArticleView } from "entities/Article";
 import type { ArticlesPageSchema } from "../types/ArticlesPageSchema";
 import { articlesPageReducer, articlesPageActions } from "./articlesPageSlice";
-import { ArticleSortType, ArticleType } from "entities/Article/model/types/article";
+import { ArticleSortType, ArticleType } from "entities/Article/model/consts/consts";
 
 describe("ArticlesPage slice", () => {
   const state: ArticlesPageSchema = {

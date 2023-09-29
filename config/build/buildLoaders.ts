@@ -1,20 +1,45 @@
 import type webpack from "webpack";
 import { type BuildOptions } from "./types/config";
 import { buildCssLoaders } from "./loaders/buildCssLoaders";
+import babelRemovePropsPlugin from "../babel/babelRemovePropsPlugin";
 
-export const buildLoaders = (options: BuildOptions): webpack.RuleSetRule[] => {
-  const babelLoader: webpack.RuleSetRule = {
-    test: /\.(?:js|jsx|tsx)$/,
+interface BabelLoaderProps extends BuildOptions {
+  isTsx?: boolean
+}
+
+const buildBabelLoader = (options: BabelLoaderProps): webpack.RuleSetRule => {
+  const plugins: any[] = [
+    ["@babel/plugin-transform-typescript",
+      {
+        isTSX: options.isTsx
+      }
+    ],
+    "@babel/plugin-transform-runtime"
+  ];
+
+  if (options.isTsx) {
+    plugins.push(
+      [babelRemovePropsPlugin, { props: ["data-testid"] }]
+    );
+  }
+  return {
+    test: options.isTsx ? /\.(?:jsx|tsx)$/ : /\.(?:js|ts)$/,
     exclude: /node_modules/,
     use: {
       loader: "babel-loader",
       options: {
         presets: [
           ["@babel/preset-env"]
-        ]
+        ],
+        plugins
       }
     }
   };
+};
+
+export const buildLoaders = (options: BuildOptions): webpack.RuleSetRule[] => {
+  const babelLoader: webpack.RuleSetRule = buildBabelLoader({ ...options, isTsx: false });
+  const babelTsxLoader: webpack.RuleSetRule = buildBabelLoader({ ...options, isTsx: true });
 
   const svgLoader: webpack.RuleSetRule = {
     test: /\.svg$/i,
@@ -30,18 +55,12 @@ export const buildLoaders = (options: BuildOptions): webpack.RuleSetRule[] => {
     ]
   };
 
-  const typescriptLoader: webpack.RuleSetRule = {
-    test: /\.tsx?$/,
-    use: "ts-loader",
-    exclude: /node_modules/
-  };
-
   const scssLoader: webpack.RuleSetRule = buildCssLoaders(options.isDev);
 
   return [
     scssLoader,
     babelLoader,
-    typescriptLoader,
+    babelTsxLoader,
     svgLoader,
     fileLoader
   ];

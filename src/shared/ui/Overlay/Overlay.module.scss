@@ -1,0 +1,10 @@
+.overlay {
+  background-color: var(--overlay-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  cursor: pointer;
+}

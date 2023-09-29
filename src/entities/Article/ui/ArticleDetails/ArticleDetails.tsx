@@ -12,11 +12,12 @@ import styles from "./ArticleDetails.module.scss";
 import { Text, TextAlign } from "shared/ui/Text/Text";
 import { ArticleDetailsSkeletonLoader } from "./ArticleDetailsSkeletonLoader/ArticleDetailsSkeletonLoader";
 import { ArticleDetailsContent } from "./ArticleDetailsContent/ArticleDetailsContent";
-import { ArticleBlockType, type ArticleBlock } from "../../../../entities/Article/model/types/article";
+import { type ArticleBlock } from "../../../../entities/Article/model/types/article";
 import { ArticleCodeBlockComponent } from "../ArticleCodeBlockComponent/ArticleCodeBlockComponent";
 import { ArticleImageBlockComponent } from "../ArticleImageBlockComponent/ArticleImageBlockComponent";
 import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
+import { ArticleBlockType } from "entities/Article/model/consts/consts";
 
 const reducers: ReducersList = {
   articleDetails: articleReducer

@@ -1,7 +1,8 @@
 import { validateProfileData } from "./validateProfileData";
-import { ValidationProfileError, type Profile } from "../../types/profile";
+import { type Profile } from "../../types/profile";
 import { Currency } from "entities/Currency";
 import { Country } from "entities/Country";
+import { ValidationProfileError } from "../../consts/consts";
 
 const data: Profile = {
   firstName: "John",

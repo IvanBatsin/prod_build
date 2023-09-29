@@ -1,7 +1,7 @@
 import { TestAsyncThunk } from "shared/lib/tests/testAsyncThunk/testAsyncThunk";
 import { addCommentForArticle } from "./addCommentForArticle";
 import type { Comment } from "entities/Comment";
-import { ArticleType } from "entities/Article/model/types/article";
+import { ArticleType } from "entities/Article/model/consts/consts";
 
 describe("add comment for article by article id:", () => {
   test("success server request", async () => {

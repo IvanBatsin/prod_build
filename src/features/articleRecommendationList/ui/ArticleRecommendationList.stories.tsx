@@ -4,7 +4,7 @@ import { storeDecorator } from "shared/config/storybook/storeDecorator";
 import { themeDecorator } from "shared/config/storybook/themeDecorator";
 import { Themes } from "app/providers/themeProvider";
 import type { Article } from "entities/Article";
-import { ArticleType } from "entities/Article/model/types/article";
+import { ArticleType } from "entities/Article/model/consts/consts";
 
 const data: Article = {
   blocks: [],
@@ -32,7 +32,7 @@ const meta = {
         url: `${__API__}/articles?_limit=3`,
         method: "GET",
         status: 200,
-        response: [data]
+        response: data
       }
     ]
   }

@@ -1,7 +1,8 @@
 import type { DeepPartial } from "@reduxjs/toolkit";
 import type { StateSchema } from "app/providers/StoreProvider";
-import { ArticleType, type Article } from "../../types/article";
+import { type Article } from "../../types/article";
 import { getArticleDetailsData } from "./getArticleDetailsData";
+import { ArticleType } from "../../consts/consts";
 
 describe("get article details data from store", () => {
   test("should return article details data", () => {

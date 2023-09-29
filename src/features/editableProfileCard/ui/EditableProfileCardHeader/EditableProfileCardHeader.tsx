@@ -10,7 +10,7 @@ import { getUserAuthData } from "entities/User";
 import { HStack } from "shared/ui/Stack/HStack/HStack";
 import { getProfileReadOnly } from "features/editableProfileCard/model/selectors/getProfileReadOnly/getProfileReadOnly";
 import { getProfileData } from "features/editableProfileCard/model/selectors/getProfileData/getProfileData";
-import { editableProfileCardActions } from "features/editableProfileCard";
+import { editableProfileCardActions } from "../../model/slice/editableProfileCardSlice";
 import { updateProfileData } from "features/editableProfileCard/model/services/updateProfileData/updateProfileData";
 import { classNames } from "shared/lib/classNames/classNames";
 

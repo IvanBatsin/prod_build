@@ -2,7 +2,7 @@ import type { DeepPartial } from "@reduxjs/toolkit";
 import type { StateSchema } from "app/providers/StoreProvider";
 import { getArticlePageSearch } from "./getArticlePageSearch";
 import { ArticleView } from "entities/Article";
-import { ArticleSortType, ArticleType } from "entities/Article/model/types/article";
+import { ArticleSortType, ArticleType } from "entities/Article/model/consts/consts";
 
 describe("get article page state from store", () => {
   test("should return search value", () => {

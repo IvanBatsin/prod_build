@@ -2,9 +2,10 @@ import React, { type HTMLAttributeAnchorTarget } from "react";
 import styles from "./ArticleListItem.module.scss";
 import { classNames } from "shared/lib/classNames/classNames";
 import type { CommonComponentProps } from "shared/types/commonTypes";
-import { type Article, ArticleView } from "entities/Article/model/types/article";
+import { type Article } from "entities/Article/model/types/article";
 import { ArticleListItemBig } from "./ArticleListItemTypes/ArticleListItemBig";
 import { ArticleListItemSmall } from "./ArticleListItemTypes/ArticleListItemSmall";
+import { ArticleView } from "entities/Article/model/consts/consts";
 
 type ArticleListItemProps = CommonComponentProps & {
   article: Article

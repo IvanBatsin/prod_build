@@ -12,7 +12,6 @@ import { Input } from "shared/ui/Input/Input";
 import { ArticleSortSelect } from "features/articleSortSelect";
 import { getArticlePageOrder } from "pages/ArticlesPage/model/selectors/getArticlePageOrder/getArticlePageOrder";
 import { getArticlePageSort } from "pages/ArticlesPage/model/selectors/getArticlePageSort/getArticlePageSort";
-import { type ArticleSortType, type ArticleType } from "entities/Article/model/types/article";
 import { getArticlePageSearch } from "pages/ArticlesPage/model/selectors/getArticlePageSearch/getArticlePageSearch";
 import { fetchArticlesList } from "pages/ArticlesPage/model/services/fetchArticlesList/fetchArticlesList";
 import { useDebounce } from "shared/lib/hooks/useDebounce/useDebounce";
@@ -20,6 +19,7 @@ import { type TabItem } from "shared/ui/Tabs/Tabs";
 import { getArticlePageCurrentType } from "pages/ArticlesPage/model/selectors/getArticlePageCurrentType/getArticlePageCurrentType";
 import { ArticleTypes } from "features/articleTypes";
 import { classNames } from "shared/lib/classNames/classNames";
+import { type ArticleSortType, type ArticleType } from "entities/Article/model/consts/consts";
 
 export const ArticlePageFilters: React.FC<CommonComponentProps> = (props) => {
   const { additionalClass } = props;

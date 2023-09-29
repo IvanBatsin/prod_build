@@ -2,7 +2,6 @@ import type { Country } from "entities/Country";
 import type { Currency } from "entities/Currency";
 import { ProfileCard } from "entities/Profile";
 import { getProfileIsLoading } from "features/editableProfileCard/model/selectors/getProfileIsLoading/getProfileIsLoading";
-import { ValidationProfileError } from "features/editableProfileCard/model/types/profile";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
@@ -18,6 +17,8 @@ import { editableProfileCardActions, editableProfileCardReducer } from "../model
 import { fetchProfileData } from "../model/services/fetchProfileData/fetchProfileData";
 import { DynamicModuleLoader, type ReducersList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { EditableProfileCardHeader } from "./EditableProfileCardHeader/EditableProfileCardHeader";
+import { ValidationProfileError } from "../model/consts/consts";
+
 const reducers: ReducersList = {
   profile: editableProfileCardReducer
 };
@@ -91,7 +92,7 @@ export const EditableProfileCard: React.FC<EditableProfileCardProps> = (props) =
             return <Text
                       key={error}
                       theme={TextThemes.ERROR}
-                      title={validationErrorsTranslate[error]}
+                      title={validationErrorsTranslate[error as keyof typeof validationErrorsTranslate]}
                       data-testid="EditableProfileCard.Error"
                     />;
           })

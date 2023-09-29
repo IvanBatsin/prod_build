@@ -1,8 +1,8 @@
+import { ArticleType } from "entities/Article/model/consts/consts";
 import { fetchRecommededArticles } from "../../services/fetchRecommededArticles/fetchRecommededArticles";
 import type { ArticleDetailsRecommendationsSchema } from "../../types/ArticleDetailsRecommendationsSchema";
 import { articleDetailsRecommendationsReducer } from "./articleDetailsRecommendationsSlice";
 import type { Article } from "entities/Article";
-import { ArticleType } from "entities/Article/model/types/article";
 
 describe("article details recommendation slice", () => {
   const intialState: ArticleDetailsRecommendationsSchema = {

@@ -4,13 +4,14 @@ import { classNames } from "shared/lib/classNames/classNames";
 import { Card } from "shared/ui/Card/Card";
 import { Avatar } from "shared/ui/Avatar/Avatar";
 import type { CommonComponentProps } from "shared/types/commonTypes";
-import { ArticleBlockType, type Article, type ArticleTextBlock } from "entities/Article/model/types/article";
+import { type Article, type ArticleTextBlock } from "entities/Article/model/types/article";
 import { Text } from "shared/ui/Text/Text";
 import { Button, ButtonTypes } from "shared/ui/Button/Button";
 import { useTranslation } from "react-i18next";
 import { ArticleTextBlockComponent } from "../../ArticleTextBlockComponent/ArticleTextBlockComponent";
 import { AppLink } from "shared/ui/AppLink/AppLink";
 import { routePaths } from "shared/config/routerConfig/routerConfig";
+import { ArticleBlockType } from "entities/Article/model/consts/consts";
 
 type ArticleListItemBigProps = CommonComponentProps & {
   article: Article

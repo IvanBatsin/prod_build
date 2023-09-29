@@ -1,7 +1,7 @@
 import { TestAsyncThunk } from "shared/lib/tests/testAsyncThunk/testAsyncThunk";
 import { fetchArticlesList } from "./fetchArticlesList";
-import type { Article } from "entities/Article";
-import { ArticleSortType, ArticleType, ArticleView } from "entities/Article/model/types/article";
+import { ArticleView, type Article } from "entities/Article";
+import { ArticleSortType, ArticleType } from "entities/Article/model/consts/consts";
 
 describe("fetch articles list:", () => {
   test("success server request", async () => {

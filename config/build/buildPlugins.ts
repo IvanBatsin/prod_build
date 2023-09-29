@@ -5,6 +5,8 @@ import { type BuildOptions } from "./types/config";
 import ReactRefreshWebpackPlugin from "@pmmmwh/react-refresh-webpack-plugin";
 import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
 import CopyPlugin from "copy-webpack-plugin";
+import CircularDependencyPlugin from "circular-dependency-plugin";
+import ForkTsCheckerWebpack from "fork-ts-checker-webpack-plugin";
 
 export const buildPlugins = (options: BuildOptions): webpack.WebpackPluginInstance[] => {
   const result = [
@@ -25,6 +27,19 @@ export const buildPlugins = (options: BuildOptions): webpack.WebpackPluginInstan
       patterns: [
         { from: options.paths.locales, to: options.paths.buildLocales }
       ]
+    }),
+    new CircularDependencyPlugin({
+      exclude: /a\.js|node_modules/,
+      failOnError: true
+    }),
+    new ForkTsCheckerWebpack({
+      typescript: {
+        diagnosticOptions: {
+          semantic: true,
+          syntactic: true
+        },
+        mode: "write-references"
+      }
     })
   ];
 

@@ -3,7 +3,9 @@ import { ArticleList } from "./ArticleList";
 import { themeDecorator } from "shared/config/storybook/themeDecorator";
 import { Themes } from "app/providers/themeProvider";
 import { routerDecorator } from "shared/config/storybook/routerDecorator";
-import { ArticleType, type Article, ArticleView } from "entities/Article/model/types/article";
+import { type Article } from "entities/Article/model/types/article";
+import { ArticleType } from "entities/Article/model/consts/consts";
+import { ArticleView } from "entities/Article";
 
 const meta = {
   title: "entities/Article/ArticleList",

@@ -1,9 +1,9 @@
 import React from "react";
-import type { CommonComponentProps } from "shared/types/commonTypes";
-import { Text, TextSize } from "shared/ui/Text/Text";
-import { ArticleList } from "entities/Article";
+import type { CommonComponentProps } from "@/shared/types/commonTypes";
+import { Text, TextSize } from "@/shared/ui/Text/Text";
+import { ArticleList } from "@/entities/Article";
 import { useTranslation } from "react-i18next";
-import { VStack } from "shared/ui/Stack/VStack/VStack";
+import { VStack } from "@/shared/ui/Stack/VStack/VStack";
 import { useArticleRecommendationList } from "../api/articleRecommendationApi";
 
 export const ArticleRecommendationList: React.FC<CommonComponentProps> = (props) => {

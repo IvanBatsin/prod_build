@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { NotificationList } from "./NotificationList";
-import { themeDecorator } from "shared/config/storybook/themeDecorator";
-import { Themes } from "app/providers/themeProvider";
-import type { Notification } from "entities/Notification/model/types/notifications";
-import { storeDecorator } from "shared/config/storybook/storeDecorator";
+import { themeDecorator } from "@/shared/config/storybook/themeDecorator";
+import { Themes } from "@/app/providers/themeProvider";
+import type { Notification } from "@/entities/Notification/model/types/notifications";
+import { storeDecorator } from "@/shared/config/storybook/storeDecorator";
 
 const data: Notification[] = [
   {

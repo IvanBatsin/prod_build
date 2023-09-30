@@ -1,6 +1,6 @@
 import React from "react";
-import { PageWrapper } from "widgets/PageWrapper/PageWrapper";
-import { EditableProfileCard } from "features/editableProfileCard";
+import { PageWrapper } from "@/widgets/PageWrapper/PageWrapper";
+import { EditableProfileCard } from "@/features/editableProfileCard";
 import { useParams } from "react-router-dom";
 
 const ProfilePage: React.FC = () => {

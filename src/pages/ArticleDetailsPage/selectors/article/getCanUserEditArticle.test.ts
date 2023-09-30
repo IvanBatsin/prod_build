@@ -1,8 +1,8 @@
 import type { DeepPartial } from "@reduxjs/toolkit";
-import type { StateSchema } from "app/providers/StoreProvider";
+import type { StateSchema } from "@/app/providers/StoreProvider";
 import { getCanUserEditArticle } from "./getCanUserEditArticle";
-import type { Article } from "entities/Article";
-import { ArticleType } from "entities/Article/model/consts/consts";
+import type { Article } from "@/entities/Article";
+import { ArticleType } from "@/entities/Article/model/consts/consts";
 
 describe("Get can user edit article", () => {
   const articleData: Article = {

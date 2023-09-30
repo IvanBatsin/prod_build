@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { ArticleTypes } from "./ArticleTypes";
-import { themeDecorator } from "shared/config/storybook/themeDecorator";
-import { Themes } from "app/providers/themeProvider";
-import { ArticleType } from "entities/Article/model/consts/consts";
+import { themeDecorator } from "@/shared/config/storybook/themeDecorator";
+import { Themes } from "@/app/providers/themeProvider";
+import { ArticleType } from "@/entities/Article/model/consts/consts";
 
 const meta = {
   title: "featues/ArticleTypes",

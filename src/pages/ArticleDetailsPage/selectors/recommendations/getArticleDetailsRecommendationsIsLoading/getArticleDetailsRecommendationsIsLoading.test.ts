@@ -1,5 +1,5 @@
 import type { DeepPartial } from "@reduxjs/toolkit";
-import type { StateSchema } from "app/providers/StoreProvider";
+import type { StateSchema } from "@/app/providers/StoreProvider";
 import { getArticleDetailsRecommendationsIsLoading } from "./getArticleDetailsRecommendationsIsLoading";
 
 describe("get article details recommended articles state from store", () => {

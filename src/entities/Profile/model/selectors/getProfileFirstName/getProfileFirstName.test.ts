@@ -1,8 +1,8 @@
 import type { DeepPartial } from "@reduxjs/toolkit";
-import type { StateSchema } from "app/providers/StoreProvider";
+import type { StateSchema } from "@/app/providers/StoreProvider";
 import type { Profile } from "../../types/profile";
-import { Currency } from "entities/Currency";
-import { Country } from "entities/Country";
+import { Currency } from "@/entities/Currency";
+import { Country } from "@/entities/Country";
 import { getProfileFirstName } from "./getProfileFirstName";
 
 describe("get profile first name from store", () => {

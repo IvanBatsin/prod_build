@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "../ArticleListItem.module.scss";
-import { classNames } from "shared/lib/classNames/classNames";
-import type { CommonComponentProps } from "shared/types/commonTypes";
-import { Card } from "shared/ui/Card/Card";
-import { Skeleton } from "shared/ui/Skeleton/Skeleton";
-import { ArticleView } from "entities/Article/model/consts/consts";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import type { CommonComponentProps } from "@/shared/types/commonTypes";
+import { Card } from "@/shared/ui/Card/Card";
+import { Skeleton } from "@/shared/ui/Skeleton/Skeleton";
+import { ArticleView } from "@/entities/Article/model/consts/consts";
 
 type ArticleListSkeletonProps = CommonComponentProps & {
   view: ArticleView

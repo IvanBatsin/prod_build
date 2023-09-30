@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./CommentCard.module.scss";
-import { classNames } from "shared/lib/classNames/classNames";
-import type { CommonComponentProps } from "shared/types/commonTypes";
-import { Skeleton } from "shared/ui/Skeleton/Skeleton";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import type { CommonComponentProps } from "@/shared/types/commonTypes";
+import { Skeleton } from "@/shared/ui/Skeleton/Skeleton";
 
 export const CommentCardLoader: React.FC<CommonComponentProps> = (props) => {
   return (

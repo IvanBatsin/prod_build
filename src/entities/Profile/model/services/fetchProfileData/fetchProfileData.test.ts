@@ -1,5 +1,5 @@
 import { fetchProfileData } from "./fetchProfileData";
-import { TestAsyncThunk } from "shared/lib/tests/testAsyncThunk/testAsyncThunk";
+import { TestAsyncThunk } from "@/shared/lib/tests/testAsyncThunk/testAsyncThunk";
 import type { Profile } from "../../types/profile";
 
 describe("fetch profile data test:", () => {

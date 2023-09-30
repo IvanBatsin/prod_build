@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Skeleton.module.scss";
-import type { CommonComponentProps } from "shared/types/commonTypes";
-import { classNames } from "shared/lib/classNames/classNames";
+import type { CommonComponentProps } from "@/shared/types/commonTypes";
+import { classNames } from "@/shared/lib/classNames/classNames";
 
 type SkeletonProps = CommonComponentProps & {
   height?: number | string

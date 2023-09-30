@@ -1,7 +1,7 @@
 import React, { type HtmlHTMLAttributes } from "react";
 import styles from "./Card.module.scss";
-import type { CommonComponentProps } from "shared/types/commonTypes";
-import { classNames } from "shared/lib/classNames/classNames";
+import type { CommonComponentProps } from "@/shared/types/commonTypes";
+import { classNames } from "@/shared/lib/classNames/classNames";
 
 export enum CardTheme {
   NORMAL = "normal",

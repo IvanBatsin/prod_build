@@ -1,7 +1,7 @@
 import { createSelector } from "@reduxjs/toolkit";
-import { getUserAuthData } from "entities/User";
+import { getUserAuthData } from "@/entities/User";
 import type { SidebarItemType } from "../../types/sidebarItems";
-import { routePaths } from "shared/config/routerConfig/routerConfig";
+import { routePaths } from "@/shared/config/routerConfig/routerConfig";
 import AboutLinkIcon from "../../../assets/aboutLink.svg";
 import MainLinkIcon from "../../../assets/mainLink.svg";
 import ProfileLinkIcon from "../../../assets/profileLink.svg";

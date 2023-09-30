@@ -1,9 +1,9 @@
 import React, { Fragment, type JSXElementConstructor, type ReactElement } from "react";
 import styles from "./Dropdown.module.scss";
-import type { CommonComponentProps } from "shared/types/commonTypes";
+import type { CommonComponentProps } from "@/shared/types/commonTypes";
 import { Menu } from "@headlessui/react";
-import { classNames } from "shared/lib/classNames/classNames";
-import type { DropdownDirection } from "shared/types/ui";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import type { DropdownDirection } from "@/shared/types/ui";
 import { AppLink } from "../../../AppLink/AppLink";
 import { directionMapper } from "../styles/consts";
 import popupStyles from "../styles/popup.module.scss";

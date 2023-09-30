@@ -1,13 +1,13 @@
 import React from "react";
-import { Button, ButtonTypes } from "shared/ui/Button/Button";
+import { Button, ButtonTypes } from "@/shared/ui/Button/Button";
 import { useNavigate } from "react-router-dom";
-import { routePaths } from "shared/config/routerConfig/routerConfig";
+import { routePaths } from "@/shared/config/routerConfig/routerConfig";
 import { useTranslation } from "react-i18next";
-import type { CommonComponentProps } from "shared/types/commonTypes";
+import type { CommonComponentProps } from "@/shared/types/commonTypes";
 import { useSelector } from "react-redux";
-import { getCanUserEditArticle } from "pages/ArticleDetailsPage/selectors/article/getCanUserEditArticle";
-import { getArticleDetailsData } from "entities/Article";
-import { HStack } from "shared/ui/Stack/HStack/HStack";
+import { getCanUserEditArticle } from "@/pages/ArticleDetailsPage/selectors/article/getCanUserEditArticle";
+import { getArticleDetailsData } from "@/entities/Article";
+import { HStack } from "@/shared/ui/Stack/HStack/HStack";
 
 export const ArticleDetailsPageHeader: React.FC<CommonComponentProps> = (props) => {
   const { additionalClass } = props;

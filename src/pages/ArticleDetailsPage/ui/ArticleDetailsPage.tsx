@@ -1,14 +1,14 @@
 import React from "react";
 import styles from "./ArticleDetailsPage.module.scss";
-import type { CommonComponentProps } from "shared/types/commonTypes";
+import type { CommonComponentProps } from "@/shared/types/commonTypes";
 import { useTranslation } from "react-i18next";
-import { ArticleDetails } from "entities/Article";
+import { ArticleDetails } from "@/entities/Article";
 import { useParams } from "react-router-dom";
-import { DynamicModuleLoader, type ReducersList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
-import { PageWrapper } from "widgets/PageWrapper/PageWrapper";
+import { DynamicModuleLoader, type ReducersList } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+import { PageWrapper } from "@/widgets/PageWrapper/PageWrapper";
 import { articleDetailsPageReducer } from "../model/slices";
 import { ArticleDetailsPageHeader } from "./ArticleDetailsPageHeader/ArticleDetailsPageHeader";
-import { ArticleRecommendationList } from "features/articleRecommendationList";
+import { ArticleRecommendationList } from "@/features/articleRecommendationList";
 import { ArticleDetailsComments } from "./ArticleDetailsComments/ArticleDetailsComments";
 
 const reducers: ReducersList = {

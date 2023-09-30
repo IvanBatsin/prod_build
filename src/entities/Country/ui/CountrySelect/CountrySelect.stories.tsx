@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { CountrySelector } from "./CountrySelect";
-import { themeDecorator } from "shared/config/storybook/themeDecorator";
-import { Themes } from "app/providers/themeProvider";
-import { Country } from "entities/Country/model/types/country";
+import { themeDecorator } from "@/shared/config/storybook/themeDecorator";
+import { Themes } from "@/app/providers/themeProvider";
+import { Country } from "@/entities/Country/model/types/country";
 
 const meta = {
   title: "entities/CountrySelector",

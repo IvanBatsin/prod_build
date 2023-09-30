@@ -1,12 +1,12 @@
 import { EditableProfileCard } from "./EditableProfileCard";
 import { screen } from "@testing-library/react";
-import { type RenderWithRouterOptions, componentRender } from "shared/lib/tests/componentRender/componentRender";
+import { type RenderWithRouterOptions, componentRender } from "@/shared/lib/tests/componentRender/componentRender";
 import type { Profile } from "../model/types/profile";
-import { Currency } from "entities/Currency";
-import { Country } from "entities/Country";
+import { Currency } from "@/entities/Currency";
+import { Country } from "@/entities/Country";
 import { editableProfileCardReducer } from "../model/slice/editableProfileCardSlice";
 import userEvent from "@testing-library/user-event";
-import { axiosApi } from "shared/api/api";
+import { axiosApi } from "@/shared/api/api";
 
 const profileData: Profile = {
   age: 12,

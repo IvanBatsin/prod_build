@@ -1,9 +1,9 @@
-import type { ArticleImageBlock } from "entities/Article/model/types/article";
+import type { ArticleImageBlock } from "@/entities/Article/model/types/article";
 import React from "react";
-import { classNames } from "shared/lib/classNames/classNames";
-import type { CommonComponentProps } from "shared/types/commonTypes";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import type { CommonComponentProps } from "@/shared/types/commonTypes";
 import styles from "./ArticleImageBlockComponent.module.scss";
-import { Text, TextAlign } from "shared/ui/Text/Text";
+import { Text, TextAlign } from "@/shared/ui/Text/Text";
 
 type ArticleImageBlockComponentProps = CommonComponentProps & {
   block: ArticleImageBlock

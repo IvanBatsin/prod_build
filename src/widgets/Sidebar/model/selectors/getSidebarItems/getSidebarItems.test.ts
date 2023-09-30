@@ -1,7 +1,7 @@
 import type { DeepPartial } from "@reduxjs/toolkit";
-import type { StateSchema } from "app/providers/StoreProvider";
+import type { StateSchema } from "@/app/providers/StoreProvider";
 import { getSidebarItems } from "./getSidebarItems";
-import { routePaths } from "shared/config/routerConfig/routerConfig";
+import { routePaths } from "@/shared/config/routerConfig/routerConfig";
 import type { SidebarItemType } from "../../types/sidebarItems";
 import AboutLinkIcon from "../../../assets/aboutLink.svg";
 import MainLinkIcon from "../../../assets/mainLink.svg";

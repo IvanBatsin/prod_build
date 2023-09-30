@@ -1,9 +1,9 @@
-import { ArticleType } from "entities/Article/model/consts/consts";
+import { ArticleType } from "@/entities/Article/model/consts/consts";
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { classNames } from "shared/lib/classNames/classNames";
-import type { CommonComponentProps } from "shared/types/commonTypes";
-import { Tabs, type TabItem } from "shared/ui/Tabs/Tabs";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import type { CommonComponentProps } from "@/shared/types/commonTypes";
+import { Tabs, type TabItem } from "@/shared/ui/Tabs/Tabs";
 
 type ArticleTypesProps = CommonComponentProps & {
   currentType: ArticleType

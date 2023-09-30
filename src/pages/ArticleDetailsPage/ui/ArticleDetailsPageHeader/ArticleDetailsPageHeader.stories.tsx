@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { ArticleDetailsPageHeader } from "./ArticleDetailsPageHeader";
-import { themeDecorator } from "shared/config/storybook/themeDecorator";
-import { Themes } from "app/providers/themeProvider";
-import { storeDecorator } from "shared/config/storybook/storeDecorator";
-import type { Article } from "entities/Article";
-import { routerDecorator } from "shared/config/storybook/routerDecorator";
-import type { User } from "entities/User";
-import { ArticleType } from "entities/Article/model/consts/consts";
+import { themeDecorator } from "@/shared/config/storybook/themeDecorator";
+import { Themes } from "@/app/providers/themeProvider";
+import { storeDecorator } from "@/shared/config/storybook/storeDecorator";
+import type { Article } from "@/entities/Article";
+import { routerDecorator } from "@/shared/config/storybook/routerDecorator";
+import type { User } from "@/entities/User";
+import { ArticleType } from "@/entities/Article/model/consts/consts";
 
 const meta = {
   title: "pages/ArticleDetailsPageHeader",

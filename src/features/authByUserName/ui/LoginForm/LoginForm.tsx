@@ -1,21 +1,21 @@
 import React from "react";
 import styles from "./LoginForm.module.scss";
-import type { CommonComponentProps } from "shared/types/commonTypes";
-import { classNames } from "shared/lib/classNames/classNames";
+import type { CommonComponentProps } from "@/shared/types/commonTypes";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next";
-import { Button, ButtonTypes } from "shared/ui/Button/Button";
-import { Input } from "shared/ui/Input/Input";
+import { Button, ButtonTypes } from "@/shared/ui/Button/Button";
+import { Input } from "@/shared/ui/Input/Input";
 import { useSelector } from "react-redux";
 import { loginActions, loginReducer } from "../../model/slice/loginSlice";
 import { loginByUsername } from "../../../authByUserName/model/services/loginByUsername/loginByUsername";
-import { Text, TextThemes } from "shared/ui/Text/Text";
+import { Text, TextThemes } from "@/shared/ui/Text/Text";
 import { getLoginUsername } from "../../model/selectors/getLoginUsername/getLoginUsername";
 import { getLoginPassword } from "../../model/selectors/getLoginPassword/getLoginPassword";
 import { getLoginError } from "../../model/selectors/getLoginError/getLoginError";
 import { getLoginIsLoading } from "../../model/selectors/getLoginIsLoading/getLoginIsLoading";
-import { DynamicModuleLoader, type ReducersList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
-import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { LOCALSTORAGE_KEY } from "shared/const/localStorage";
+import { DynamicModuleLoader, type ReducersList } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { LOCALSTORAGE_KEY } from "@/shared/const/localStorage";
 
 const REDUCER_LIST: ReducersList = {
   login: loginReducer

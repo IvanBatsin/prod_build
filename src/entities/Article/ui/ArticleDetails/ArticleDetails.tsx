@@ -1,23 +1,23 @@
-import { fetchArticleById } from "entities/Article/model/services/fetchArticleById/fetchArticleById";
+import { fetchArticleById } from "@/entities/Article/model/services/fetchArticleById/fetchArticleById";
 import { articleReducer } from "../../model/slice/articleDetailsSlice";
 import React from "react";
-import { DynamicModuleLoader, type ReducersList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
-import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { DynamicModuleLoader, type ReducersList } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
-import { getArticleDetailsError } from "entities/Article/model/selectors/getArticleDetailsError/getArticleDetailsError";
-import { getArticleDetailsIsLoading } from "entities/Article/model/selectors/getArticleDetailsIsLoading/getArticleDetailsIsLoading";
-import { getArticleDetailsData } from "entities/Article/model/selectors/getArticleDetailsData/getArticleDetailsData";
+import { getArticleDetailsError } from "@/entities/Article/model/selectors/getArticleDetailsError/getArticleDetailsError";
+import { getArticleDetailsIsLoading } from "@/entities/Article/model/selectors/getArticleDetailsIsLoading/getArticleDetailsIsLoading";
+import { getArticleDetailsData } from "@/entities/Article/model/selectors/getArticleDetailsData/getArticleDetailsData";
 import styles from "./ArticleDetails.module.scss";
-import { Text, TextAlign } from "shared/ui/Text/Text";
+import { Text, TextAlign } from "@/shared/ui/Text/Text";
 import { ArticleDetailsSkeletonLoader } from "./ArticleDetailsSkeletonLoader/ArticleDetailsSkeletonLoader";
 import { ArticleDetailsContent } from "./ArticleDetailsContent/ArticleDetailsContent";
 import { type ArticleBlock } from "../../../../entities/Article/model/types/article";
 import { ArticleCodeBlockComponent } from "../ArticleCodeBlockComponent/ArticleCodeBlockComponent";
 import { ArticleImageBlockComponent } from "../ArticleImageBlockComponent/ArticleImageBlockComponent";
 import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
-import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
-import { ArticleBlockType } from "entities/Article/model/consts/consts";
+import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect/useInitialEffect";
+import { ArticleBlockType } from "@/entities/Article/model/consts/consts";
 
 const reducers: ReducersList = {
   articleDetails: articleReducer

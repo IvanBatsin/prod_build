@@ -1,7 +1,7 @@
 import type { DeepPartial } from "@reduxjs/toolkit";
-import type { StateSchema } from "app/providers/StoreProvider";
+import type { StateSchema } from "@/app/providers/StoreProvider";
 import { getIsUserAdmin } from "./getIsUserAdmin";
-import { Roles } from "entities/User/model/types/user";
+import { Roles } from "@/entities/User/model/types/user";
 
 describe("Get is user admin test:", () => {
   test("should return true", () => {

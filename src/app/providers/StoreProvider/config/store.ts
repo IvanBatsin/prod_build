@@ -1,13 +1,13 @@
 import { type ReducersMapObject, configureStore, type AnyAction, type ThunkMiddleware, type MiddlewareArray, type CombinedState, type Reducer } from "@reduxjs/toolkit";
 import type { StateSchema } from "./StateSchema";
-import { counterReducer } from "entities/Counter";
-import { userReducer } from "entities/User";
+import { counterReducer } from "@/entities/Counter";
+import { userReducer } from "@/entities/User";
 import { createReducerManager } from "./reducerManagers";
 import { type ToolkitStore } from "@reduxjs/toolkit/dist/configureStore";
-import { axiosApi } from "shared/api/api";
+import { axiosApi } from "@/shared/api/api";
 import { type AxiosInstance } from "axios";
-import { scrollRestoreReducer } from "features/ScrollRestore";
-import { rtkApi } from "shared/api/rtkQueryApi";
+import { scrollRestoreReducer } from "@/features/ScrollRestore";
+import { rtkApi } from "@/shared/api/rtkQueryApi";
 
 export const createStore = (initialState?: StateSchema, asyncReducers?: ReducersMapObject<StateSchema>): ToolkitStore<StateSchema, AnyAction, MiddlewareArray<[ThunkMiddleware<StateSchema, AnyAction, { api: AxiosInstance }>]>> => {
   const rootReducer: ReducersMapObject<StateSchema> = {

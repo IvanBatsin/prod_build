@@ -1,14 +1,14 @@
-import { AboutPage } from "pages/AboutPage";
-import { ArticlesPage } from "pages/ArticlesPage/";
-import { ArticlesDetailsPage } from "pages/ArticleDetailsPage";
-import { MainPage } from "pages/MainPage";
-import { NotFoundPage } from "pages/NotFoundPage";
-import { ProfilePage } from "pages/ProfilePage";
+import { AboutPage } from "@/pages/AboutPage";
+import { ArticlesPage } from "@/pages/ArticlesPage/";
+import { ArticlesDetailsPage } from "@/pages/ArticleDetailsPage";
+import { MainPage } from "@/pages/MainPage";
+import { NotFoundPage } from "@/pages/NotFoundPage";
+import { ProfilePage } from "@/pages/ProfilePage";
 import { type RouteProps } from "react-router-dom";
-import ArticleEditPage from "pages/ArticleEditPage/ui/ArticleEditPage";
-import { AdminPanelPage } from "pages/AdminPanelPage";
-import { Roles } from "entities/User/model/types/user";
-import { ForbiddenPage } from "pages/ForbiddenPage";
+import ArticleEditPage from "@/pages/ArticleEditPage/ui/ArticleEditPage";
+import { AdminPanelPage } from "@/pages/AdminPanelPage";
+import { Roles } from "@/entities/User/model/types/user";
+import { ForbiddenPage } from "@/pages/ForbiddenPage";
 import { AppRoutes } from "./consts";
 
 export type AppRouterProps = RouteProps & {

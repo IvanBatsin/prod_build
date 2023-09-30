@@ -1,13 +1,13 @@
 import React from "react";
-import type { CommonComponentProps } from "shared/types/commonTypes";
-import { Dropdown } from "shared/ui/Popups/index";
+import type { CommonComponentProps } from "@/shared/types/commonTypes";
+import { Dropdown } from "@/shared/ui/Popups/index";
 import { useSelector } from "react-redux";
-import { getIsUserAdmin, getIsUserManager, getUserAuthData, userActions } from "entities/User";
-import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { routePaths } from "shared/config/routerConfig/routerConfig";
+import { getIsUserAdmin, getIsUserManager, getUserAuthData, userActions } from "@/entities/User";
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { routePaths } from "@/shared/config/routerConfig/routerConfig";
 import { useTranslation } from "react-i18next";
-import { Avatar } from "shared/ui/Avatar/Avatar";
-import type { DrobdownItem } from "shared/ui/Popups/ui/Dropdown/Dropdown";
+import { Avatar } from "@/shared/ui/Avatar/Avatar";
+import type { DrobdownItem } from "@/shared/ui/Popups/ui/Dropdown/Dropdown";
 
 export const AvatarDropdown: React.FC<CommonComponentProps> = (props) => {
   const { additionalClass } = props;

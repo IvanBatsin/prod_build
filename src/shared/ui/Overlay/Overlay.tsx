@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Overlay.module.scss";
-import type { CommonComponentProps } from "shared/types/commonTypes";
-import { classNames } from "shared/lib/classNames/classNames";
+import type { CommonComponentProps } from "@/shared/types/commonTypes";
+import { classNames } from "@/shared/lib/classNames/classNames";
 
 type OverlayProps = CommonComponentProps & {
   handleClick?: () => void

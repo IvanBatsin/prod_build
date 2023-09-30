@@ -1,13 +1,13 @@
 import React from "react";
 import styles from "./ArticleDetailsContent.module.scss";
-import type { CommonComponentProps } from "shared/types/commonTypes";
-import type { Article } from "entities/Article/model/types/article";
-import { Avatar } from "shared/ui/Avatar/Avatar";
-import { classNames } from "shared/lib/classNames/classNames";
-import { Text, TextSize } from "shared/ui/Text/Text";
+import type { CommonComponentProps } from "@/shared/types/commonTypes";
+import type { Article } from "@/entities/Article/model/types/article";
+import { Avatar } from "@/shared/ui/Avatar/Avatar";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { Text, TextSize } from "@/shared/ui/Text/Text";
 import EyeIcon from "../../../../../shared/assets/eye.svg";
 import CalendarIcon from "../../../../../shared/assets/calendar.svg";
-import { Icon } from "shared/ui/IconComponent/Icon";
+import { Icon } from "@/shared/ui/IconComponent/Icon";
 
 type ArticleDetailsContentProps = CommonComponentProps & {
   article: Article | undefined

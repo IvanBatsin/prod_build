@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { PageWrapper } from "./PageWrapper";
-import { themeDecorator } from "shared/config/storybook/themeDecorator";
-import { Themes } from "app/providers/themeProvider";
-import { storeDecorator } from "shared/config/storybook/storeDecorator";
-import { routerDecorator } from "shared/config/storybook/routerDecorator";
+import { themeDecorator } from "@/shared/config/storybook/themeDecorator";
+import { Themes } from "@/app/providers/themeProvider";
+import { storeDecorator } from "@/shared/config/storybook/storeDecorator";
+import { routerDecorator } from "@/shared/config/storybook/routerDecorator";
 
 const meta = {
   title: "widgets/PageWrapper",

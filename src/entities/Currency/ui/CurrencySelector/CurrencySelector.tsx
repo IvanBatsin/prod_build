@@ -1,8 +1,8 @@
-import { Currency } from "entities/Currency/model/types/currency";
+import { Currency } from "@/entities/Currency/model/types/currency";
 import React from "react";
 import { useTranslation } from "react-i18next";
-import type { CommonComponentProps } from "shared/types/commonTypes";
-import { ListBox } from "shared/ui/Popups/index";
+import type { CommonComponentProps } from "@/shared/types/commonTypes";
+import { ListBox } from "@/shared/ui/Popups/index";
 
 const options = [
   { value: Currency.EUR, content: Currency.EUR },

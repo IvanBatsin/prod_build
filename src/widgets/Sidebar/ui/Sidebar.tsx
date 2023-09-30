@@ -1,14 +1,14 @@
 import React from "react";
 import styles from "./Sidebar.module.scss";
-import { classNames } from "shared/lib/classNames/classNames";
-import { ThemeSwitcher } from "widgets/ThemeSwitcher";
-import { Button, ButtonSizes, ButtonTypes } from "shared/ui/Button/Button";
-import { LanguageSwitcher } from "widgets/LanguageSwitcher";
-import { type CommonComponentProps } from "shared/types/commonTypes";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { ThemeSwitcher } from "@/widgets/ThemeSwitcher";
+import { Button, ButtonSizes, ButtonTypes } from "@/shared/ui/Button/Button";
+import { LanguageSwitcher } from "@/widgets/LanguageSwitcher";
+import { type CommonComponentProps } from "@/shared/types/commonTypes";
 import { SidebarItem } from "./SidebarItem/SidebarItem";
 import { useSelector } from "react-redux";
 import { getSidebarItems } from "../model/selectors/getSidebarItems/getSidebarItems";
-import { VStack } from "shared/ui/Stack/VStack/VStack";
+import { VStack } from "@/shared/ui/Stack/VStack/VStack";
 
 export const Sidebar: React.FC<CommonComponentProps> = React.memo(function Sidebar ({ additionalClass }: CommonComponentProps) {
   const [collapsed, setCollapsed] = React.useState<boolean>(false);

@@ -1,8 +1,8 @@
 /* eslint-disable quote-props */
 import React, { type DetailedHTMLProps, type HTMLAttributes } from "react";
 import styles from "./Flex.module.scss";
-import { type Mods, classNames } from "shared/lib/classNames/classNames";
-import type { CommonComponentProps } from "shared/types/commonTypes";
+import { type Mods, classNames } from "@/shared/lib/classNames/classNames";
+import type { CommonComponentProps } from "@/shared/types/commonTypes";
 
 type FlexJustify = "start" | "center" | "end" | "between";
 type FlexAlign = "start" | "center" | "end" | "baseline";

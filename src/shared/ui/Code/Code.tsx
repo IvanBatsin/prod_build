@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Code.module.scss";
-import type { CommonComponentProps } from "shared/types/commonTypes";
-import { classNames } from "shared/lib/classNames/classNames";
+import type { CommonComponentProps } from "@/shared/types/commonTypes";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import { Button, ButtonTypes } from "../Button/Button";
 import CopyIcon from "../../assets/copy.svg";
 

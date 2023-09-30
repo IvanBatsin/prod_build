@@ -1,14 +1,14 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import type { ThunkConfig } from "app/providers/StoreProvider";
-import { type Article } from "entities/Article";
+import type { ThunkConfig } from "@/app/providers/StoreProvider";
+import { type Article } from "@/entities/Article";
 import { getArticlesPageLimit } from "../../selectors/getArticlesPageLimit/getArticlesPageLimit";
 import { getArticlePageSearch } from "../../selectors/getArticlePageSearch/getArticlePageSearch";
 import { getArticlePageSort } from "../../selectors/getArticlePageSort/getArticlePageSort";
 import { getArticlePageOrder } from "../../selectors/getArticlePageOrder/getArticlePageOrder";
 import { getArticlesPagePage } from "../../selectors/getArticlesPagePage/getArticlesPagePage";
-import { setQueryParams } from "shared/lib/url/setQueryParams/setQueryParams";
+import { setQueryParams } from "@/shared/lib/url/setQueryParams/setQueryParams";
 import { getArticlePageCurrentType } from "../../selectors/getArticlePageCurrentType/getArticlePageCurrentType";
-import { ArticleType } from "entities/Article/model/consts/consts";
+import { ArticleType } from "@/entities/Article/model/consts/consts";
 
 interface fetchArticlesListPayload {
   page?: number

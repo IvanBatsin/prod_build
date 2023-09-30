@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import type { ThunkConfig } from "app/providers/StoreProvider";
-import type { User } from "entities/User";
-import { userActions } from "entities/User/model/slice/userSlice";
+import type { ThunkConfig } from "@/app/providers/StoreProvider";
+import type { User } from "@/entities/User";
+import { userActions } from "@/entities/User/model/slice/userSlice";
 
 export interface LoginByUsernamePayload {
   username: string

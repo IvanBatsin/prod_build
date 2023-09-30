@@ -1,8 +1,8 @@
 import type { Decorator, Meta, StoryObj } from "@storybook/react";
 import { type ListBoxItem, ListBox } from "./ListBox";
-import { routerDecorator } from "shared/config/storybook/routerDecorator";
-import { themeDecorator } from "shared/config/storybook/themeDecorator";
-import { Themes } from "app/providers/themeProvider";
+import { routerDecorator } from "@/shared/config/storybook/routerDecorator";
+import { themeDecorator } from "@/shared/config/storybook/themeDecorator";
+import { Themes } from "@/app/providers/themeProvider";
 
 const meta = {
   title: "shared/Popups/ListBox",

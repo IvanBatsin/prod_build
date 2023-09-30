@@ -1,11 +1,11 @@
 import React from "react";
 import styles from "./CommentsList.module.scss";
-import type { CommonComponentProps } from "shared/types/commonTypes";
-import { Text } from "shared/ui/Text/Text";
+import type { CommonComponentProps } from "@/shared/types/commonTypes";
+import { Text } from "@/shared/ui/Text/Text";
 import { useTranslation } from "react-i18next";
 import { CommentCard } from "../CommentCard/CommentCard";
-import type { Comment } from "entities/Comment/model/types/comment";
-import { VStack } from "shared/ui/Stack/VStack/VStack";
+import type { Comment } from "@/entities/Comment/model/types/comment";
+import { VStack } from "@/shared/ui/Stack/VStack/VStack";
 
 type CommentsListProps = CommonComponentProps & {
   comments?: Comment[]

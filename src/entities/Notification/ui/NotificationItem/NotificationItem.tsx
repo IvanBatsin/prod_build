@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "./NotificationItem.module.scss";
-import type { CommonComponentProps } from "shared/types/commonTypes";
-import type { Notification } from "entities/Notification/model/types/notifications";
-import { Card, CardTheme } from "shared/ui/Card/Card";
-import { classNames } from "shared/lib/classNames/classNames";
-import { Text } from "shared/ui/Text/Text";
+import type { CommonComponentProps } from "@/shared/types/commonTypes";
+import type { Notification } from "@/entities/Notification/model/types/notifications";
+import { Card, CardTheme } from "@/shared/ui/Card/Card";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { Text } from "@/shared/ui/Text/Text";
 
 type NotificationItemProps = CommonComponentProps & {
   item: Notification

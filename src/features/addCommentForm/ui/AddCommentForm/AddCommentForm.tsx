@@ -1,15 +1,15 @@
 import React from "react";
 import styles from "./AddCommentForm.module.scss";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next";
-import { Input } from "shared/ui/Input/Input";
-import { Button } from "shared/ui/Button/Button";
+import { Input } from "@/shared/ui/Input/Input";
+import { Button } from "@/shared/ui/Button/Button";
 import { useSelector } from "react-redux";
-import { getCommentFormText } from "features/addCommentForm/model/selectors/getCommentFormText/getCommentFormText";
-import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { addCommentFormActions, addCommentFormReducer } from "features/addCommentForm/model/slice/addCommentFormSlice";
-import { DynamicModuleLoader, type ReducersList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
-import type { CommonComponentProps } from "shared/types/commonTypes";
+import { getCommentFormText } from "@/features/addCommentForm/model/selectors/getCommentFormText/getCommentFormText";
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { addCommentFormActions, addCommentFormReducer } from "@/features/addCommentForm/model/slice/addCommentFormSlice";
+import { DynamicModuleLoader, type ReducersList } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+import type { CommonComponentProps } from "@/shared/types/commonTypes";
 
 const reducers: ReducersList = {
   addCommentForm: addCommentFormReducer

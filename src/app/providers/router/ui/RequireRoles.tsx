@@ -1,9 +1,9 @@
 import React from "react";
-import { getUserRoles } from "entities/User";
+import { getUserRoles } from "@/entities/User";
 import { useSelector } from "react-redux";
 import { Navigate, useLocation } from "react-router-dom";
-import { routePaths } from "shared/config/routerConfig/routerConfig";
-import type { Roles } from "entities/User/model/types/user";
+import { routePaths } from "@/shared/config/routerConfig/routerConfig";
+import type { Roles } from "@/entities/User/model/types/user";
 
 interface RequireRolesProps {
   roles?: Roles[]

@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { CommentsList } from "./CommentsList";
-import { themeDecorator } from "shared/config/storybook/themeDecorator";
-import { Themes } from "app/providers/themeProvider";
-import type { Comment } from "entities/Comment/model/types/comment";
-import { routerDecorator } from "shared/config/storybook/routerDecorator";
+import { themeDecorator } from "@/shared/config/storybook/themeDecorator";
+import { Themes } from "@/app/providers/themeProvider";
+import type { Comment } from "@/entities/Comment/model/types/comment";
+import { routerDecorator } from "@/shared/config/storybook/routerDecorator";
 
 const meta = {
   title: "entities/CommentsList",

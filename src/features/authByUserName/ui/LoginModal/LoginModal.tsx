@@ -1,8 +1,8 @@
 import React, { Suspense } from "react";
-import { Modal } from "shared/ui/Modal/Modal";
+import { Modal } from "@/shared/ui/Modal/Modal";
 import { LoginForm } from "../LoginForm/LoginForm.async";
-import type { CommonComponentProps } from "shared/types/commonTypes";
-import { PageLoader } from "widgets/PageLoader";
+import type { CommonComponentProps } from "@/shared/types/commonTypes";
+import { PageLoader } from "@/widgets/PageLoader";
 
 type LoginModalProps = CommonComponentProps & {
   isOpen: boolean

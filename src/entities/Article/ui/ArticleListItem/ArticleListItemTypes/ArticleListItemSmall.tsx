@@ -1,15 +1,15 @@
 import React, { type HTMLAttributeAnchorTarget } from "react";
 import styles from "../ArticleListItem.module.scss";
-import { classNames } from "shared/lib/classNames/classNames";
-import type { CommonComponentProps } from "shared/types/commonTypes";
-import type { Article } from "entities/Article/model/types/article";
-import { Text } from "shared/ui/Text/Text";
-import { Icon } from "shared/ui/IconComponent/Icon";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import type { CommonComponentProps } from "@/shared/types/commonTypes";
+import type { Article } from "@/entities/Article/model/types/article";
+import { Text } from "@/shared/ui/Text/Text";
+import { Icon } from "@/shared/ui/IconComponent/Icon";
 import EyeIcon from "../../../../../shared/assets/eye.svg";
-import { Card } from "shared/ui/Card/Card";
-import { useHover } from "shared/lib/hooks/useHover/useHover";
-import { AppLink } from "shared/ui/AppLink/AppLink";
-import { routePaths } from "shared/config/routerConfig/routerConfig";
+import { Card } from "@/shared/ui/Card/Card";
+import { useHover } from "@/shared/lib/hooks/useHover/useHover";
+import { AppLink } from "@/shared/ui/AppLink/AppLink";
+import { routePaths } from "@/shared/config/routerConfig/routerConfig";
 
 type ArticleListItemSmallProps = CommonComponentProps & {
   article: Article

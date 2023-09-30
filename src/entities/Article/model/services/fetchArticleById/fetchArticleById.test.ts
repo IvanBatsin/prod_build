@@ -1,7 +1,7 @@
 import { ArticleType } from "../../consts/consts";
 import { type Article } from "../../types/article";
 import { fetchArticleById } from "./fetchArticleById";
-import { TestAsyncThunk } from "shared/lib/tests/testAsyncThunk/testAsyncThunk";
+import { TestAsyncThunk } from "@/shared/lib/tests/testAsyncThunk/testAsyncThunk";
 
 describe("fetch article by id:", () => {
   test("success server request", async () => {

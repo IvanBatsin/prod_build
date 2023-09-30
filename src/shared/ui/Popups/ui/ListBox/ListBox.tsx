@@ -1,11 +1,11 @@
 import { Listbox } from "@headlessui/react";
 import React from "react";
 import styles from "./ListBox.module.scss";
-import type { CommonComponentProps } from "shared/types/commonTypes";
-import { classNames } from "shared/lib/classNames/classNames";
+import type { CommonComponentProps } from "@/shared/types/commonTypes";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import { Button } from "../../../Button/Button";
 import { HStack } from "../../../Stack/HStack/HStack";
-import type { DropdownDirection } from "shared/types/ui";
+import type { DropdownDirection } from "@/shared/types/ui";
 import { directionMapper } from "../styles/consts";
 import popupStyles from "../styles/popup.module.scss";
 

@@ -1,7 +1,7 @@
 import React, { type ButtonHTMLAttributes } from "react";
 import styles from "./Button.module.scss";
-import { type Mods, classNames } from "shared/lib/classNames/classNames";
-import { type CommonComponentProps } from "shared/types/commonTypes";
+import { type Mods, classNames } from "@/shared/lib/classNames/classNames";
+import { type CommonComponentProps } from "@/shared/types/commonTypes";
 
 export enum ButtonTypes {
   CLEAR = "clear",

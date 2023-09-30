@@ -1,15 +1,15 @@
 import React, { type MutableRefObject } from "react";
 import styles from "./PageWrapper.module.scss";
-import { classNames } from "shared/lib/classNames/classNames";
-import type { CommonComponentProps } from "shared/types/commonTypes";
-import { useInfinteScroll } from "shared/lib/hooks/useInfinteScroll/useInfinteScroll";
-import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { getScrollRestoreByPath, scrollRestoreActions } from "features/ScrollRestore";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import type { CommonComponentProps } from "@/shared/types/commonTypes";
+import { useInfinteScroll } from "@/shared/lib/hooks/useInfinteScroll/useInfinteScroll";
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { getScrollRestoreByPath, scrollRestoreActions } from "@/features/ScrollRestore";
 import { useLocation } from "react-router-dom";
-import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
+import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect/useInitialEffect";
 import { useSelector } from "react-redux";
-import type { StateSchema } from "app/providers/StoreProvider";
-import { useThrottle } from "shared/lib/hooks/useThrottle/useThrottle";
+import type { StateSchema } from "@/app/providers/StoreProvider";
+import { useThrottle } from "@/shared/lib/hooks/useThrottle/useThrottle";
 
 type PageWrapperProps = CommonComponentProps & {
   children: React.ReactNode

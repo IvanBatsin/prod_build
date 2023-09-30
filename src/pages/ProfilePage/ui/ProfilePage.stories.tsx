@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import ProfilePage from "./ProfilePage";
-import { themeDecorator } from "shared/config/storybook/themeDecorator";
-import { Themes } from "app/providers/themeProvider";
-import { storeDecorator } from "shared/config/storybook/storeDecorator";
-import { Currency } from "entities/Currency";
-import { Country } from "entities/Country";
-import { routerDecorator } from "shared/config/storybook/routerDecorator";
-import type { Profile } from "features/editableProfileCard";
+import { themeDecorator } from "@/shared/config/storybook/themeDecorator";
+import { Themes } from "@/app/providers/themeProvider";
+import { storeDecorator } from "@/shared/config/storybook/storeDecorator";
+import { Currency } from "@/entities/Currency";
+import { Country } from "@/entities/Country";
+import { routerDecorator } from "@/shared/config/storybook/routerDecorator";
+import type { Profile } from "@/features/editableProfileCard";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 const meta = {

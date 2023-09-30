@@ -1,5 +1,5 @@
 import type { DeepPartial } from "@reduxjs/toolkit";
-import type { StateSchema } from "app/providers/StoreProvider";
+import type { StateSchema } from "@/app/providers/StoreProvider";
 import { getProfileReadOnly } from "./getProfileReadOnly";
 
 describe("get profile readOnly from store", () => {

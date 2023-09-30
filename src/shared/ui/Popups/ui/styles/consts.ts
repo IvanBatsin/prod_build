@@ -1,4 +1,4 @@
-import type { DropdownDirection } from "shared/types/ui";
+import type { DropdownDirection } from "@/shared/types/ui";
 import popupStyles from "./popup.module.scss";
 
 export const directionMapper: Record<DropdownDirection, string> = {

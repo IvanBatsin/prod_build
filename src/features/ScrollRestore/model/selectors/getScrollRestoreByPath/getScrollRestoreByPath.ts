@@ -1,6 +1,6 @@
 import { createSelector } from "@reduxjs/toolkit";
 import { getScrollRestore } from "../getScrollRestore/getScrollRestore";
-import type { StateSchema } from "app/providers/StoreProvider";
+import type { StateSchema } from "@/app/providers/StoreProvider";
 
 export const getScrollRestoreByPath = createSelector(
   getScrollRestore,

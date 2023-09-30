@@ -1,12 +1,12 @@
 import React from "react";
 import styles from "./ArticleViewSelector.module.scss";
-import type { CommonComponentProps } from "shared/types/commonTypes";
-import { classNames } from "shared/lib/classNames/classNames";
-import ListIcon from "shared/assets/list-24-24.svg";
-import TiledIcon from "shared/assets/tiled-24-24.svg";
-import { Button, ButtonTypes } from "shared/ui/Button/Button";
-import { Icon } from "shared/ui/IconComponent/Icon";
-import { ArticleView } from "entities/Article/model/consts/consts";
+import type { CommonComponentProps } from "@/shared/types/commonTypes";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import ListIcon from "@/shared/assets/list-24-24.svg";
+import TiledIcon from "@/shared/assets/tiled-24-24.svg";
+import { Button, ButtonTypes } from "@/shared/ui/Button/Button";
+import { Icon } from "@/shared/ui/IconComponent/Icon";
+import { ArticleView } from "@/entities/Article/model/consts/consts";
 
 interface ViewType {
   icon: React.FunctionComponent<React.SVGAttributes<SVGElement>>

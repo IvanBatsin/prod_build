@@ -98,6 +98,7 @@
     "stylelint-config-standard-scss": "^9.0.0",
     "ts-jest": "^29.1.0",
     "ts-loader": "^9.2.6",
+    "ts-morph": "^20.0.0",
     "ts-node": "^10.5.0",
     "typescript": "^5.0.4",
     "webpack": "^5.69.1",
@@ -107,8 +108,10 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.17",
+    "@react-spring/web": "^9.7.3",
     "@reduxjs/toolkit": "^1.9.5",
     "@types/react-virtualized": "^9.21.22",
+    "@use-gesture/react": "^10.3.0",
     "axios": "^1.4.0",
     "concurrently": "^8.2.0",
     "i18next": "^22.4.15",

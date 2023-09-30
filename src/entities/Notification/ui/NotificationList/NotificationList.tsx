@@ -1,10 +1,10 @@
 import React from "react";
-import type { CommonComponentProps } from "shared/types/commonTypes";
-import { useNotifications } from "entities/Notification/api/notificationApi";
-import { VStack } from "shared/ui/Stack/VStack/VStack";
-import { classNames } from "shared/lib/classNames/classNames";
+import type { CommonComponentProps } from "@/shared/types/commonTypes";
+import { useNotifications } from "@/entities/Notification/api/notificationApi";
+import { VStack } from "@/shared/ui/Stack/VStack/VStack";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import { NotificationItem } from "../NotificationItem/NotificationItem";
-import { Skeleton } from "shared/ui/Skeleton/Skeleton";
+import { Skeleton } from "@/shared/ui/Skeleton/Skeleton";
 
 export const NotificationList: React.FC<CommonComponentProps> = (props) => {
   const { additionalClass } = props;

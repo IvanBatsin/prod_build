@@ -1,9 +1,9 @@
-import type { ArticleCodeBlock } from "entities/Article/model/types/article";
+import type { ArticleCodeBlock } from "@/entities/Article/model/types/article";
 import React from "react";
-import { classNames } from "shared/lib/classNames/classNames";
-import type { CommonComponentProps } from "shared/types/commonTypes";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import type { CommonComponentProps } from "@/shared/types/commonTypes";
 import styles from "./ArticleCodeBlockComponent.module.scss";
-import { Code } from "shared/ui/Code/Code";
+import { Code } from "@/shared/ui/Code/Code";
 
 type ArticleCodeBlockComponentProps = CommonComponentProps & {
   block: ArticleCodeBlock

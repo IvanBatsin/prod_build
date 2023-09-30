@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { AvatarDropdown } from "./AvatarDropdown";
-import { themeDecorator } from "shared/config/storybook/themeDecorator";
-import { Themes } from "app/providers/themeProvider";
-import { storeDecorator } from "shared/config/storybook/storeDecorator";
-import { Roles } from "entities/User/model/types/user";
-import { routerDecorator } from "shared/config/storybook/routerDecorator";
+import { themeDecorator } from "@/shared/config/storybook/themeDecorator";
+import { Themes } from "@/app/providers/themeProvider";
+import { storeDecorator } from "@/shared/config/storybook/storeDecorator";
+import { Roles } from "@/entities/User/model/types/user";
+import { routerDecorator } from "@/shared/config/storybook/routerDecorator";
 
 const meta = {
   title: "entities/AvatarDropdown",

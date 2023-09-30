@@ -1,15 +1,15 @@
 import React from "react";
 import styles from "./ProfileCard.module.scss";
-import { type Mods, classNames } from "shared/lib/classNames/classNames";
+import { type Mods, classNames } from "@/shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next";
-import { Text, TextAlign, TextThemes } from "shared/ui/Text/Text";
-import { Input } from "shared/ui/Input/Input";
-import type { Profile } from "features/editableProfileCard/model/types/profile";
-import { PageLoader } from "widgets/PageLoader";
-import { Avatar } from "shared/ui/Avatar/Avatar";
-import { type Currency, CurrencySelector } from "entities/Currency";
-import { CountrySelector, type Country } from "entities/Country";
-import { VStack } from "shared/ui/Stack/VStack/VStack";
+import { Text, TextAlign, TextThemes } from "@/shared/ui/Text/Text";
+import { Input } from "@/shared/ui/Input/Input";
+import type { Profile } from "@/features/editableProfileCard/model/types/profile";
+import { PageLoader } from "@/widgets/PageLoader";
+import { Avatar } from "@/shared/ui/Avatar/Avatar";
+import { type Currency, CurrencySelector } from "@/entities/Currency";
+import { CountrySelector, type Country } from "@/entities/Country";
+import { VStack } from "@/shared/ui/Stack/VStack/VStack";
 
 interface ProfileCardProps {
   profile?: Profile

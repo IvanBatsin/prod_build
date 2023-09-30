@@ -1,18 +1,18 @@
 import React from "react";
 import styles from "./EditableProfileCardHeader.module.scss";
 import { useTranslation } from "react-i18next";
-import { Text } from "shared/ui/Text/Text";
-import { Button, ButtonTypes } from "shared/ui/Button/Button";
-import { type CommonComponentProps } from "shared/types/commonTypes";
+import { Text } from "@/shared/ui/Text/Text";
+import { Button, ButtonTypes } from "@/shared/ui/Button/Button";
+import { type CommonComponentProps } from "@/shared/types/commonTypes";
 import { useSelector } from "react-redux";
-import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { getUserAuthData } from "entities/User";
-import { HStack } from "shared/ui/Stack/HStack/HStack";
-import { getProfileReadOnly } from "features/editableProfileCard/model/selectors/getProfileReadOnly/getProfileReadOnly";
-import { getProfileData } from "features/editableProfileCard/model/selectors/getProfileData/getProfileData";
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { getUserAuthData } from "@/entities/User";
+import { HStack } from "@/shared/ui/Stack/HStack/HStack";
+import { getProfileReadOnly } from "@/features/editableProfileCard/model/selectors/getProfileReadOnly/getProfileReadOnly";
+import { getProfileData } from "@/features/editableProfileCard/model/selectors/getProfileData/getProfileData";
 import { editableProfileCardActions } from "../../model/slice/editableProfileCardSlice";
-import { updateProfileData } from "features/editableProfileCard/model/services/updateProfileData/updateProfileData";
-import { classNames } from "shared/lib/classNames/classNames";
+import { updateProfileData } from "@/features/editableProfileCard/model/services/updateProfileData/updateProfileData";
+import { classNames } from "@/shared/lib/classNames/classNames";
 
 export const EditableProfileCardHeader: React.FC<CommonComponentProps> = (props) => {
   const { t } = useTranslation("profile");

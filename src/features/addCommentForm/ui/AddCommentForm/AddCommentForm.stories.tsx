@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import AddCommentForm from "./AddCommentForm";
-import { storeDecorator } from "shared/config/storybook/storeDecorator";
-import { themeDecorator } from "shared/config/storybook/themeDecorator";
-import { Themes } from "app/providers/themeProvider";
-import type { AddCommentFormSchema } from "features/addCommentForm/model/types/addComentFormSchema";
+import { storeDecorator } from "@/shared/config/storybook/storeDecorator";
+import { themeDecorator } from "@/shared/config/storybook/themeDecorator";
+import { Themes } from "@/app/providers/themeProvider";
+import type { AddCommentFormSchema } from "@/features/addCommentForm/model/types/addComentFormSchema";
 
 const meta = {
   title: "featues/AddCommentForm",

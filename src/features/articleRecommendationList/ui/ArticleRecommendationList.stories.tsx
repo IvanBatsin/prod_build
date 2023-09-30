@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { ArticleRecommendationList } from "./ArticleRecommendationList";
-import { storeDecorator } from "shared/config/storybook/storeDecorator";
-import { themeDecorator } from "shared/config/storybook/themeDecorator";
-import { Themes } from "app/providers/themeProvider";
-import type { Article } from "entities/Article";
-import { ArticleType } from "entities/Article/model/consts/consts";
+import { storeDecorator } from "@/shared/config/storybook/storeDecorator";
+import { themeDecorator } from "@/shared/config/storybook/themeDecorator";
+import { Themes } from "@/app/providers/themeProvider";
+import type { Article } from "@/entities/Article";
+import { ArticleType } from "@/entities/Article/model/consts/consts";
 
 const data: Article = {
   blocks: [],

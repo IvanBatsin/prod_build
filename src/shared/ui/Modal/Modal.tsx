@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "./Modal.module.scss";
-import type { CommonComponentProps } from "@/[object Object]";
-import { type Mods, classNames } from "@/[object Object]";
 import { Portal } from "../Portal/Portal";
 import { Overlay } from "../Overlay/Overlay";
-import { useModal } from "@/[object Object]";
+import { useModal } from "@/shared/lib/hooks/useModal/useModal";
+import type { CommonComponentProps } from "@/shared/types/commonTypes";
+import { classNames, type Mods } from "@/shared/lib/classNames/classNames";
 
 type ModalProps = CommonComponentProps & {
   isOpen: boolean
@@ -19,7 +19,7 @@ export const Modal: React.FC<ModalProps> = (props) => {
 
   const { isClosing, isMounted, handleClose } = useModal({
     animationDelay: ANIMATION_DELAY,
-    handleCloseFn: onClose,
+    onClose,
     isOpen
   });
 

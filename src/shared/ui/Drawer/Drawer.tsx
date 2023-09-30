@@ -5,6 +5,8 @@ import { useTheme } from "@/app/providers/themeProvider";
 import { classNames, type Mods } from "@/shared/lib/classNames/classNames";
 import { Portal } from "@headlessui/react";
 import { Overlay } from "../Overlay/Overlay";
+import { useAnimationLibs } from "@/shared/lib/components/AnimationProvider/AnimationProvider";
+import { useModal } from "@/shared/lib/hooks/useModal/useModal";
 
 export type DrawerProps = CommonComponentProps & {
   isOpen?: boolean
@@ -20,7 +22,7 @@ export const Drawer: React.FC<DrawerProps> = (props) => {
   const { isClosing, isMounted, handleClose: handleCloseFn } = useModal({
     animationDelay: 300,
     isOpen,
-    handleCloseFn: handleClose
+    onClose: handleClose
   });
   const { Gesture, Spring } = useAnimationLibs();
   const [{ y }, api] = Spring.useSpring(() => ({ y: HEIGHT }));
@@ -68,7 +70,7 @@ export const Drawer: React.FC<DrawerProps> = (props) => {
     }
   );
 
-  const display = y.to((py) => (py < HEIGHT ? "block" : "none"));
+  const display = y.to((py: number) => (py < HEIGHT ? "block" : "none"));
 
   React.useEffect(() => {
     if (isOpen) {

@@ -16,6 +16,9 @@ export default ({ config }: { config: WebpackConfiguration }): WebpackConfigurat
 
   config.resolve?.modules?.push(pathConfig.src);
   config.resolve?.extensions?.push(".ts", ".tsx");
+  if (config.resolve?.alias) {
+    config.resolve.alias = { "@": pathConfig.src }
+  }
   config.module?.rules?.push(buildCssLoaders(true));
   if (config?.module?.rules) {
     config.module.rules = config.module?.rules?.map((rule: any) => {

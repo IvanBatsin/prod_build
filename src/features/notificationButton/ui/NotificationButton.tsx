@@ -7,8 +7,9 @@ import { Icon } from "@/shared/ui/IconComponent/Icon";
 import { Popover } from "@/shared/ui/Popups";
 import NotificationIcon from "../../../shared/assets/notification-20-20.svg";
 import { classNames } from "@/shared/lib/classNames/classNames";
-import { Drawer } from "@/shared/ui/Drawer/Drawer";
 import { BrowserView, MobileView } from "react-device-detect";
+import { DrawerWrapper } from "@/shared/ui/Drawer/DrawerWrapper";
+import { AnimationProvider } from "@/shared/lib/components/AnimationProvider/AnimationProvider";
 
 export const NotificationButton: React.FC<CommonComponentProps> = (props) => {
   const { additionalClass } = props;
@@ -32,9 +33,11 @@ export const NotificationButton: React.FC<CommonComponentProps> = (props) => {
       </BrowserView>
       <MobileView>
         {trigger}
-        <Drawer isOpen={isDrawerOpen} handleClose={handleDrawerClose}>
-          <NotificationList/>
-        </Drawer>
+        <AnimationProvider>
+          <DrawerWrapper isOpen={isDrawerOpen} handleClose={handleDrawerClose}>
+            <NotificationList/>
+          </DrawerWrapper>
+        </AnimationProvider>
       </MobileView>
     </div>
   );

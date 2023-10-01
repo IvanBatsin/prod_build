@@ -23,15 +23,17 @@ type ButtonProps = CommonComponentProps & ButtonHTMLAttributes<HTMLButtonElement
   theme?: ButtonTypes
   square?: boolean
   size?: ButtonSizes
+  fullWidth?: boolean
 };
 
 export const Button: React.FC<ButtonProps> = React.memo(function Button (props: ButtonProps) {
-  const { additionalClass, square, disabled, size = ButtonSizes.M, theme = ButtonTypes.CLEAR, children, ...restProps } = props;
+  const { additionalClass, square, fullWidth, disabled, size = ButtonSizes.M, theme = ButtonTypes.CLEAR, children, ...restProps } = props;
 
   const mods: Mods = {
     [styles.square]: !!square,
     [styles[size]]: !!size,
-    [styles.disabled]: disabled
+    [styles.disabled]: disabled,
+    [styles.fullWidth]: fullWidth
   };
 
   return (

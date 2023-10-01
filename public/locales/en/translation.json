@@ -17,5 +17,8 @@
   "authorizationForm": "Authorization form",
   "authorizationError": "Incrorrect login or password",
   "toProfile": "Profile",
-  "admin": "Admin panel"
+  "admin": "Admin panel",
+  "yourFeedback": "Your feedback message",
+  "close": "Close",
+  "send": "Send"
 }

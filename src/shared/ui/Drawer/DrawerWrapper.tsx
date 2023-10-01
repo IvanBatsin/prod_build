@@ -1,8 +1,8 @@
 import React from "react";
 import { Drawer, type DrawerProps } from "./Drawer";
-import { useAnimationLibs } from "@/shared/lib/components/AnimationProvider/AnimationProvider";
+import { AnimationProvider, useAnimationLibs } from "@/shared/lib/components/AnimationProvider/AnimationProvider";
 
-export const DrawerWrapper: React.FC<DrawerProps> = (props) => {
+const DrawerAsync: React.FC<DrawerProps> = (props) => {
   const { isLoaded } = useAnimationLibs();
 
   if (!isLoaded) {
@@ -11,5 +11,13 @@ export const DrawerWrapper: React.FC<DrawerProps> = (props) => {
 
   return (
     <Drawer {...props}/>
+  );
+};
+
+export const DrawerWrapper: React.FC<DrawerProps> = (props) => {
+  return (
+    <AnimationProvider>
+      <DrawerAsync {...props}/>
+    </AnimationProvider>
   );
 };

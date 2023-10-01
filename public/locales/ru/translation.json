@@ -17,5 +17,8 @@
   "authorizationForm": "Форма авторизации",
   "authorizationError": "Вы ввели неправильный логин или пароль",
   "toProfile": "Профиль",
-  "admin": "Панель админа"
+  "admin": "Панель админа",
+  "yourFeedback": "Ваш отзыв",
+  "close": "Закрыть",
+  "send": "Отправить"
 }

@@ -20,5 +20,8 @@
   "admin": "Admin panel",
   "yourFeedback": "Your feedback message",
   "close": "Close",
-  "send": "Send"
+  "send": "Send",
+  "rateArticle": "Rate article",
+  "leaveReview": "Leave a review, It will help us improve the service",
+  "thanksForRate": "Thank you for your rate"
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import styles from "./ArticleDetailsPage.module.scss";
 import type { CommonComponentProps } from "@/shared/types/commonTypes";
 import { useTranslation } from "react-i18next";
@@ -10,6 +10,8 @@ import { articleDetailsPageReducer } from "../model/slices";
 import { ArticleDetailsPageHeader } from "./ArticleDetailsPageHeader/ArticleDetailsPageHeader";
 import { ArticleRecommendationList } from "@/features/articleRecommendationList";
 import { ArticleDetailsComments } from "./ArticleDetailsComments/ArticleDetailsComments";
+import { ArticleRating } from "@/features/articleRating";
+import { Skeleton } from "@/shared/ui/Skeleton/Skeleton";
 
 const reducers: ReducersList = {
   articleDetailsPage: articleDetailsPageReducer
@@ -35,6 +37,9 @@ const ArticleDetailsPage: React.FC<CommonComponentProps> = (props) => {
         <div className={styles.container}>
           <ArticleDetailsPageHeader/>
           <ArticleDetails id={id}/>
+          <Suspense fallback={<Skeleton width="100%" height={120}/>}>
+            <ArticleRating articleId={id}/>
+          </Suspense>
           <ArticleRecommendationList additionalClass={styles.recommendations}/>
           <ArticleDetailsComments articleId={id}/>
         </div>

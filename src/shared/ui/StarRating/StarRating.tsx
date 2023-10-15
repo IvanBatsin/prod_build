@@ -15,7 +15,7 @@ type StarRatingProps = CommonComponentProps & {
 
 export const StarRating: React.FC<StarRatingProps> = (props) => {
   const { additionalClass, selectedStar = 0, size = 30, handleSelect } = props;
-  const [currentStarsCount, setCurrentStarsCount] = React.useState<number>(0);
+  const [currentStarsCount, setCurrentStarsCount] = React.useState<number>(selectedStar);
   const [isSelected, setIsSelected] = React.useState<boolean>(Boolean(selectedStar));
 
   const handleStarsHover = (starCount: number) => () => {

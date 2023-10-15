@@ -17,14 +17,15 @@ type RatingCardProps = CommonComponentProps & {
   title?: string
   feedbackTitle?: string
   hasFeedback?: boolean
+  rateNumber?: number
   handleCancel?: (starCount: number) => void
   handleAccept?: (starCount: number, feedback?: string) => void
 }
 
 export const RatingCard: React.FC<RatingCardProps> = (props) => {
-  const { additionalClass, feedbackTitle, title, hasFeedback, handleCancel, handleAccept } = props;
+  const { additionalClass, feedbackTitle, title, hasFeedback, rateNumber, handleCancel, handleAccept } = props;
   const [isModalOpen, setIsModalOpen] = React.useState<boolean>(false);
-  const [starsCount, setStarsCount] = React.useState<number>(0);
+  const [starsCount, setStarsCount] = React.useState<number>(rateNumber || 0);
   const [feedback, setFeedback] = React.useState<string>("");
   const { t } = useTranslation();
 
@@ -61,8 +62,8 @@ export const RatingCard: React.FC<RatingCardProps> = (props) => {
   return (
     <Card additionalClass={classNames("", {}, [additionalClass])}>
       <VStack align="center" gap="8">
-        <Text title={title}/>
-        <StarRating size={40} handleSelect={handleStarSelect}/>
+        <Text title={starsCount ? t("thanksForRate") || "" : title}/>
+        <StarRating selectedStar={rateNumber} size={40} handleSelect={handleStarSelect}/>
       </VStack>
         <BrowserView>
           <Modal onClose={handleModalFeedbackCancel} isOpen={isModalOpen} lazy>
